@@ -1,0 +1,44 @@
+<div class="navbar-header b-r {{app.settings.navbarHeaderColor}}" >
+  <button class=" pull-right visible-xs" type="button" data-toggle="collapse"
+          data-target=".navbar-collapse">
+    <i class="glyphicon glyphicon-align-justify"></i>
+  </button>
+  <a ui-sref="access.home" class="navbar-brand text-lt" >
+    <!--<i class="fa j-fa-btc" ng-style="{'background-image':'url('+app.logo+')' }"></i>-->
+    <img class="fa j-fa-btc" ng-src="{{app.logo}}" alt="" style="max-height: 26px; width: auto;">
+    <span class="hidden-folded m-l-xs" >{{app.name}}</span>
+  </a>
+
+</div>
+<div class="collapse  navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}" >
+  <ul class="nav navbar-nav hidden-sm">
+    <!--ng-click="lyLevelMenu(menu)" ng-repeat="menu in LevelMenu"-->
+    <li class=" pos-stc">
+      <a ui-sref="projecset.blacklis" class="dropdown-toggle ly-a b-r"  >
+        <span>项目配置</span>
+      </a>
+    </li>
+    <li class=" pos-stc">
+      <a ui-sref="{{homepage}}" class="dropdown-toggle ly-a b-r"  >
+        <span>项目成员</span>
+      </a>
+    </li>
+  </ul>
+  <!-- nabar right -->
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <a href="">{{app.projectName}}</a>
+    </li>
+    <li class="dropdown" dropdown>
+      <a href class="dropdown-toggle clear" dropdown-toggle>
+        <span class="hidden-sm hidden-md">{{userRName}}</span> <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu animated fadeInRight w">
+
+        <li>
+          <a ui-sref="access.signin">退出</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

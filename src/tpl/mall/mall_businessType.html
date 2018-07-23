@@ -1,0 +1,93 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="businessTypeCtrl">
+    <div class="col">
+        <div class="wrapper-md" >
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <div class="inline m-r text-left">
+                                <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">指标:</span></div>
+                                <div class="sparkline inline">
+                                    <select class="form-control input-sm" ng-style="app.settings.select">
+                                        <option>业态面积比例</option>
+                                        <option>门店数量比例</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="inline m-r text-left">
+                                <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">叠加:</span></div>
+                                <div class="sparkline inline">
+                                    <select class="form-control input-sm" ng-style="app.settings.select">
+                                        <option>每周停留时长</option>
+                                        <option>每周访问频次</option>
+                                        <option>进店率</option>
+                                        <option>平效</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="inline m-r text-left">
+                                <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">时间:</span></div>
+                                <div class="sparkline inline">
+                                    <select class="form-control input-sm" ng-style="app.settings.select">
+                                        <option>近一年</option>
+                                        <option>近三年</option>
+                                        <option>近五年</option>
+                                        <option>全部</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">业态构成变化</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">近一年</span>
+                        <div class="chartHeight"  id="constituteAnalysisID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">面积</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">数量</button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">当前业态构成</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017年8月 - 2017年9月</span>
+                        <div  class="chartHeight"  id="currentConstituteAnalysisID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">销售额分析</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                        <div class="chartHeight" id="salesAnalysisID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <!--<label class="i-switch bg-warning pull-right" ng-init="showSpline=true">-->
+                        <!--<input type="checkbox" ng-model="showSpline">-->
+                        <!--<i></i>-->
+                        <!--</label>-->
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">租金与平效</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017年8月 - 2017年9月</span>
+                        <div class="chartHeight"  id="rentBenefitsID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

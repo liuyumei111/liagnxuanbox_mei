@@ -1,0 +1,46 @@
+<!-- navbar -->
+<div ng-controller="projecSetMainCtrl">
+    <div data-ng-include=" 'tpl/izonev/blocks/header-home.html' "></div>
+    <!--<div data-ng-include=" 'tpl/izonev/blocks/header-proset.html' " class="app-header navbar"></div>-->
+    <!--<div class="navbar-header b-r {{app.settings.navbarHeaderColor}}" >-->
+        <!--<button class=" pull-right visible-xs" type="button" data-toggle="collapse"-->
+                <!--data-target=".navbar-collapsea">-->
+            <!--<i class="glyphicon glyphicon-align-justify"></i>-->
+        <!--</button>-->
+    <!--</div>-->
+    <!--<div class="collapse  navbar-collapse navbar-collapsea box-shadow m-t {{app.settings.navbarHeaderColor2}}">-->
+        <!--<ul class="nav navbar-nav">-->
+            <!--&lt;!&ndash;ui-sref="" ui-sref-active="ly-onmenu-bg"&ndash;&gt;-->
+            <!--<li class="dropdown" ng-repeat="menu in menuSecondaryRes">-->
+                <!--<a class="dropdown-toggle " ui-sref=" {{menu.url}}" ui-sref-active="{{app.settings.lyonmenubg}}">-->
+                    <!--{{menu.menuName}}-->
+                <!--</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash; nabar right &ndash;&gt;-->
+        <!--<div class="inline" style="clear: both"></div>-->
+        <!--<div class="pull-right" style="padding: 10px">-->
+            <!--<div class="inline m-r text-left">-->
+                <!--<div class="m-b-xs inline"><span class="text-muted" ng-style="app.settings.fontColor">筛选:</span></div>-->
+            <!--</div>-->
+            <!--<div class="inline text-left">-->
+                <!--&lt;!&ndash;<div class="m-b-xs inline hidden-xs hidden-sm"><span class="text-muted" ng-style="app.settings.fontColor">时间:</span></div>&ndash;&gt;-->
+                <!--<div class="sparkline inline">-->
+                    <!--<div class="btn-group dropdown" dropdown>-->
+                        <!--<input class="form-control input-default input-sm inline " style="width: 170px; height: 30px;" ng-style="app.settings.button" id="plustest" ng-model="timeName">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; / navbar right &ndash;&gt;-->
+    <!--</div>-->
+    <!-- content -->
+    <div class="app-content">
+        <div ui-butterbar></div>
+        <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a>
+        <div class="app-content-body " ui-view ng-style="app.settings.contentBody"></div>
+    </div>
+    <!-- /content -->
+    <div data-ng-include=" 'tpl/izonev/blocks/footer.html' " ></div>
+
+</div>

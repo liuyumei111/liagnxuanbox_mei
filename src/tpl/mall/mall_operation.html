@@ -1,0 +1,574 @@
+<!--<style>-->
+  <!--.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {-->
+    <!--background-color: #121d1f;-->
+  <!--}-->
+  <!--.table-bordered > tbody > tr > td {-->
+    <!--border-color: #263836;-->
+  <!--}-->
+  <!--.table-bordered {-->
+    <!--border: 1px solid #263836;-->
+  <!--}-->
+  <!--.table-bordered > thead > tr > th {-->
+    <!--border-color: #263836;-->
+  <!--}-->
+  <!--.nav-tabs > li:hover > a, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {-->
+    <!--border-color: #3e4141;-->
+  <!--}-->
+  <!--.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {-->
+    <!--color: #fff;-->
+    <!--cursor: default;-->
+    <!--background-color: #141a28;-->
+    <!--border: 1px solid #3e4141;-->
+    <!--border-bottom-color: transparent;-->
+  <!--}-->
+  <!--.nav-tabs > li.active > a {-->
+    <!--border-bottom-color: #3e4141!important;-->
+  <!--}-->
+  <!--.nav-tabs {-->
+    <!--border-color: #3e4141;-->
+  <!--}-->
+  <!--.nav-tabs {-->
+    <!--border-bottom: 1px solid #3e4141;-->
+  <!--}-->
+  <!--.nav-tabs > li > a{-->
+    <!--color: #ffffff;-->
+  <!--}-->
+  <!--.nav-tabs > li > a:hover, .nav > li > a:focus {-->
+    <!--background-color: #141a28;-->
+  <!--}-->
+<!--</style>-->
+<style>
+  .nav-tabs{
+
+  }
+</style>
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="mallOperationCtrl">
+  <div class="" style="padding: 10px 0px">
+    <div class="inline pull-right ">
+      <div class="inline m-r text-left">
+        <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">筛选:</span></div>
+        <div class="sparkline inline">
+          <select class="form-control input-sm"
+                  ng-options="level.value as level.name for level in storeOperations.level"
+                  ng-change="OnselectConditions()"
+                  ng-model="storeOperations.conditions.level"
+                  ng-style="app.settings.select"
+
+          >
+          </select>
+        </div>
+        <div class="sparkline inline">
+          <select class="form-control input-sm"
+                  ng-options="type.value as type.name for type in storeOperations.type"
+                  ng-change="OnselectConditions()"
+                  ng-model="storeOperations.conditions.type"
+                  ng-style="app.settings.select"
+          >
+          </select>
+        </div>
+        <div class="sparkline inline">
+          <select class="form-control input-sm"
+                  ng-options="area.value as area.name for area in storeOperations.area"
+                  ng-change="OnselectConditions()"
+                  ng-model="storeOperations.conditions.area"
+                  ng-style="app.settings.select"
+          >
+          </select>
+        </div>
+      </div>
+      <div class="inline text-left">
+        <!--<div class="m-b-xs inline hidden-xs hidden-sm"><span class="text-muted" ng-style="app.settings.fontColor">时间:</span></div>-->
+        <div class="sparkline inline">
+          <div class="btn-group dropdown" dropdown>
+            <button class="btn btn-default btn-sm" dropdown-toggle ng-style="app.settings.button">{{storeOperations.conditions.timeName}} <span class="caret"></span></button>
+            <ul class="list-group list-group-lg m-b-none dropdown-menu izone-dropdown-menu">
+              <li class="">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <ul class="list-unstyled l-h-2x" style="padding-left: 10px">
+                      <li ng-repeat="left in storeOperations.time.left" >
+                        <a class="text-muted " ng-click="OnselectConditions(left.value,left.name)">{{left.name}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-6 b-l b-light">
+                    <ul class="list-unstyled l-h-2x" style="padding-left: 4px">
+                      <li ng-repeat="right in storeOperations.time.right" >
+                        <a class="text-muted " ng-click="OnselectConditions(right.value,right.name)">{{right.name}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <tabset class="tab-container" ng-style="app.settings.tabContainer">
+      <!--1111111111111111111111111-->
+      <tab >
+        <tab-heading >
+          总体情况
+        </tab-heading>
+        <!--总体情况-->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel  clearfix" ng-style="app.settings.Panel">
+              <div class="panel-body">
+                <a href class="w-xl pull-left m-r">
+                  <img src="img/izone/u587.png" style="width: 100%">
+                </a>
+                <div class="clear" ng-style="app.settings.fontColor">
+                  <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor" >北京东直门来福士购物中心</h4>
+                  <div>
+                      <p>
+                        北京来福士广场位于北京市东直门立交桥西南角、东二环的核心商圈地带，北临东直门内大街，东面东二环路，紧邻第二使馆区，周边遍布写字楼、大型购物中心、酒店和文化中心。
+                        <br><br>
+                        项目占地 13854.07平方米，总建筑面积为 103184平方米。由写字楼、零售商场、附属用房和停车场组成。凯德集团将其建成集高档公寓、商务写字楼、零售商场于一体的综合项目。 北京来福士广场于2009年竣工，地下直接连通东直门交通枢纽。凭借轨道交通及近在咫尺的东二环、机场高速，最为便捷的交通网络和绝佳的地理位置。
+                      </p>
+                    </div>
+                    <div class="text-muted m-t-lg" >
+                      <a><i class="fa fa-user text-success "></i>
+                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">地址：北京市东城区东直门南大街1号</span>
+                      </a>
+                      <a> <i class="fa fa-clock-o text-info "></i>
+                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">占地面积：13854.07㎡，建筑面积：103184㎡</span>
+                      </a>
+                      <a><i class="fa fa-comment-o text-info "></i>
+                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">入驻商户：1023 户</span>
+                      </a>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('day')" ng-style="app.settings.button">天</button>
+                <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('week')" ng-style="app.settings.button">周</button>
+                <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('month')" ng-style="app.settings.button">月</button>
+              </div>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">{{storeOperations.trafficAnalysis.title}}</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{storeOperations.trafficAnalysis.time}}</span>
+              <div class="chartHeight" id="trafficAnalysisID" ></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客来源对比</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="shopChartHeight" id="customerFromContrastID" ></div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+            <span class="text-xs text-muted pull-right">
+              <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span></div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm" ng-style="app.settings.select">
+                    <option>工作地</option>
+                    <option>居住地</option>
+                  </select>
+                </div>
+               <div class="m-b-xs inline m-l"> <span class="text-muted" ng-style="app.settings.fontColor">分析区域：</span></div>
+               <div class="btn-group">
+                 <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('area')" >区域</button>
+                 <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('city')" >城市</button>
+                 <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('province')" >省份</button>
+
+               </div>
+
+              </span>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客来源展示</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="row"  >
+                <div class="col-sm-10">
+                  <div class="shopChartHeight" id="hotMapID"></div>
+                </div>
+                <div class="col-sm-2" >
+                  <div class="shopChartHeight table-responsive">
+                    <table class="table  m-b-none table-bordered {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                      <thead>
+                      <tr>
+                        <th class="NNewline">排名</th>
+                        <th class="NNewline">小区</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr ng-repeat="t in table">
+                        <td class="" style="line-height: 260%">
+                          {{$index+1}}
+                        </td>
+                        <td class="NNewline">
+                          <span>{{t.name}}</span>
+                          <span class="block izone-font-size-11">{{t.value}}</span>
+                        </td>
+                      </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </tab>
+      <!--22222222222222222222222-->
+      <tab ng-click="tab2init()">
+        <tab-heading >
+          客流动线
+        </tab-heading>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">行业均值</button>
+
+              </div>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">{{storeOperations.averageIntoShop.title}}</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{storeOperations.averageIntoShop.time}}</span>
+              <div class="chartHeight" id="averageIntoShopID" ></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-sm m-r" ng-style="app.settings.button">行业均值</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+              </div>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">{{storeOperations.notIntoShop.title}}</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{storeOperations.notIntoShop.time}}</span>
+              <div class="chartHeight" id="notIntoShopID" ></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-sm m-r" ng-style="app.settings.button">行业均值</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+              </div>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">{{storeOperations.stayAccessLength.title}}</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{storeOperations.stayAccessLength.time}}</span>
+              <div class="chartHeight" id="stayAccessLengthID" ></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="panel wrapper" ng-style="app.settings.Panelbg">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客进店次序分析</h4>
+              <div class="shopChartHeight" id="customersIntoStoreOrderID" >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-sm " ng-style="app.settings.button">升序</button>
+
+              </div>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客落地门店排名</h4>
+              <div class="shopChartHeight " >
+                <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                  <thead>
+                  <tr>
+                    <th class="NNewline text-center">排名</th>
+                    <th class="NNewline text-center">Logo</th>
+                    <th class="NNewline text-center">门店</th>
+                    <th class="NNewline text-center">进店人数</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="t in traffic">
+                    <td class="tableHeight">{{$index+1}}</td>
+                    <td class="tableHeight"><a><img ng-src="{{t.logo}}"></a></td>
+                    <td class="tableHeight">{{t.name}}</td>
+                    <td class="tableHeight">
+                      <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                        <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日出入口人流计数</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="shopChartHeight" id="passengerFlowInOutNumID" >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">人流动线与热度分析</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">-</span>
+              <div class="shopChartHeight" id="1ID" >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">人流动线与热度分析</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">-</span>
+              <div class="shopChartHeight" id="1I1D" >
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </tab>
+      <!--333333333333333333333333-->
+      <tab ng-click="tab3init()">
+        <tab-heading >
+         顾客画像
+        </tab-heading>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <div class="btn-group pull-right">
+                <div class="inline m-r text-left">
+                  <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析指标：</span></div>
+                  <div class="sparkline inline">
+                    <select class="form-control input-sm" ng-style="app.settings.select">
+                      <option>年龄段</option>
+                      <option>性别</option>
+                      <option>婚姻状况</option>
+                      <option>收入水平</option>
+                      <option>消费水平</option>
+                      <option>职业类型</option>
+                      <option>兴趣爱好</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline m-r text-left">
+                  <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span></div>
+                  <div class="sparkline inline">
+                    <div class="btn-group ">
+                      <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                      <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                      <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">按时段分析顾客构成</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+              <div class="chartHeight"  id="customersAgeID" >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">性别</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="chartHeight"  id="genderID" >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">年龄分布</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="chartHeight"  id="ageID" >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">婚姻状况</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="chartHeight"  id="marriageID" >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">收入水平</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="chartHeight"  id="incomeLevelID" >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">文化水平</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="chartHeight"  id="culturalLevelID" >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">消费水平</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="chartHeight"  id="consumptionLevelID" >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">职业类型</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="shopChartHeight" id="professionalID"  >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">兴趣爱好</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="shopChartHeight" id="interestID" ></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">消费偏好</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="shopChartHeight" id="consumerPreferencesID" ></div>
+
+            </div>
+          </div>
+        </div>
+      </tab>
+      <!--4444444444444444444444-->
+      <tab ng-click="tab4init()">
+        <tab-heading >
+          业态构成
+        </tab-heading>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <div class="btn-group pull-right">
+                <div class="inline m-r text-left">
+                  <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">指标:</span></div>
+                  <div class="sparkline inline">
+                    <select class="form-control input-sm" ng-style="app.settings.select">
+                      <option>业态面积比例</option>
+                      <option>门店数量比例</option>
+
+                    </select>
+                  </div>
+                </div>
+                <div class="inline m-r text-left">
+                  <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">叠加:</span></div>
+                  <div class="sparkline inline">
+                    <select class="form-control input-sm" ng-style="app.settings.select">
+                      <option>每周停留时长</option>
+                      <option>每周访问频次</option>
+                      <option>进店率</option>
+                      <option>平效</option>
+
+                    </select>
+                  </div>
+                </div>
+                <div class="inline m-r text-left">
+                  <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">时间:</span></div>
+                  <div class="sparkline inline">
+                    <select class="form-control input-sm" ng-style="app.settings.select">
+                      <option>近一年</option>
+                      <option>近三年</option>
+                      <option>近五年</option>
+                      <option>全部</option>
+
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">业态构成变化</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">近一年</span>
+              <div class="chartHeight"  id="constituteAnalysisID">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">面积</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">数量</button>
+              </div>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">当前业态构成</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017年8月 - 2017年9月</span>
+              <div  class="chartHeight"  id="currentConstituteAnalysisID">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+              </div>
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">销售额分析</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="chartHeight" id="salesAnalysisID">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <!--<label class="i-switch bg-warning pull-right" ng-init="showSpline=true">-->
+                <!--<input type="checkbox" ng-model="showSpline">-->
+                <!--<i></i>-->
+              <!--</label>-->
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">租金与平效</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017年8月 - 2017年9月</span>
+              <div class="chartHeight"  id="rentBenefitsID">
+              </div>
+            </div>
+          </div>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+
+</div>
+
+

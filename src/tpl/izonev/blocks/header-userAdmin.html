@@ -1,0 +1,134 @@
+
+<!--
+<div class="m_row">
+  <a ui-sref="access.home">
+    <div class="m_home-logo">
+      <img src="img/logo.jpg" alt="">
+    </div>
+  </a>
+  <div class="m_box3">
+    <div class="btn-group m_exit">
+      <span class="btn"><i class="glyphicon glyphicon-list margin20" ng-click="nav600()"></i><i class="icon-user icon-white"></i>&nbsp;&nbsp;{{userRName}}</span>
+      <span class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></span>
+      <ul class="dropdown-menu">
+        <li ng-click="toUrl('projecset.pflowperception')"><a href="javascript:;">感知器列表</a></li>
+        <li ng-click="exit()"><a href="javascript:;"><i class="icon-ban-circle"></i> 退出</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .m_home-logo {
+    width: 80px;
+    height: 100%;
+    margin-left: 2%;
+    float: left;
+    visibility: hidden;
+  }
+
+  .m_home-logo > img {
+    width: 180%;
+  }
+  .m_row{
+    text-align: center;
+    line-height: 100%;
+    background: #fff;
+    height: 50px;
+    box-shadow: 0 0 3px #ccc;
+  }
+  .m_box3{
+    float: right;
+    line-height: 50px;
+    text-align: right;
+    padding-right: 15px;
+  }
+  .margin20{
+    margin-right: 20px;
+    visibility: hidden;
+  }
+  @media screen and (max-width:600px){
+    .margin20{
+      visibility: visible;
+    }
+    .m_home-logo{
+      visibility: visible;
+    }
+  }
+</style>
+-->
+
+
+<div class="navbar app-header navbar  bg-white-only navbar-fixed-top">
+    <div class="col-xs-12 m_height">
+        <a ui-sref="access.home">
+            <div class="m_home-logo">
+                <img src="img/logo.jpg" alt="">
+            </div>
+        </a>
+
+        <div class="m_exit">
+            <div class="dropdown" dropdown style="position: relative">
+                <i class="glyphicon glyphicon-align-justify m_navBtn" style="position: absolute;top: 26px;left: -30px;" ui-toggle-class="off-screen" data-target=".app-aside"></i>
+                <a href class="dropdown-toggle clear" dropdown-toggle>
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="img/a0.jpg" alt="...">
+                <i class="on md b-white bottom"></i>
+              </span>
+                    <span class="hidden-sm hidden-md">{{userRName}}</span> <b class="caret"></b>
+                </a>
+                <!-- dropdown -->
+                <ul class="dropdown-menu animated fadeInRight w">
+                    <li ng-click="exit()">
+                        <a ui-sref="access.signin">
+                            <i class="glyphicon glyphicon-share-alt" style="margin-right: 18px"></i>
+                            退出
+                        </a>
+
+                        <!--glyphicon glyphicon-share-alt-->
+                    </li>
+                </ul>
+                <!-- / dropdown -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .m_home-logo {
+        width: 80px;
+        height: 100%;
+        margin-left: 2%;
+        float: left;
+    }
+
+    .m_home-logo > img {
+        width: 180%;
+    }
+
+    .m_height {
+        height: 64px;
+        line-height: 64px;
+        position: relative;
+    }
+
+    .m_exit {
+        float: right;
+        /*margin-top: 18px;*/
+        position: relative;
+    }
+    .dropdown-menu{
+        position: absolute;
+        top: 95%;
+        left: -23px;
+    }
+    .m_navBtn{
+        visibility: hidden;
+    }
+    @media screen and (max-width: 768px) {
+        .m_navBtn{
+            visibility: visible;
+        }
+    }
+</style>

@@ -1,0 +1,75 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="basicPortraitTocCtrl">
+    <div class="col">
+        <div class="bg-light lter b-b wrapper-md" ng-style="app.settings.bgLight" style="padding-bottom: 8px!important;">
+            <div class="row">
+                <div class="col-md-8 col-xs-12 col-sm-12">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <h1 class="m-n font-bold h3 text-black inline" ng-style="app.settings.fontColor">人群画像</h1>
+                            <div style="height: 8px"></div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<div class="collapse1  navbar-collapse-custom ">-->
+                                <!--<ul class="nav navbar-nav">-->
+                                    <!--<li class="dropdown" ng-class="{realTimeactive : $index==focus}"-->
+                                        <!--ng-repeat="m in temMenu">-->
+                                        <!--<a class="dropdown-toggle " ng-click="clickStatus($index,m.id,m)">-->
+                                            <!--{{m.name}}-->
+                                        <!--</a>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                                <!--&lt;!&ndash; nabar right &ndash;&gt;-->
+                                <!--<div class="inline" style="clear: both"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                    <div class="form-inline  text-right">
+                        <div class="form-group">
+                            <span class="m-b-xs inline"><span class="text-muted" ng-style="app.settings.fontColor">时间：</span></span>
+                            <div class="sparkline inline">
+                                <input class="form-control input-sm" ng-style="app.settings.select" type="text" ng-model="proDate" id="date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-md" style="padding-top: 0px">
+            <div class="row">
+                <div ng-repeat="d in alllabel |limitTo:moreChart" repeat-finish="renderFinish()">
+                    <div class="wrapper-md">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <h4 class="m-n font-thin font-bold  text-black">{{d.chartype}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrapper-md">
+                        <div ng-repeat="label in d.label ">
+                            <div class="{{label.class}}">
+                                <div class="panel wrapper" ng-style="app.settings.Panel">
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">
+                                        {{label.title}}</h4>
+                                    <span class="m-b block text-xs text-muted"
+                                          ng-style="app.settings.fontColor">{{proDate}}</span>
+                                    <div class="{{label.height}}" id="{{label.id}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<row>-->
+                <!--<div class="col-md-12">-->
+                    <!--<a class="btn btn-default btn-block m-b-md" ng-if="moreChart!==3" ng-click="showmoreChart(moreChart+1)">显示更多</a>-->
+                <!--</div>-->
+            <!--</row>-->
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+    </div>
+</div>
+
+

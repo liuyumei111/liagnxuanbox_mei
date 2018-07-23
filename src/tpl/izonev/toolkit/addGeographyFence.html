@@ -1,0 +1,175 @@
+<style>
+    .BMapLib_Drawing_panel a:first-child{
+        display: none;
+    }
+    .BMapLib_marker,.BMapLib_polyline{
+        display: none;
+    }
+</style>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="toolAddGeographyFenceCtrl">
+    <div class="col">
+        <div class="" style="width: 95%; margin: 0 auto;">
+                <div class="">
+                    <div class="modal-header">
+                        <h3 class="modal-title font-bold" id="estateModalLabel">
+                            {{id==0?'添加':'修改'}}地理围栏
+                        </h3>
+                    </div>
+                    <div style="background: #fff;">
+                        <div class="modal-body">
+                            <div class="wrapper clear">
+                                <form action="" id="formId"  class="col-lg-6">
+                                    <div class="">
+                                        <h5 class="modal-title font-bold">基础信息</h5>
+                                        <div class="m-t-sm m-b-sm">
+                                            <span class="text-right col-lg-2"><sup style="top: -.2em">*</sup>名称：</span>
+                                            <input type="text" class="form-control input-sm w inline" name="name" ng-model="name">
+                                        </div>
+                                        <div style="margin: 10px 0 10px;">
+                                            <div id="distpicker1" class="clear">
+                                                <span class="text-right col-lg-2">地址：</span>
+                                                <div class="col-lg-10 no-padder">
+                                                    <div class="m-r-xs col-lg-2-4 no-padder">
+                                                        <label class="sr-only" for="province10">省</label>
+                                                        <select class="form-control input-sm" id="province10" name="province"></select>
+                                                    </div>
+                                                    <div class="col-lg-2-4 m-r-xs no-padder">
+                                                        <label class="sr-only" for="city10">市</label>
+                                                        <select class="form-control input-sm" id="city10" name="city"></select>
+                                                    </div>
+                                                    <div class="col-lg-2-4 m-r-xs no-padder">
+                                                        <label class="sr-only" for="district10">区</label>
+                                                        <select class="form-control input-sm" id="district10" name="county"></select>
+                                                    </div>
+                                                    <div class="col-lg-4 no-padder">
+                                                        <input type="text" class="form-control input-sm inline " placeholder="详细地址、精确到门牌号"  ng-model="address" name="address">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span  class="text-right col-lg-2" style="padding-left: 0;">Logo或照片：</span>
+                                            <label for="browse" style="position: relative;">
+                                                <img ng-src="{{myImage}}" alt="" class="h-full w-full" style="position: absolute; top: 0; left: 0; width: 240px; height: 160px; border: none" id="im">
+                                                <span  class="btn btn-sm btn-sm-b  w-md text-center" style=" background: #eee; color: #a2a2a2;  height: 160px;">
+                                                <span class="block m-t-xxl">点击此处上传<br>图片不小于 100 * 100 px</span>
+                                            </span>
+                                            </label>
+                                            <input type="file" id="browse"  onchange="angular.element(this).scope().filechange(this)" style="display: none;" name="">
+                                            <div class="inline" style="color: #f05050;">{{fileerror}}</div>
+                                            <!--multiple-->
+                                        </div>
+                                        <!--类型-->
+                                        <!--<div class="m-l-xl m-t-xs m-b-xs">
+                                            <sup style="top: -.2em">*</sup>类型：<select name="" id="" class="form-control input-sm w-xs inline m-l-sm" ng-model="attr" ng-options="item as item for item in attrList"></select>
+                                        </div>-->
+                                        <div class="m-t-sm m-b-sm clearfix">
+                                            <span class="text-right col-lg-2">备注：</span>
+                                            <div class="col-lg-6 no-padder">
+                                                <textarea class=" input-sm form-control" style="resize: none; height: 110px;" ng-model="remarks" name="remarks"></textarea>
+                                            </div>
+                                        </div>
+                                        <!--附加字段-->
+                                        <!--<h5 class="modal-title font-bold">附加字段</h5>
+                                        <div class="m-md m-t-xs m-b-xs" style="height: 34px; line-height: 34px;">
+                                            <span class="pull-left">近期开盘：</span>
+                                            <input type="text" name="openingDate" id="openingDate" class="inline form-control pull-left input-group w m-l-sm m-r-xl" ng-model="openingDate">
+                                        </div>
+                                        <div class="m-md m-t-xs m-b-xs">
+                                            主力户型：<input type="text" class="form-control input-sm w inline m-l-sm" ng-model="houseType" name="houseType">
+                                        </div>
+                                        <div class="m-md m-t-xs m-b-xs">
+                                            楼盘均价：<input type="number" class="form-control input-sm w-xs inline m-l-sm m-r-sm" ng-model="housePrice" name="housePrice">元/㎡
+                                        </div>-->
+                                        <h5 class="modal-title font-bold">取数规则（已审核通过的，修改将重新审核）</h5>
+                                        <div class="m-t-sm m-b-sm clearfix" style=" line-height: 34px;">
+                                            <span class="text-right col-lg-2" style="padding-left: 0;"><sup style="top: -.2em">*</sup>取数时段：</span>
+                                            <div class="col-lg-10 no-padder">
+                                                <!--<input class="col-lg-2-4 wrapper-xs form-control"  type="text" name="" id="startDate" ng-model="startDate">-->
+                                                <div class="col-lg-2-4 wrapper-xs form-control" id="startDate">{{startDate}}</div>
+                                                <span class="col-lg-2 text-center no-padder">至</span>
+                                                <!--<input class="col-lg-2-4 wrapper-xs form-control" id="endDate" type="text" name="" ng-model="endDate">-->
+                                                <div class="col-lg-2-4 wrapper-xs form-control" id="endDate">{{endDate}}</div>
+                                                <span class="col-lg-4 text-center no-padder">请根据合同选取</span>
+                                            </div>
+                                        </div>
+                                        <div class="m-t-sm m-b-sm clearfix" style=" line-height: 34px;">
+                                            <span class="text-right col-lg-2" style="padding-left: 0;"><sup style="top: -.2em">*</sup>更新频率：</span>
+                                            <div class="col-lg-10 no-padder">
+                                                <select class="form-control input-sm col-lg-2-4" name="cycleDay" ng-model="rate" ng-options="item as item for item in rateList" ></select>
+                                                <span class="col-lg-8 text-center no-padder">若有未来需要采集的数据，更新一次统计结果的时间</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="m-t-xs m-b-xs clearfix displayhide">
+                                            <span class="text-right col-lg-2" style="padding-left: 0;">剔除人群：</span>
+                                            <div class="col-sm-10 no-padder">
+                                                <label class="checkbox-inline" ng-repeat="v in check">
+                                                    <input type="checkbox" value="{{v.id}}" name="excludePeoples" class="excludePeoples"> {{v.con}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="btn-group hidden-sm col-lg-6">
+                                    <div class="col-lg-12 no-padder">
+                                        <span class="font-bold" style="line-height: 30px;"><sup style=" top: -.2em">*</sup>
+                                        地理围栏圈选：（已审核通过的，修改将重新审核）</span>
+                                        <div class="pull-right">
+                                            <input type="text" id="suggestId" size="20" value="百度" style="width:180px;" placeholder="地点搜索" class="form-control input-sm" />
+                                            <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:180px;height:auto; display:none;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div id="dlmap" class="col-lg-12 m-b-md  m-t-sm no-padder" style="height: 450px;"></div>
+                                    <div class="col-lg-12 no-padder" style="line-height: 34px;">
+                                        <span class="col-lg-6 no-padder">已选地块：{{arrarrnum}}块<span class="m-l-xl">总面积：{{mapArea | number}}㎡</span></span>
+                                        <button class="btn btn-danger col-lg-2-4 pull-right" ng-click="clearAllK()" >清除全部地块</button>
+                                        <!--ng-disabled="id!=0"-->
+                                    </div>
+                                    <div class="col-lg-12 no-padder">
+                                        <span>小提示：</span>
+                                        <div>1、由于GPS报点存在漂移问题（25M以内），故圈选时最好内缩一定间隙，从而避免选到无关人群。</div>
+                                        <div>2、对于已审核完成的，修改地理围栏、取数规则，将会重新提交审核，请慎重修改。</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer " style="text-align: center;">
+                            <button type="button" class="btn btn-sm btn-sm-b bg-info r-3x " style="color: #fff;" ng-click="create()" ng-disabled="disab">完成</button>
+                            <button type="button" class="btn btn-sm btn-sm-b bg-info r-3x " style="color: #fff;" ng-click="back()">取消</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="modal fade estatemodal" id="estateModal" tabindex="-1" role="dialog" aria-labelledby="estateModalLabel" aria-hidden="true" >
+            <!--<div >-->
+            <div class="modal-dialog " style="width: 25%; margin: 20% auto;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title font-bold" id="">
+                            审核确认
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="wrapper text-center" style="overflow: hidden;">
+                            您修改了 取数规则 或 地理围栏，<br>
+                            将会重新提交审核，请确认
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="text-align: center;">
+                        <button type="button" class="btn btn-sm btn-sm-b bg-info" data-dismiss="modal" style="color: #fff;" ng-click="createtrue()">提交审核
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">返回修改
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+    </div>
+</div>

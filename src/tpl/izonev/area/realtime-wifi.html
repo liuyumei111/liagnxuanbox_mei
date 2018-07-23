@@ -1,0 +1,139 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="realtimewifiCtrl">
+    <div class="col">
+        <div class="bg-light lter b-b wrapper-md" ng-style="app.settings.bgLight">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                    <h3 class="m-n font-bold h3 text-black hidden-xs" ng-style="app.settings.fontColor">实时分析</h3>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs">
+                    <div class="inline m-r text-left">
+                        <div class="m-b-xs inline"><span class="text-muted" ng-style="app.settings.fontColor">{{clock.now}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-md"  ng-if="app.exhibition.dataflag">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">实时客流量</h4>
+                        <div class="chartHeight" id="realTimePassengerFlowID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <!--ng-style="app.settings.Panel"-->
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日累计客流量</h4>
+                        <div class="chartHeight" id="DPassengerFlowSumID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日客流</h4>
+                        <div class="chartHeight" id="theDayPassengerFlowID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">区域导览</h4>
+                        <label for="photo" class="ditu">
+                            <img ng-src="https://jdi.jiguang.cn/iZone/2017/{{img}}" alt=""
+                                 style="width: 100%;height: 100%" onerror='nofind(this,"ditu.jpg");'><i
+                                class="on b-white right"></i>
+                        </label>
+                        <input type="file" id="photo" style="display: none;"
+                               onchange="angular.element(this).scope().filechange(this)">
+                    </div>
+
+                </div>
+                <div class="col-md-6  no-border-xs">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-thin m-t-none m-b-md " style="color: #ffffff">.</h4>
+                        <div class="shopChartHeight table-responsive" style="overflow: auto;">
+                            <table class="table  table-bordered m-b-none text-center "
+                                   ng-style="app.settings.fontColor">
+                                <thead>
+                                <tr style="background: #f7f7f7;">
+                                    <th class="NNewline text-center tableHeight">区域名称</th>
+                                    <th class="NNewline text-center tableHeight">实时客流</th>
+                                    <th class="NNewline text-center tableHeight">区域介绍</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="t in traffic" class="hover">
+                                    <td class="tableHeight NNewline">
+                                        <a class="dropdown-toggle block"
+                                           ui-sref="area.astatistical({pavilion_id:$index+7,pavilion_idPlus:t.area_id})"
+                                           ui-sref-active="{{app.settings.lyonmenubg}}">
+                                            {{t.area_name}}
+                                        </a>
+                                    </td>
+                                    <td class="tableHeight NNewline">
+                                        <a class="dropdown-toggle block"
+                                           ui-sref="area.astatistical({pavilion_id:$index+7,pavilion_idPlus:t.area_id})"
+                                           ui-sref-active="{{app.settings.lyonmenubg}}">
+                                            {{t.realTime}}
+                                        </a>
+                                    </td>
+                                    <td class="tableHeight NNewline">
+                                        <a class="dropdown-toggle block"
+                                           ui-sref="area.astatistical({pavilion_id:$index+7,pavilion_idPlus:t.area_id})"
+                                           ui-sref-active="{{app.settings.lyonmenubg}}">
+                                            {{t.area_desc}}
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+
+                    <div>备注：</div>
+                    <div>• 实时客流量，是指近30分钟内扫描到的去重设备数。</div>
+                    <div>• 今日累计客流量，是指从今日0点开始，扫描到的去重设备数。</div>
+                    <div>• 每15分钟统计一次。</div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-md" ng-if="app.exhibition.dataflag2">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper-sm" style="height: 300px;" ng-style="app.settings.Panel">
+                        <h3 class="text-center" style="margin: 100px 0 0 0;">暂无本品数据来源，请先<a href="">配置客流感知器</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading"></div>
+
+    </div>
+</div>
+<style>
+    .hover:hover {
+        background-color: #00a8f3;
+        color: #fff;
+    }
+
+    .hover:hover a {
+        color: #fff;
+    }
+
+    .ditu {
+        display: block;
+        cursor: pointer;
+        width: 640px;
+        height: 610px;
+        margin: 0 auto;
+    }
+</style>

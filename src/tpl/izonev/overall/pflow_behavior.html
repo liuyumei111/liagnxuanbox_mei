@@ -1,0 +1,83 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="obehaviorCtrl">
+    <div class="col">
+        <div class="wrapper-md" ng-if="app.exhibition.dataflag">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right" style="display: none; ">
+
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="">平均数
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="">中位数
+                            </button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">各区域停留时长分布</h4>
+                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{timeName}}</span>
+                        <div class="chartHeight" id="stayTimeDistID"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panelbg">
+                        <h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">各区域参观轨迹</h4>
+                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{timeName}}</span>
+                        <div class="shopChartHeight" id="trajectorylD">
+                            <!--<p style="font-size: 30px; color: #eee; font-weight: bold; line-height: 600px; text-align: center;">暂 无 数 据</p>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectTime('8')">按绝对值
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectTime('9')">按相对值
+                            </button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">各区域顾客重复度矩阵</h4>
+                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{timeName}}</span>
+                        <div class="shopChartHeight table-responsive" style="height: auto;">
+                            <!--<p style="font-size: 30px; color: #eee; font-weight: bold; line-height: 590px; text-align: center;">暂 无 数 据</p>-->
+
+                            <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                                <thead>
+                                <tr>
+                                    <th class="NNewline text-center"></th>
+                                    <th class="NNewline text-center" ng-repeat="v in arrr">{{v}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="t in table2">
+                                    <td class="tableHeight_visit NNewline">{{t.name}}</td>
+                                    <td class="tableHeight_visit NNewline" ng-repeat="v in t.arr track by $index">{{v}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="{{ProjectName=='changscz'?'row':'displayhide'}}">
+                <div class="col-md-12">
+
+                    <div class="panel wrapper col-md-12" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">热力图[模拟数据]</h4>
+                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{timeName}}</span>
+                        <img class="block " style="margin: 0 auto; width: 70%;" src="img/izone/changsha/jdheatmap.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+        <div data-ng-include=" 'tpl/izonev/blocks/exhibitionContent.html' " ng-if="app.exhibition.dataflag2">
+        </div>
+    </div>
+</div>
+
+

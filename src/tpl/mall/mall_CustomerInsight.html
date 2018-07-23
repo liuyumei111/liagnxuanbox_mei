@@ -1,0 +1,251 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="businessCustomerInsightCtrl">
+  <div class="col">
+    <div class="bg-light lter b-b wrapper-md">
+      <div class="row">
+        <div class="col-sm-2 col-xs-12 hidden-xs hidden-md">
+          <h1 class="m-n font-bold h3 text-black">{{izoneMenuName.menuName}}</h1>
+          <!--<div class="btn-group">-->
+            <!--<button type="button" class="btn btn-default btn-sm">运营指标</button>-->
+            <!--<button type="button" class="btn btn-default btn-sm">业态分析</button>-->
+          <!--</div>-->
+        </div>
+        <div class="col-sm-10 text-right ">
+
+          <div class="inline m-r text-left">
+            <div class="m-b-xs inline"> <span class="text-muted">叠加:</span></div>
+            <div class="sparkline inline">
+              <select class="form-control input-sm">
+                <option>每周停留时长</option>
+                <option>每周访问频次</option>
+                <option>进店率</option>
+              </select>
+            </div>
+            <div class="m-b-xs inline"> <span class="text-muted">筛选:</span></div>
+            <div class="sparkline inline">
+              <select class="form-control input-sm">
+                <option>全部等级</option>
+                <option>主力店</option>
+                <option>次主力店</option>
+                <option>一般商铺</option>
+              </select>
+            </div>
+            <div class="sparkline inline">
+              <select class="form-control input-sm">
+                <option>全部业态</option>
+                <option>零售</option>
+                <option>娱乐</option>
+                <option>餐饮</option>
+                <option>体验</option>
+              </select>
+            </div>
+            <div class="sparkline inline">
+              <select class="form-control input-sm">
+                <option>全部区域</option>
+                <option>第一层</option>
+                <option>第二层</option>
+              </select>
+            </div>
+            <div class="m-b-xs inline"><span class="text-muted">时间:</span></div>
+            <div class="sparkline inline">
+              <input type="text" class="demo-input form-control input-sm" placeholder="请选择日期" id="test6">
+            </div>
+            <div class="sparkline inline">
+              <div class="btn-group dropdown" dropdown>
+                <button class="btn btn-default btn-sm" dropdown-toggle>本周 <span class="caret"></span></button>
+                <div  class="dropdown-menu izone-dropdown-menu">
+                  <tabset class="nav-tabs-alt" justified="true">
+                    <tab>
+                      <tab-heading>
+                        绝对时间
+                      </tab-heading>
+                      <div class="wrapper-md">
+
+
+                      </div>
+                    </tab>
+                    <tab>
+                      <tab-heading>
+                        相对时间
+                      </tab-heading>
+                      <div class="wrapper-md">
+                        <div class="m-b-sm text-md">follow</div>
+                        kkkkkkkkkkkkkkkkkkkkkk
+                        <div class="text-center">
+                          <a href class="btn btn-sm btn-primary padder-md m-b">More Connections</a>
+                        </div>
+                      </div>
+                    </tab>
+
+                  </tabset>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-md" >
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel wrapper">
+
+            <h4 class="font-bold m-t-none  text-muted">性别</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="chartHeight"  id="genderID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel wrapper">
+
+            <h4 class="font-bold m-t-none  text-muted">年龄分布</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="chartHeight"  id="ageID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel wrapper">
+
+            <h4 class="font-bold m-t-none  text-muted">婚姻状况</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="chartHeight"  id="marriageID" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel wrapper">
+
+            <h4 class="font-bold m-t-none  text-muted">收入水平</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="chartHeight"  id="incomeLevelID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel wrapper">
+
+            <h4 class="font-bold m-t-none  text-muted">文化水平</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="chartHeight"  id="culturalLevelID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel wrapper">
+
+            <h4 class="font-bold m-t-none  text-muted">消费水平</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="chartHeight"  id="consumptionLevelID" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel wrapper">
+            <h4 class="font-bold m-t-none  text-muted">职业类型</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="shopChartHeight" id="professionalID"  >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel wrapper">
+            <h4 class="font-bold m-t-none  text-muted">兴趣爱好</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="shopChartHeight" id="interestID" ></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel wrapper">
+            <h4 class="font-bold m-t-none  text-muted">消费偏好</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="shopChartHeight" id="consumerPreferencesID" ></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel wrapper">
+
+            <h4 class="font-bold m-t-none  text-muted">顾客来源对比</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="shopChartHeight" id="customerFromContrastID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="panel wrapper">
+            <span class="text-xs text-muted pull-right">
+              <div class="m-b-xs inline"> <span class="text-muted">分析维度：</span></div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm">
+                    <option>工作地</option>
+                    <option>居住地</option>
+                  </select>
+                </div>
+               <div class="m-b-xs inline m-l"> <span class="text-muted">分析区域：</span></div>
+               <div class="btn-group">
+                 <button type="button" class="btn btn-default btn-sm">区域</button>
+                <button type="button" class="btn btn-default btn-sm">城市</button>
+                <button type="button" class="btn btn-default btn-sm">省份</button>
+
+               </div>
+
+              </span>
+            <h4 class="font-bold m-t-none  text-muted">顾客来源展示</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="row"  >
+              <div class="col-sm-10">
+                <div class="shopChartHeight" id="hotMapID"></div>
+              </div>
+              <div class="col-sm-2" >
+                <div class="shopChartHeight table-responsive">
+                  <table class="table  m-b-none table-bordered table-hover" {{app.settings.tablestriped}}>
+                    <thead>
+                    <tr>
+                      <th class="NNewline">排名</th>
+                      <th class="NNewline">小区</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="t in table">
+                      <td class="" style="line-height: 260%">
+                        {{$index+1}}
+                      </td>
+                      <td class="NNewline">
+                        <span>{{t.name}}</span>
+                        <span class="block izone-font-size-11">{{t.value}}</span>
+                      </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel wrapper">
+            <h4 class="font-bold m-t-none  text-muted">人流动线分析</h4>
+            <span class="m-b block text-xs text-muted">本周</span>
+            <div class="shopChartHeight" id="customerFlowAnalysisID" >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,180 @@
+<!-- navbar -->
+<div ng-controller="contrastAnalysisCtrl">
+    <div data-ng-include=" 'tpl/izonev/blocks/header.html' " class="app-header navbar"></div>
+    <div class="wrapper-md" style="padding-bottom: 0px" ng-style="app.settings.contentBody">
+        <div class="row">
+            <div class="col-lg-4" ng-repeat="pro in proFenceShow">
+                <div class="panel panel-default item {{app.settings.izoneborde}}" ng-style="app.settings.Panel">
+                    <div class="panel-body">
+                        <div class="list-group-item clearfix" style="border: none" ng-style="app.settings.Panelbg">
+                            <span class="pull-left w-sm  m-r">
+                                <img ng-src="https://jdi.jiguang.cn/iZone/2017/{{pro.photo}}" alt="..." class="border-radius-6" style="width: 100%;height: 108px" onerror='nofind(this,"ditu1.png");'>
+                                <i class="on b-white right"></i>
+                            </span>
+                            <span class="clear">
+                                <h4 class="h4 padding-bottom-10 font-bold" ng-style="app.settings.fontColor">{{pro.name}}</h4>
+                                <small class="clear text-muted" ng-style="app.settings.fontColor">
+                                    <span class="text-overflow "> 地址：{{pro.province}}{{pro.city}}{{pro.county}}{{pro.address}}</span>
+                                    <span class="text-overflow"> {{pro.remarks}}</span>
+                                    <!--<span class="text-overflow"> 公司：<span class="text-danger">{{pro.price}}</span></span>-->
+                                </small>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="top text-right w-full padding-top-5">
+                        <a ng-class="{true:'displayhide'}[proFenceShow.length==1]" ng-click="proFenceRemove(pro.id)"><i class="icon icon-close text-muted m-r-sm" ng-style="app.settings.fontColor"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 {{displayShow}}" >
+                <div class="panel panel-default item {{app.settings.izoneborde}}" ng-style="app.settings.Panel">
+                    <div class="panel-body text-center" style="padding: 41px">
+                        <div class="list-group-item clearfix" style="border: none" ng-style="app.settings.Panelbg">
+                            <span class="pull-left w-sm  m-r"></span>
+                            <span class="clear  padder-v" ng-click="addFenceAlert()">
+                                <a class="h3" ng-style="app.settings.fontColor" data-toggle="modal" data-target="#estateModal">
+                                    <i class="icon icon-plus"></i>
+                                    <span class="">添加调研竞品</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="top text-right w-full padding-top-5">
+                        <i class="icon  text-muted m-r-sm" ng-style="app.settings.fontColor"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade estatemodal" id="estateModal" tabindex="-1" role="dialog" aria-labelledby="estateModalLabel" aria-hidden="true">
+                <div class="modal-dialog " style="width: 80%">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+
+                            <h4 class="modal-title" id="estateModalLabel">
+                                添加对比
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="wrapper "ng-style="app.settings.bbcolor" >
+                                <div class="btn-group pull-right hidden-sm hidden-xs">
+                                    <input class="input-sm form-control" type="search"ng-style="app.settings.input" placeholder="竞品名称">
+                                </div>
+                                <div class="inline">
+                                    <h4 class="font-thin m-t-none  text-muted inline" ng-style="app.settings.fontColor">项目类型：</h4>
+                                    <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">全部</button>
+                                    <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">全部省份</button>
+                                    <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">全部城市</button>
+
+                                </div>
+                                <div class="inline padder">
+                                    <!--<h4 class="font-thin m-t-none  text-muted inline" ng-style="app.settings.fontColor">项目类型：</h4>-->
+                                    <select class="form-control input-sm" ng-style="app.settings.select"
+                                            ng-model="selectProConfigDate"
+                                            ng-options="d.id as d.name for d in proConfigDate"
+                                            ng-change="OnseleDate()">
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="wrapper-md" style="padding-bottom: 0px" ng-style="app.settings.contentBody">
+                                <div class="row">
+                                    <div class="col-lg-6" ng-repeat="pro in proFenceNoShow | orderBy : 'id' : true">
+                                        <div class="panel panel-default item {{app.settings.izoneborde}}" ng-style="app.settings.Panel">
+                                            <div class="panel-body">
+                                                <a class="list-group-item clearfix" style="border: none" ng-style="app.settings.Panelbg" ng-click="proFenceAdd(pro.id)">
+                                                    <span class="pull-left w-sm  m-r">
+                                                        <img ng-src="https://jdi.jiguang.cn/iZone/2017/{{pro.photo}}" alt="..." class="border-radius-6"onerror='nofind(this);' style="width: 100%;height: 108px">
+                                                        <i class="on b-white right"></i>
+                                                    </span>
+                                                    <span class="clear">
+                                                        <h4 class="h4 padding-bottom-10 font-bold" ng-style="app.settings.fontColor">{{pro.name}}</h4>
+                                                        <small class="clear text-muted" ng-style="app.settings.fontColor">
+                                                            <span class="text-overflow "> 地址：{{pro.province}}{{pro.city}}{{pro.county}}{{pro.address}}</span>
+                                                            <span class="text-overflow"> {{pro.remarks}}</span>
+                                                            <!--<span class="text-overflow"> 公司：<span class="text-danger">{{pro.price|number}}</span>元/m²</span>-->
+
+                                                        </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">关闭
+                            </button>
+                            <!--<button type="button" class="btn btn-sm btn-primary">-->
+                            <!--提交更改-->
+                            <!--</button>-->
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+    <div class="navbar-header b-r {{app.settings.navbarHeaderColor}}" >
+        <button class=" pull-right visible-xs" type="button" data-toggle="collapse"
+                data-target=".navbar-collapsea">
+            <i class="glyphicon glyphicon-align-justify"></i>
+        </button>
+
+    </div>
+    <div class="collapse collapsea navbar-collapse navbar-collapsea box-shadow {{app.settings.navbarHeaderColor2}}">
+        <ul class="nav navbar-nav">
+            <!--ui-sref="" ui-sref-active=""-->
+            <li class="dropdown">
+                <a class="dropdown-toggle" ui-sref="contrastAnalysis.passengerSource"
+                   ui-sref-active="{{app.settings.lyonmenubg}}">
+                    <span ng-style="app.settings.fontColor">客流统计</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" ui-sref="contrastAnalysis.basicPortrait" ui-sref-active="{{app.settings.lyonmenubg}}">
+                    <span ng-style="app.settings.fontColor">基本画像</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" ui-sref="contrastAnalysis.interestsHobbies"
+                   ui-sref-active="{{app.settings.lyonmenubg}}">
+                    <span ng-style="app.settings.fontColor"> 兴趣偏好</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" ui-sref="contrastAnalysis.customerValue" ui-sref-active="{{app.settings.lyonmenubg}}">
+                    <span ng-style="app.settings.fontColor">客户价值</span>
+                </a>
+            </li>
+        </ul>
+        <!-- nabar right -->
+        <div class="inline" style="clear: both">
+
+        </div>
+        <div class="pull-right" style="padding: 10px">
+            <div class="inline m-r text-left displayhide">
+                <div class="m-b-xs inline"><span class="text-muted" ng-style="app.settings.fontColor">时间：</span></div>
+                <div class="sparkline inline">
+                    <input class="form-control input-sm" ng-style="app.settings.select" type="text" ng-model="proDate" id="date">
+                </div>
+
+            </div>
+        </div>
+        <!-- / navbar right -->
+    </div>
+    <!-- content -->
+    <div class="app-content">
+        <div ui-butterbar></div>
+        <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a>
+        <div class="app-content-body " ui-view ng-style="app.settings.contentBody"></div>
+        <!--ng-style="app.settings.contentBody"-->
+    </div>
+    <!-- /content -->
+    <div data-ng-include=" 'tpl/izonev/blocks/footer.html' ">
+    </div>
+</div>

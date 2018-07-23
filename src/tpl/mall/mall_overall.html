@@ -1,0 +1,122 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="overallCtrl">
+    <div class="col">
+        <div class="wrapper-md" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel  clearfix" ng-style="app.settings.Panel">
+                        <div class="panel-body">
+                            <a href class="w-xl pull-left m-r hidden-sm hidden-xs">
+                                <img src="img/izone/u587.png" style="width: 100%">
+                            </a>
+                            <div class="clear" ng-style="app.settings.fontColor">
+                                <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor" >天津大悦城</h4>
+                                <div>
+                                    <p>
+                                        天津大悦城是世界500强企业中粮集团斥资50亿打造的商业地产项目，位于天津内环核心区域，据守和平与南开两大中心城区交汇处，定位为“国际时尚青年城”， “年轻、时尚潮流、品位”作为大悦城的精神名片，诠释JOY CITY的生活方式，以便捷、休闲、开放与亲和为基调，引导前沿生活理念。
+                                        <br><br>
+                                        大悦城购物中心总建筑面积达到27万平方米，相当于5个天津泰达体育场，开业后的营业面积将占东马路老城厢商圈的60%。地处城市交通干线“黄金交叉点”——紧邻城市主干道南门外大街、南马路。周边不仅有49条公交线路汇集至此，同时还与2012年已开通的地铁2号线无缝对接。天津大悦城接连城市动脉之上，占据繁华制高点。
+                                    </p>
+                                </div>
+                                <div class="text-muted m-t-lg" >
+                                    <a><i class="fa fa-user text-success "></i>
+                                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">地址：天津市南开区南门外大街2号</span>
+                                    </a>
+                                    <a> <i class="fa fa-clock-o text-info "></i>
+                                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">占地面积：8.9万平方米 ，建筑面积：53万平方米(含地下部分)</span>
+                                    </a>
+                                    <!--<a><i class="fa fa-comment-o text-info "></i>-->
+                                        <!--<span class="m-l-sm m-r" ng-style="app.settings.fontColor">入驻商户：1023 户</span>-->
+                                    <!--</a>-->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('D_CustCnts')" ng-style="app.settings.button">天</button>
+                            <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('W_CustCnts')" ng-style="app.settings.button">周</button>
+                            <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('M_CustCnts')" ng-style="app.settings.button">月</button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">客流量统计</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight" id="trafficAnalysisID" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客来源对比</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="shopChartHeight" id="customerFromContrastID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <span class="text-xs text-muted pull-right">
+                            <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span></div>
+                            <div class="sparkline inline">
+                                <select class="form-control input-sm" ng-style="app.settings.select">
+                                    <option>工作地</option>
+                                    <option>居住地</option>
+                                </select>
+                            </div>
+                            <div class="m-b-xs inline m-l"> <span class="text-muted" ng-style="app.settings.fontColor">分析区域：</span></div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('area')" >区域</button>
+                                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('city')" >城市</button>
+                                <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('province')" >省份</button>
+
+                            </div>
+
+                        </span>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客来源展示</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="row"  >
+                            <div class="col-sm-10">
+                                <div class="shopChartHeight" id="hotMapID"></div>
+                            </div>
+                            <div class="col-sm-2" >
+                                <div class="shopChartHeight table-responsive">
+                                    <table class="table  m-b-none table-bordered {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                                        <thead>
+                                        <tr>
+                                            <th class="NNewline">排名</th>
+                                            <th class="NNewline">小区</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="t in table">
+                                            <td class="NNewline" style="line-height: 260%">
+                                                {{$index+1}}
+                                            </td>
+                                            <td class="NNewline">
+                                                <span>{{t.name}}</span>
+                                                <span class="block izone-font-size-11">{{t.value}}</span>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" >
+        </div>
+    </div>
+    <!--ng-show="insight.view.loading"-->
+</div>
+
+

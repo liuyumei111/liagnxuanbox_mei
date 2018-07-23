@@ -1,0 +1,82 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="pflowperceptionCtrl">
+    <div class="col">
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel no-border">
+                        <div class="row wrapper  b-b">
+                            <div class="col-sm-5 m-b-xs">
+                                <div>
+                                    <h4 class="inline font-bold m-r">感知器列表</h4>
+                                    <span class="text-base">当前共有 {{needleData.length}} 个感知器</span>
+                                </div>
+                            </div>
+
+                         <!--   <div class="col-sm-5">
+                                <span class="text-base font-bold">有效采集时段：</span>
+                                <span class="text-muted">08:00~12:00, 14:00~18:00</span>
+                                <a class="text-info m-l-lg">修改</a>
+                            </div>
+                            <div class="col-sm-1">
+
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="input-group">
+                                    <span class="input-group-btn text-right">
+                                        <a class="btn btn-sm btn-info" type="button">接入客流感知器</a>
+                                    </span>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover text-center ">
+                                <thead>
+                                <tr>
+                                    <!--<th class="text-center">名称</th>-->
+                                    <th class="text-center">部署区域</th>
+                                    <th class="text-center">MAC地址</th>
+                                    <th class="text-center">状态</th>
+                                   <!-- <th class="text-center">有效半径</th>
+                                    <th class="text-center">操作</th>-->
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="item in needleData">
+                                    <!--<td class="text-xs v-middle">{{item.area_name}}</td>-->
+                                    <td class="text-xs v-middle">{{item.area_name}}</td>
+                                    <td class="text-xs v-middle">{{item.dmac}}</td>
+                                    <td class="text-xs v-middle"><i class="fa fa-circle  text-base m-r {{ item.status.status == '正常' ? 'text-success' : ' ' }}"></i>{{item.status.status}}</td>
+                                 <!--   <td class="text-xs v-middle">5m</td>
+                                    <td class="text-xs v-middle">
+                                        <div class="buttons">
+                                            <a><i class="fa fa-edit text-lg text-muted m-r"></i></a>
+                                            <a><i class="fa fa-minus-square text-lg text-danger"></i></a>
+
+                                        </div>
+                                    </td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                       <!-- <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-sm-4 hidden-xs">
+                                    <jpagination num-pages="totalRow" curr-page="cpage" on-select-page="selectPage(page)"></jpagination>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <small class="text-muted inline m-t-sm m-b-sm">当前第 {{cpage}}页 共 {{totalRow}} 页</small>
+                                </div>
+                                <div class="col-sm-4 text-right text-center-xs"></div>
+                            </div>
+                        </footer>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading">
+        </div>
+    </div>
+</div>
+
+

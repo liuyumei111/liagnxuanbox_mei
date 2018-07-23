@@ -1,0 +1,48 @@
+<div ng-controller="userListPerceptionCtrl" class="userList-box">
+    <!--账号列表层-->
+    <div class="modify-box" ng-repeat="item in userManageDataS">
+        <div class="col-sm-2">
+            <div class="panel b-a border-radius-6">
+                <div class="panel-heading bg-info dk no-border wrapper-lg"></div>
+                <div class="text-center m-b clearfix">
+                    <div class="thumb-lg avatar m-t-n-xxl">
+                        <img src="img/a5.jpg" alt="..." class="b b-3x b-white">
+                        <div class="h4 font-thin m-t-sm over-hide">{{item.username}}</div>
+                    </div>
+                </div>
+                <div class="hbox text-center b-t b-light">
+                    <a href class="col padder-v text-muted b-r b-light" ui-sref="userAdmin.pflowperception">查看探针</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .userList-box {
+        padding: 20px 20px 0 10px;
+    }
+
+    .modify-box {
+        /*display: none;*/
+    }
+
+    input {
+        margin-bottom: 24px;
+    }
+
+    .over-hide {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+    .bitian-box span{
+        position: absolute;
+        top: 10px;
+        right: -8px;
+        font-size: 10px;
+        color: red;
+    }
+
+</style>

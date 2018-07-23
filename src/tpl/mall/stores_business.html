@@ -1,0 +1,69 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="storesBusinessCtrl">
+    <div class="col">
+        <div class="wrapper-md" >
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel wrapper"  ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('PassengerFlow','D_Shop_CustCnts')">天</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('PassengerFlow','W_Shop_CustCnts')">周</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('PassengerFlow','M_Shop_CustCnts')">月</button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">客流量统计</h4>
+                        <span class=" block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+                        <div class="chartHeight" id="theDayPassengerFlowID"  >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper"  ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">租金与平效</h4>
+                        <span class=" block text-xs text-muted" ng-style="app.settings.fontColor">2017年8月 - 2017年9月</span>
+                        <div class="chartHeight" id="rentBenefitsID"  >
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel wrapper"  ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm m-r" ng-style="app.settings.button">行业均值</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">门店捕获率</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+                        <div class="chartHeight"  id="storesTocaptureID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper"  ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm m-r" ng-style="app.settings.button">行业均值</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('StayTime','D_Shop_StayTime')">天</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('StayTime','W_Shop_StayTime')">周</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('StayTime','M_Shop_StayTime')">月</button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">平均停留时长</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+                        <div class="chartHeight" id="averageStayTimeID">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+    </div>
+</div>

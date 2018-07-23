@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app" ng-controller="AppCtrl">
+<head>
+  <meta charset="utf-8" />
+  <title ng-bind="app.title.Level3 + app.title.secondary +app.title.home+app.title.version"></title>
+  <meta name="description" content="{{app.title.Level3 + app.title.secondary +app.title.home+app.title.version}}" />
+  <meta name="keywords" content="{{app.title.Level3 + app.title.secondary +app.title.home+app.title.version}}" />
+  <link rel="icon" href={{app.favicon}} type="image/x-icon"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="../libs/assets/animate.css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/laydate/theme/default/laydate.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/layui/css/layui.css" type="text/css" />
+
+
+  <!-- build:css css/app.min.css -->
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <!-- endbuild -->
+</head>
+<body >
+<div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+<!-- build:js js/app.angular.js -->
+<!-- jQuery -->
+<script src="../libs/jquery/jquery/dist/jquery.js"></script>
+<!-- Bootstrap -->
+<script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+
+<!-- Angular -->
+<script src="../libs/angular/angular/angular.js"></script>
+
+
+<script src="../libs/angular/angular-animate/angular-animate.js"></script>
+<script src="../libs/angular/angular-aria/angular-aria.js"></script>
+<script src="../libs/angular/angular-cookies/angular-cookies.js"></script>
+<script src="../libs/angular/angular-messages/angular-messages.js"></script>
+<script src="../libs/angular/angular-resource/angular-resource.js"></script>
+<script src="../libs/angular/angular-sanitize/angular-sanitize.js"></script>
+<script src="../libs/angular/angular-touch/angular-touch.js"></script>
+
+<script src="../libs/angular/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../libs/angular/ngstorage/ngStorage.js"></script>
+<script src="../libs/angular/angular-ui-utils/ui-utils.js"></script>
+
+<!-- bootstrap -->
+<script src="../libs/angular/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- lazyload -->
+<script src="../libs/angular/oclazyload/dist/ocLazyLoad.js"></script>
+<!-- translate -->
+<script src="../libs/angular/angular-translate/angular-translate.js"></script>
+<script src="../libs/angular/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+<script src="../libs/angular/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+<script src="../libs/angular/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+
+
+<script type="text/javascript" src="../libs/mapv/Mapv.js"></script>
+<script type="text/javascript" src="../libs/mapv/mapv2.0.js"></script>
+<script type="text/javascript" src="../libs/echars/echarts-all-3.js"></script>
+<script type="text/javascript" src="../libs/validation/validation.js"></script>
+<script type="text/javascript" src="../libs/base64/base64.js"></script>
+<script type="text/javascript" src="../libs/laydate/laydate.js"></script>
+<script type="text/javascript" src="../libs/distpicker/distpicker.data.js"></script>
+<script type="text/javascript" src="../libs/distpicker/distpicker.js"></script>
+<script type="text/javascript" src="../libs/distpicker/main.js"></script>
+<!-- App -->
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/config.chart.js"></script>
+<script src="js/config.lazyload.js"></script>
+<script src="js/config.router.js"></script>
+<script src="js/main.js"></script>
+<script src="js/services/ui-load.js"></script>
+<script src="js/services/api.js"></script>
+<script src="js/filters/fromNow.js"></script>
+<script src="js/directives/setnganimate.js"></script>
+<script src="js/directives/ui-butterbar.js"></script>
+<script src="js/directives/ui-focus.js"></script>
+<script src="js/directives/ui-fullscreen.js"></script>
+<script src="js/directives/ui-jq.js"></script>
+<script src="js/directives/ui-module.js"></script>
+<script src="js/directives/ui-nav.js"></script>
+<script src="js/directives/ui-scroll.js"></script>
+<script src="js/directives/ui-shift.js"></script>
+<script src="js/directives/ui-toggleclass.js"></script>
+<script src="js/controllers/bootstrap.js"></script>
+<!-- endbuild -->
+<!-- Lazy loading -->
+
+<!--swiper-->
+<link rel="stylesheet" href="../libs/swiper/swiper.css">
+<script type="text/javascript" src="../libs/swiper/swiper.js"></script>
+
+
+<!--layer-->
+<script src="../libs/layer-v3.1.1/layer/layer.js"></script>
+<script src="../libs/layui/layui.js"></script>
+
+
+<!--zTree树结构-->
+<link rel="stylesheet" href="../libs/zTree/zTreeStyle.css">
+<script src="../libs/zTree/jquery.ztree.all.min.js"></script>
+
+
+</body>
+</html>

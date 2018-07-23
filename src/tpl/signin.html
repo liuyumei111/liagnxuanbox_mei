@@ -1,0 +1,238 @@
+
+<div class="container m_login">
+    <div  class="m_login-left"></div>
+    <div class="w-xl w-auto-xs m_login-right" ng-controller="SigninFormController"
+         ng-init="app.settings.container = false;">
+        <div class="row m_logo">
+            <img class="m_logo-img" src="img/liangxuan_slogan.png" alt="">
+        </div>
+
+        <div class="m-b-lg">
+            <form name="form" class="form-validation wrapper signin-box">
+                <div class="text-danger wrapper text-center" ng-show="authError">
+                    {{authError}}
+                </div>
+                <div class="list-group list-group-sm">
+                    <div class="list-group-item">
+                        <i class="m_user-icon"></i>
+                        <input type="text" placeholder="请输入用户名" class="form-control no-border m_padding username" ng-model="userName">
+                    </div>
+                    <div class="list-group-item">
+                        <i class="m_password-icon"></i>
+                        <input type="password" placeholder="请输入密码" class="form-control no-border m_padding password"
+                               ng-model="userPassword">
+                    </div>
+                    <span class="promptError" style="color: red;margin: 3px 0 0 3px;display: inline-block"></span>
+                </div>
+                <button type="submit" class="btn btn-block btn-lg btn-login m_btn" ng-click="loginv2()"
+                        ng-disabled='form.$invalid'>登录
+                </button>
+                <!--<a class="btn btn-lg btn-default btn-block m_btn"  style="margin-top: 20px" ng-click="goYesNumber()">注册</a>-->
+                <a class="btn btn-lg btn-default btn-block m_btn"  style="margin-top: 20px">注册</a>
+            </form>
+            <form name="form" class="wrapper register-box">
+                <div>
+                    <input type="text" ng-model="regName" placeholder="用户名(必填)" class="form-control no-border m_Bmargin">
+                </div>
+                <div>
+                    <input type="text" ng-model="regEmil" placeholder="邮箱(必填)" class="form-control no-border m_Bmargin">
+                </div>
+                <div>
+                    <input type="password" ng-model="regPass" placeholder="设置密码(必填)" class="form-control no-border m_Bmargin">
+                </div>
+                <div>
+                    <input type="password" ng-model="regPassS" placeholder="确认密码(必填)" class="form-control no-border m_Bmargin">
+                </div>
+                <div>
+                    <input type="text" ng-model="regComName" placeholder="公司名称(必填)" class="form-control no-border m_Bmargin">
+                </div>
+                <div>
+                    <input type="tel" ng-model="regTel" placeholder="联系电话(必填)" class="form-control no-border m_Bmargin">
+                </div>
+                <div>
+                    <div class="outer">
+                        <div class="filter-box"></div>
+                        <span>滑动解锁</span>
+                        <div class="inner">&gt;&gt;</div>
+                    </div>
+                </div>
+                <div class="register-btn" style="width: 100%;line-height: 44px;text-align: center;background: yellowgreen;margin-top: 5px;"ng-click="register()">
+                    <span>确定注册</span>
+                </div>
+                <div style="text-align: right">
+                    <a style="color: #f0f0f0" ng-click="yesNumber()">已经有账号</a>
+                </div>
+            </form>
+        </div>
+        <!--<div class="text-center" ng-include="'tpl/blocks/page_footer.html'"></div>-->
+    </div>
+</div>
+
+<div class="container m_footer">
+    <div class="text-center" style="margin-bottom: 10px;">
+        <a class="m_footer-text" href="http://www.liangxuantech.com/">关于我们</a>|
+        <a class="m_footer-text" href="http://www.liangxuantech.com/">公司介绍</a>|
+        <a class="m_footer-text" href="http://www.liangxuantech.com/">解决方案</a>|
+        <a class="m_footer-text" href="http://www.liangxuantech.com/">联系我们</a>
+    </div>
+    <div class="text-center">
+        <span>©良轩科技2018. All rights reserved</span>
+    </div>
+
+</div>
+
+
+<style>
+
+    .m_footer-text{
+        color: #666;
+        padding: 0 10px;
+
+    }
+    .m_footer-text:hover{
+        color: #00b0ff;
+        text-decoration:underline;
+    }
+    .m_footer{
+        margin-top: 10px;
+    }
+
+    @media (max-width: 760px) {
+        .m_login-left{
+            display: none;
+        }
+        .m_login-right{
+            margin: 0!important;
+        }
+
+    }
+    .list-group-item{
+        border: 4px solid #eee!important;
+    }
+    .list-group-item{
+        position: relative;
+    }
+    .m_password-icon{
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        background: url("img/izone/icon/password-icon.png")no-repeat;
+        background-size: 100% 100%;
+    }
+    .m_user-icon{
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: url("img/izone/icon/user-icon.png")no-repeat;
+        background-size: 100% 100%;
+    }
+    .m_padding{
+        padding-left: 30px;
+        background-color: #fff !important;
+    }
+    .m_btn{
+        width: 120px;
+        margin: auto;
+        text-align: center;
+        border-radius: 22px;
+    }
+    .m_login{
+        display: flex;
+        background: url("img/izone/banner_bg2.png")no-repeat;
+        background-size: cover;
+        padding: 30px;
+    }
+    .m_login-left{
+        flex: 1.6;
+        width: 700px;
+        height: 400px;
+        margin-top: 60px;
+        background-size: 100% 100%;
+    }
+    .m_login-right{
+        position: relative;
+        flex: 0.8;
+        margin-right: 100px;
+        margin-top: 60px;
+        background: rgba(0,0,0,.3);
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn-login {
+        background: rgb(22, 155, 213);
+        color: #ffffff;
+    }
+    .m_logo{
+        width: 100%;
+        height: 60px;
+        margin: 10px auto;
+    }
+    .m_logo-img{
+        height: 100%;
+        display: block;
+        margin-left: 14%;
+    }
+    .m_Bmargin{
+        margin-bottom: 5px;
+        padding: 20px 10px;
+    }
+    /*滑动验证*/
+    .outer{
+        position: relative;
+        width: 100%;
+        height: 36px;
+        line-height: 34px;
+        border:1px solid #ccc;
+        background: #ccc9c9;
+    }
+    .outer span,.filter-box,.inner{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .outer span{
+        display: block;
+        padding:0  0 0 36px;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+    }
+    .filter-box{
+        width: 0;
+        height: 100%;
+        background: green;
+        z-index: 9;
+    }
+    .outer.act span{
+        padding:0 36px 0 0;
+    }
+    .inner{
+        width: 36px;
+        height: 35px;
+        text-align: center;
+        background: #fff;
+        cursor: pointer;
+        font-family: "宋体";
+        z-index: 10;
+        font-weight: bold;
+        color: #929292;
+    }
+    .outer.act .inner{
+        color: green;
+    }
+    .outer.act span{
+        z-index: 99;
+    }
+    .register-box{
+        display: none;
+    }
+</style>

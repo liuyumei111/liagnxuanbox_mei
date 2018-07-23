@@ -1,0 +1,72 @@
+<div class="navbar app-header navbar  bg-white-only navbar-fixed-top">
+    <div class="col-xs-12 m_height">
+        <a ui-sref="access.home">
+            <div class="m_home-logo">
+                <img src="img/logo.jpg" alt="">
+            </div>
+        </a>
+        <div class="m_exit">
+            <div class="dropdown" dropdown>
+                <a href class="dropdown-toggle clear" dropdown-toggle>
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="img/a0.jpg" alt="...">
+                <i class="on md b-white bottom"></i>
+              </span>
+                    <span class="hidden-sm hidden-md">{{userRName}}</span> <b class="caret"></b>
+                </a>
+                <!-- dropdown -->
+                <ul class="dropdown-menu animated fadeInRight w">
+
+                    <li>
+                        <a ui-sref="userAdmin.info">
+                            <i class="glyphicon glyphicon-cog" style="margin-right: 18px"></i>
+                            用户管理
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li ng-click="exit()">
+                        <a ui-sref="access.signin">
+                            <i class="glyphicon glyphicon-share-alt" style="margin-right: 18px"></i>
+                            退出
+                        </a>
+
+                        <!--glyphicon glyphicon-share-alt-->
+                    </li>
+                </ul>
+                <!-- / dropdown -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .m_home-logo {
+        width: 80px;
+        height: 100%;
+        margin-left: 2%;
+        float: left;
+    }
+
+    .m_home-logo > img {
+        width: 180%;
+    }
+
+    .m_height {
+        height: 64px;
+        line-height: 64px;
+        position: relative;
+    }
+
+    .m_exit {
+        float: right;
+        /*margin-top: 18px;*/
+        position: relative;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 95%;
+        left: -20px;
+    }
+</style>

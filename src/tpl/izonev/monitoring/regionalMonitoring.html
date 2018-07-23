@@ -1,0 +1,73 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="regionalMonitoringCtrl">
+    <div class="col">
+
+        <div class="bg-light lter b-b wrapper-md" ng-style="app.settings.bgLight" style="padding-bottom: 0px" >
+            <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                    <h3 class="m-n font-bold h3 text-black hidden-xs" ng-style="app.settings.fontColor">实时监测</h3>
+                    <div class="collapse m-t navbar-collapse navbar-collapsea">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown" ng-class="{realTimeactive : $index==focus}" ng-repeat="m in temMenu">
+                                <a class="dropdown-toggle " ng-click="clickStatus($index,m.id,m)">
+                                    {{m.name}}
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!-- nabar right -->
+                        <div class="inline" style="clear: both">
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs">
+                    <div class="inline m-r text-left">
+                        <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">{{clock.now}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-md" >
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel" >
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">实时客流量</h4>
+                        <div class="chartHeight"  id="realTimePassengerFlowID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel"  >
+                        <!--ng-style="app.settings.Panel"-->
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日累计客流量</h4>
+                        <div class="chartHeight"  id="DPassengerFlowSumID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日客流</h4>
+                        <div class="chartHeight" id="theDayPassengerFlowID"  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper " ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">实时客流热力图</h4>
+                        <div class="inline ">
+                            <span class=" text-xs text-muted  " ng-style="app.settings.fontColor"></span>
+                        </div>
+                        <div class="heatHeight" id="heatmapID" ></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+
+    </div>
+</div>

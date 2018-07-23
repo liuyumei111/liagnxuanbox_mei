@@ -1,0 +1,174 @@
+<div ng-controller="uuserproCtrl">
+    <div class="userPro-box">
+        <!--项目管理列表-->
+        <div class="proCon">
+            <!-- <table class="table table-striped b-t b-light">
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>公司</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody style="height: 200px;overflow-y: scroll">
+                <tr ng-repeat="item in userManageDataS">
+                    <td>{{item.username}}</td>
+                    <td>{{item.company}}</td>
+                    <td>
+                        <span class="proBtn" ng-click="addProBtn(item.username,item.user_id)">增加</span>
+                        <span class="proBtn" ng-click="remProBtn(item.username,item.user_id)">删除</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table> -->
+            <table class="layui-table">
+                    <colgroup>
+                        <col width="150">
+                        <col>
+                        <col width="200">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>公司</th>
+                            <th>操作</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in userManageDataS">
+                            <td>{{item.username}}</td>
+                            <td>{{item.company}}</td>
+                            <td>
+                                <span class="proBtn" ng-click="addProBtn(item.username,item.user_id)">增加</span>
+                                <span class="proBtn" ng-click="remProBtn(item.username,item.user_id)">删除</span>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+        <!--增加项目-->
+        <div class="addProCon">
+            <table class="table table-striped b-t b-light">
+                <thead>
+                <tr>
+                    <th style="width:20px;">
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" id="all"><i></i>
+                        </label>
+                    </th>
+                    <th>
+                        <span>全选</span>
+                        <!-- <span class="proBtn marLeft-10" ng-click="yesAdd()">确定增加</span> -->
+                    </th>
+                    <th>用户名称</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in NoExistsData">
+                    <td><label class="i-checks m-b-none"><input type="checkbox" name="box" id="{{item.project_id}}"><i></i></label></td>
+                    <td>{{item.project_name}}</td>
+                    <td>{{item.customer_name}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--删除项目-->
+        <div class="removeProCon">
+            <table class="table table-striped b-t b-light">
+                <thead>
+                <tr ng-show="project_listData.length > 0">
+                    <th style="width:20px;">
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" id="remAll"><i></i>
+                        </label>
+                    </th>
+                    <th>
+                        <span>全选</span>
+                        <!-- <span class="proBtn marLeft-10" ng-click="yesRem()">确定删除</span> -->
+                    </th>
+                    <th>公司名称</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in project_listData">
+                    <td><label class="i-checks m-b-none"><input type="checkbox" name="box" remoId="{{item.project_id}}"><i></i></label></td>
+                    <td>{{item.project_name}}</td>
+                    <td>{{item.project_company}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--标题-->
+        <h3 class="m-n font-thin h3 userList-title">用户项目信息</h3>
+    </div>
+</div>
+
+
+
+<style>
+    .userPro-box {
+        padding: 100px 20px 20px 20px;
+        position: relative;
+        height: 700px;
+        overflow-y: scroll;
+    }
+    .proCon{
+        height: 720px;
+        /*display: none;*/
+    }
+    .addProCon{
+        height: 720px;
+        display: none;
+    }
+    .removeProCon{
+        height: 720px;
+        display: none;
+    }
+
+    .proBtn {
+        background: #7266ba;
+        color: #fff;
+        padding: 8px;
+        font-size: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    thead tr {
+        height: 50px;
+    }
+
+    tbody tr {
+        height: 30px;
+    }
+
+    th {
+        line-height: 50px !important;
+    }
+
+    td {
+        line-height: 30px !important;
+    }
+    .marLeft-10{
+        margin-left: 10px;
+    }
+    .userList-title{
+        position: absolute;
+        top: 20px;
+        left: 8px;
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+    }
+    @media screen and (max-width: 760px) {
+        .proBtn {
+            background: #7266ba;
+            color: #fff;
+            padding: 3px;
+            font-size: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    }
+</style>

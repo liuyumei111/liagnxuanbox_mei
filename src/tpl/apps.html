@@ -1,0 +1,192 @@
+<!-- navbar -->
+<div ng-controller="iZonesMainCtrl">
+<div data-ng-include=" 'tpl/blocks/header.html' " class="app-header navbar"></div>
+    <div class="navbar-header b-r {{app.settings.navbarHeaderColor}}" >
+        <button class=" pull-right visible-xs" type="button" data-toggle="collapse"
+                data-target=".navbar-collapsea">
+            <i class="glyphicon glyphicon-align-justify"></i>
+        </button>
+
+    </div>
+    <div class="collapse  navbar-collapse  navbar-collapsea box-shadow {{app.settings.navbarHeaderColor2}}">
+        <ul class="nav navbar-nav">
+            <!--ui-sref="" ui-sref-active="ly-onmenu-bg"-->
+            <li class="dropdown">
+                <a class="dropdown-toggle " ui-sref="izones.overall" ui-sref-active="{{app.settings.lyonmenubg}}">
+                    总体情况
+                </a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" ui-sref="izones.passengerFlow" ui-sref-active="{{app.settings.lyonmenubg}}">
+                    客流动线
+                </a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" ui-sref="izones.customerPortrait"
+                   ui-sref-active="{{app.settings.lyonmenubg}}">
+                    顾客画像
+                </a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" ui-sref="izones.businessType" ui-sref-active="{{app.settings.lyonmenubg}}">
+                    业态构成
+                </a>
+            </li>
+
+        </ul>
+        <!-- nabar right -->
+        <div class="inline" style="clear: both">
+
+        </div>
+        <div class="pull-right" style="padding: 10px">
+            <div class="inline m-r text-left">
+                <div class="m-b-xs inline"><span class="text-muted" ng-style="app.settings.fontColor">筛选:</span></div>
+                <div class="sparkline inline">
+                    <select class="form-control input-sm"
+                            ng-options="level.value as level.name for level in AllstoreOperations.level"
+                            ng-change="OnselectConditions('k_level')"
+                            ng-model="app.mallScreening.k_level"
+                            ng-style="app.settings.select"
+
+                    >
+                    </select>
+                </div>
+                <div class="sparkline inline">
+                    <select class="form-control input-sm"
+                            ng-options="type.value as type.name for type in AllstoreOperations.type"
+                            ng-change="OnselectConditions('k_type')"
+                            ng-model="app.mallScreening.k_type"
+                            ng-style="app.settings.select"
+                    >
+                    </select>
+                </div>
+                <div class="sparkline inline">
+                    <select class="form-control input-sm"
+                            ng-options="area.value as area.name for area in AllstoreOperations.area"
+                            ng-change="OnselectConditions('k_floor')"
+                            ng-model="app.mallScreening.k_floor"
+                            ng-style="app.settings.select"
+                    >
+                    </select>
+                </div>
+            </div>
+            <div class="inline text-left">
+                <!--<div class="m-b-xs inline hidden-xs hidden-sm"><span class="text-muted" ng-style="app.settings.fontColor">时间:</span></div>-->
+                <div class="sparkline inline">
+                    <div class="btn-group dropdown" dropdown>
+                        <button class="btn btn-default btn-sm" dropdown-toggle ng-style="app.settings.button">
+                            {{app.mallScreening.timeName}} <span class="caret"></span></button>
+                        <ul class="list-group list-group-lg m-b-none dropdown-menu izone-dropdown-menu">
+                            <li class="">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="list-unstyled l-h-2x" style="padding-left: 10px">
+                                            <li ng-repeat="left in AllstoreOperations.time.left">
+                                                <a class="text-muted "
+                                                   ng-click="OnselectConditions('time',left.id,left.value,left.name)">{{left.name}}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6 b-l b-light">
+                                        <ul class="list-unstyled l-h-2x" style="padding-left: 4px">
+                                            <li ng-repeat="right in AllstoreOperations.time.right">
+                                                <a class="text-muted "
+                                                   ng-click="OnselectConditions('time',right.id,right.value,right.name)">{{right.name}}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- / navbar right -->
+
+    </div>
+    <!-- content -->
+    <div class="app-content">
+        <div ui-butterbar></div>
+        <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a>
+        <div class="app-content-body" ui-view ng-style="app.settings.contentBody"></div>
+        <!--ng-style="app.settings.contentBody"-->
+    </div>
+    <!-- /content -->
+
+    <!-- aside right -->
+    <div class="app-aside-right pos-fix no-padder w-md w-auto-xs bg-white b-l animated fadeInRight hide">
+        <div class="vbox">
+            <div class="wrapper b-b b-t b-light m-b">
+                <a href class="pull-right text-muted text-md" ui-toggle-class="show" target=".app-aside-right"><i
+                        class="icon-close"></i></a>
+                Chat
+            </div>
+            <div class="row-row">
+                <div class="cell">
+                    <div class="cell-inner padder" >
+                        <!-- chat list -->
+                        <div class="m-b">
+                            <a href class="pull-left thumb-xs avatar"><img src="img/a2.jpg" alt="..."></a>
+                            <div class="clear">
+                                <div class="pos-rlt wrapper-sm b b-light r m-l-sm">
+                                    <span class="arrow left pull-up"></span>
+                                    <p class="m-b-none">Hi John, What's up...</p>
+                                </div>
+                                <small class="text-muted m-l-sm"><i class="fa fa-ok text-success"></i> 2 minutes ago
+                                </small>
+                            </div>
+                        </div>
+                        <div class="m-b">
+                            <a href class="pull-right thumb-xs avatar"><img src="img/a3.jpg" class="img-circle"
+                                                                            alt="..."></a>
+                            <div class="clear">
+                                <div class="pos-rlt wrapper-sm bg-light r m-r-sm">
+                                    <span class="arrow right pull-up arrow-light"></span>
+                                    <p class="m-b-none">Lorem ipsum dolor :)</p>
+                                </div>
+                                <small class="text-muted">1 minutes ago</small>
+                            </div>
+                        </div>
+                        <div class="m-b">
+                            <a href class="pull-left thumb-xs avatar"><img src="img/a2.jpg" alt="..."></a>
+                            <div class="clear">
+                                <div class="pos-rlt wrapper-sm b b-light r m-l-sm">
+                                    <span class="arrow left pull-up"></span>
+                                    <p class="m-b-none">Great!</p>
+                                </div>
+                                <small class="text-muted m-l-sm"><i class="fa fa-ok text-success"></i>Just Now</small>
+                            </div>
+                        </div>
+                        <!-- / chat list -->
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper m-t b-t b-light">
+                <form class="m-b-none">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Say something">
+                        <span class="input-group-btn">
+              <button class="btn btn-default" type="button">SEND</button>
+            </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- / aside right -->
+
+    <!-- footer -->
+    <div class="app-footer wrapper " ng-style="app.settings.bgLightTop">
+        <span class="pull-right">{{app.version}} <a href  class="m-l-sm text-muted"><i
+                class="fa fa-long-arrow-up"></i></a></span>
+        &copy; 2017 Copyright {{app.copyright}}
+    </div>
+    <!-- / footer -->
+
+    <div data-ng-include=" 'tpl/blocks/settings.html' " class="settings panel panel-default">
+    </div>
+</div>

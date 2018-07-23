@@ -1,0 +1,131 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="customerPortraitCtrl">
+    <div class="col">
+        <div class="wrapper-md" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <div class="inline m-r text-left">
+                                <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析指标：</span></div>
+                                <div class="sparkline inline">
+                                    <select class="form-control input-sm" ng-style="app.settings.select"
+                                            ng-options="c.id as c.name for c in custPortrayalLabel"
+                                            ng-change="OncustPortrayalLabel()"
+                                            ng-model="custPortrayalLabelModel"
+                                    >
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="inline m-r text-left">
+                                <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span></div>
+                                <div class="sparkline inline">
+                                    <div class="btn-group ">
+                                        <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                        ng-click="OnSelectTime('A_CustPortrayalByTime')">按每天时段</button>
+                                        <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                         ng-click="OnSelectTime('D_CustPortrayalByTime')">按每周时段</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">按时段分析顾客构成</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight"  id="custPortrayalByTimeID" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">性别</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight"  id="genderID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">年龄分布</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight"  id="ageID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">婚姻状况</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight"  id="marriageID" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">收入水平</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight"  id="incomeLevelID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">购买方式</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight"  id="culturalLevelID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">消费水平</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight"  id="consumptionLevelID" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">职业类型</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="shopChartHeight" id="professionalID"  >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">兴趣爱好</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="shopChartHeight" id="interestID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">消费偏好</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="shopChartHeight" id="consumerPreferencesID" ></div>
+
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+    </div>
+</div>
+
+

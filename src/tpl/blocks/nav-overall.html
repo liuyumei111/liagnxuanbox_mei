@@ -1,0 +1,74 @@
+<nav ui-nav class="navi" >
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs" style="margin: 20px 0">
+    <span></span>
+  </li>
+  <!--项目名称-->
+  <li class="line dk"></li>
+  <li ui-sref-active="active">
+    <a ui-sref="app.calendar">
+      <!--icon-drawer-->
+      <i class="glyphicon glyphicon-briefcase icon"></i>
+      <span class="font-bold">{{m_project_name}}</span>
+    </a>
+  </li>
+  <!--日期选择-->
+  <li class="line dk"></li>
+  <li ui-sref-active="active">
+    <div class="inline text-left" style="margin-left: 14px">
+      <div class="sparkline inline">
+        <div class="btn-group dropdown" dropdown>
+          <input class="form-control input-default input-sm inline "
+                 style="width: 170px; height: 30px;" ng-style="app.settings.button"
+                 id="plustest" ng-model="timeName">
+        </div>
+      </div>
+    </div>
+  </li>
+  <!--实时分析-->
+  <li class="line dk"></li>
+  <li ui-sref-active="active">
+    <a href="#/fulls/realtimewifi">
+      <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+      <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+      <span class="font-bold">实时分析</span>
+    </a>
+  </li>
+  <!--总体分析-->
+  <li class="line dk"></li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+      <i class="glyphicon glyphicon-th-large icon text-success"></i>
+      <span class="font-bold">总体分析</span>
+    </a>
+    <ul class="nav nav-sub dk" ng-repeat="menu in menuSecondaryRes">
+      <li class="nav-sub-header">
+        <a href>
+          <span translate="aside.nav.DASHBOARD">Dashboard</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="{{menu.url?menu.url:false}}">
+          <span>{{menu.two_level}}</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!--区域分析-->
+  <li class="line dk"></li>
+  <li ui-sref-active="active" >
+    <a href="#/fulls/areaAnalysis">
+      <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+      <span class="font-bold">区域分析</span>
+    </a>
+  </li>
+
+</ul>
+<!-- / list -->
+</nav>

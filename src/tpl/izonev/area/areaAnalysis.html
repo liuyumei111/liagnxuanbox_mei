@@ -1,0 +1,75 @@
+<style>
+    .hover:hover{
+        background-color: #00a8f3;
+        color: #fff;
+    }
+    .hover:hover a{
+        color: #fff;
+    }
+    .ditu{
+        display: block;
+        cursor: pointer;
+        width: 640px;
+        height: 700px;
+        margin:0 auto;
+    }
+</style>
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="areaAnalysis">
+    <div class="col">
+        <div class="wrapper-md" ng-if="app.exhibition.dataflag" >
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+                <div class="row">
+                    <div class="col-md-6 b-r b-light no-border-xs">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">区域导览</h4>
+                        <!--<div class="shopChartHeight">-->
+                            <!--<img ng-src="{{traffic.img}}" style="width: 100%;height: 100%">-->
+                            <label for="photo" class="ditu">
+                                <!--<img ng-src="https://jdi.jiguang.cn/iZone/2017/{{img}}" alt="" style="width: 100%;height: 100%" onerror='nofind(this,"ditu.jpg");'>-->
+                                <img src="img/izone/thumbnail.png" alt="" style="width: 100%;" onerror='nofind(this,"ditu.jpg");'>
+                                <i class="on b-white right"></i>
+                            </label>
+                            <input type="file" id="photo" style="display: none;" onchange="angular.element(this).scope().filechange(this)">
+                        <!--</div>-->
+                    </div>
+                    <div class="col-md-6  no-border-xs">
+                        <h4 class="font-thin m-t-none m-b-md " style="color: #ffffff">.</h4>
+                        <div class="shopChartHeight table-responsive" style="overflow: auto;">
+                            <table class="table  table-bordered m-b-none text-center " ng-style="app.settings.fontColor">
+                                <thead>
+                                <tr style="background: #f7f7f7;">
+                                    <th class="NNewline text-center tableHeight">区域名称</th>
+                                    <th class="NNewline text-center tableHeight">区域介绍</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="t in traffic" class="hover">
+                                    <td class="tableHeight NNewline">
+                                        <a class="dropdown-toggle block" ui-sref="area.astatistical({pavilion_id:$index+7,pavilion_idPlus:t.area_id})" ui-sref-active="{{app.settings.lyonmenubg}}">
+                                            {{t.area_name}}
+                                        </a>
+                                    </td>
+                                    <td class="tableHeight NNewline">
+                                        <a class="dropdown-toggle block" ui-sref="area.astatistical({pavilion_id:$index+7,pavilion_idPlus:t.area_id})" ui-sref-active="{{app.settings.lyonmenubg}}">
+                                            {{t.area_desc}}
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" >
+        </div>
+        <div data-ng-include=" 'tpl/izonev/blocks/exhibitionContent.html' " ng-if="app.exhibition.dataflag2">
+        </div>
+    </div>
+    <!--ng-show="insight.view.loading"-->
+</div>
+
+

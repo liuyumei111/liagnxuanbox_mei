@@ -1,0 +1,245 @@
+<div ng-controller="uprolistCtrl" class="proList-box">
+    <!--标题-->
+    <h3 class="m-n font-thin h3 userList-title">项目信息管理</h3>
+    <!--搜索/增加项目-->
+    <form class="navbar-form navbar-form-sm navbar-left shift m_margin20 search-box">
+        <!--搜索框-->
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control input-sm no-border rounded padder" placeholder="输入项目名称"
+                       ng-model="searchInput" id="searchInput" autocomplete="off">
+                <!--搜索按钮-->
+                <!--<span class="input-group-btn" ng-click="search()">-->
+                <span class="input-group-btn" ng-click="search()">
+                <button type="submit" class="btn btn-sm rounded" style="line-height: 1.55"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+        </div>
+        <!--增加项目-->
+        <!--<a href class="btn btn-sm btn-default btn-addon" ui-sref="userAdmin.addProject"><i-->
+                <!--class="fa fa-plus fa-fw m-r-xs"></i>增加项目</a>-->
+        <a href class="btn btn-sm btn-default btn-addon" ng-click="addProClick()" ng-show="userRName=='liangxuan'"><i class="fa fa-plus fa-fw m-r-xs"></i>增加项目</a>
+        <a href class="btn btn-sm btn-default btn-addon" ng-show="userRName!=='liangxuan'"><i class="fa fa-plus fa-fw m-r-xs"></i>增加项目</a>
+    </form>
+    <!--项目信息列表-->
+    <div class="proListCon">
+        <div class="proListCon-scroll">
+            <div class="col-lg-3 col-md-4 col-sm-6" ng-repeat="item in project_listData">
+                <div class="panel b-a">
+                    <div class="panel-heading text-center bg-info no-border">
+                        <h4 class="m-t-none">
+                            <span class="text-lt">{{item.project_name}}</span>
+                        </h4>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            所属客户：{{item.project_company}}
+                        </li>
+                        <li class="list-group-item">
+                            开始时间：{{item.accredit_start_time}}
+                        </li>
+                        <li class="list-group-item">
+                            结束时间：{{item.accredit_end_time}}
+                        </li>
+                        <li class="list-group-item">
+                            项目所在地：{{item.project_province}}
+                        </li>
+                    </ul>
+                    <div class="hbox text-center b-t b-light" ng-show="userRName=='liangxuan'">
+                        <a href class="col padder-v text-muted b-r b-light" ng-click="editClick(item.project_id)">编辑</a>
+                        <a href class="col padder-v text-muted"
+                           ng-click="proDel(item.project_id,item.project_name)">删除</a>
+                    </div>
+                    <div class="hbox text-center b-t b-light" ng-show="userRName!=='liangxuan'">
+                        <a href class="col padder-v text-muted b-r b-light">编辑</a>
+                        <a href class="col padder-v text-muted">删除</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--编辑和增加-->
+    <div class="editCon">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">项目pid</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="例如：53" id="pid" ng-model="pid" maxlength="12">
+            </div>
+        </div>
+
+        <div class="form-group project_id-box">
+            <label class="col-lg-2 control-label">项目id</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="例如：32" id="project_id" ng-model="project_id" maxlength="12">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">项目名称</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="河北温泉旅游" id="project_name" ng-model="project_name" maxlength="40">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">项目描述</label>
+            <div class="col-lg-10 bitian-box">
+                <textarea class="form-control" rows="3" placeholder="温泉旅游是国家重点项目..." id="project_desc" ng-model="project_desc"></textarea>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">开始时间</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="例如：2018-7-1" id="accredit_start_time" ng-model="accredit_start_time" maxlength="20">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">结束时间</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="例如：2018-9-10" id="accredit_end_time" ng-model="accredit_end_time" maxlength="20">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">所属公司</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="良轩科技" id="project_company" ng-model="project_company" maxlength="40">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">所属城市</label>
+            <div class="col-lg-10 bitian-box">
+                <input type="text" class="form-control" placeholder="" id="project_city" ng-model="project_city" maxlength="20">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">项目地址</label>
+            <div class="col-lg-10 bitian-box">
+                <input type="text" class="form-control" placeholder="" id="project_address" ng-model="project_address" maxlength="70">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">所属省</label>
+            <div class="col-lg-10 bitian-box">
+                <input type="text" class="form-control" placeholder="" id="project_province" ng-model="project_province" maxlength="20">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">所属县</label>
+            <div class="col-lg-10 bitian-box">
+                <input type="text" class="form-control" placeholder="" id="project_county" ng-model="project_county" maxlength="20">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">客户描述</label>
+            <div class="col-lg-10 bitian-box">
+                <textarea class="form-control" rows="3" placeholder="" id="project_desc_client" ng-model="project_desc_client"></textarea>
+            </div>
+        </div>
+    </div>
+
+</div>
+<style>
+    .proList-box {
+        padding: 142px 20px 20px 20px;
+        position: relative;
+
+    }
+
+    .search-box {
+        width: 100%;
+        position: absolute;
+        top: 90px;
+        right: 0;
+        padding: 0 30px 0 60px;
+    }
+
+    .search-box .form-group {
+        float: right;
+    }
+
+    .search-box .addproIcon {
+        float: left;
+        cursor: pointer;
+    }
+
+    .proListCon {
+        height: 700px;
+        overflow-y: scroll;
+    }
+
+    .proListCon-scroll {
+        height: 720px;
+    }
+
+    .m_margin20 {
+        margin-right: 20px;
+    }
+
+    .userList-title {
+        position: absolute;
+        top: 20px;
+        left: 8px;
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+    }
+
+    .editCon{
+        width: 860px;
+        margin: 0 auto;
+        position: relative;
+        display: none;
+    }
+
+    input,textarea {
+        margin-bottom: 24px;
+    }
+
+    .control-label {
+        line-height: 32px;
+        width: 100px;
+    }
+
+    .panel-body {
+        width: 860px;
+        margin: 0 auto;
+    }
+
+    .bitian-box span{
+        position: absolute;
+        top: 10px;
+        right: -8px;
+        font-size: 10px;
+        color: red;
+    }
+    .warning{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #fcf8e3;
+        padding: 20px 80px;
+        border-radius: 8px;
+
+    }
+    .warning .close{
+        position: absolute;
+        top: -1px;
+        right: 5px;
+    }
+</style>

@@ -1,0 +1,140 @@
+<div class="panel-body" ng-controller="uaddProjectCtrl">
+    <div class="form-group">
+    <label class="col-lg-2 control-label">项目pid</label>
+    <div class="col-lg-10 bitian-box">
+        <span class="m_company-bitian">必填</span>
+        <input type="text" class="form-control" placeholder="例如：53" id="pid" ng-model="pid" maxlength="12">
+    </div>
+</div>
+
+    <div class="form-group project_id-box">
+        <label class="col-lg-2 control-label">项目id</label>
+        <div class="col-lg-10 bitian-box">
+            <span class="m_company-bitian">必填</span>
+            <input type="text" class="form-control" placeholder="例如：32" id="project_id" ng-model="project_id" maxlength="12">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">项目名称</label>
+        <div class="col-lg-10 bitian-box">
+            <span class="m_company-bitian">必填</span>
+            <input type="text" class="form-control" placeholder="河北温泉旅游" id="project_name" ng-model="project_name" maxlength="40">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">项目描述</label>
+        <div class="col-lg-10 bitian-box">
+            <textarea class="form-control" rows="3" placeholder="温泉旅游是国家重点项目..." id="project_desc" ng-model="project_desc"></textarea>
+        </div>
+    </div>
+    
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">开始时间</label>
+        <div class="col-lg-10 bitian-box">
+            <span class="m_company-bitian">必填</span>
+            <input type="text" class="form-control" placeholder="例如：2018-7-1" id="accredit_start_time" ng-model="accredit_start_time" maxlength="20">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">结束时间</label>
+        <div class="col-lg-10 bitian-box">
+            <span class="m_company-bitian">必填</span>
+            <input type="text" class="form-control" placeholder="例如：2018-9-10" id="accredit_end_time" ng-model="accredit_end_time" maxlength="20">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">所属公司</label>
+        <div class="col-lg-10 bitian-box">
+            <span class="m_company-bitian">必填</span>
+            <input type="text" class="form-control" placeholder="良轩科技" id="project_company" ng-model="project_company" maxlength="40">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">所属城市</label>
+        <div class="col-lg-10 bitian-box">
+            <input type="text" class="form-control" placeholder="" id="project_city" ng-model="project_city" maxlength="20">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">项目地址</label>
+        <div class="col-lg-10 bitian-box">
+            <input type="text" class="form-control" placeholder="" id="project_address" ng-model="project_address" maxlength="70">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">所属省</label>
+        <div class="col-lg-10 bitian-box">
+            <input type="text" class="form-control" placeholder="" id="project_province" ng-model="project_province" maxlength="20">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">所属县</label>
+        <div class="col-lg-10 bitian-box">
+            <input type="text" class="form-control" placeholder="" id="project_county" ng-model="project_county" maxlength="20">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">客户描述</label>
+        <div class="col-lg-10 bitian-box">
+            <textarea class="form-control" rows="3" placeholder="" id="project_desc_client" ng-model="project_desc_client"></textarea>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-sm btn-primary center-block" ng-click="panelBtn()">提交</button>
+
+    <!--弹出框-->
+    <div class="warning">
+        <span class="close">&times;</span>
+        <span class="warningText">111111111111</span>
+    </div>
+</div>
+
+<style>
+
+    input,textarea {
+        margin-bottom: 24px;
+    }
+
+    .control-label {
+        line-height: 32px;
+        width: 100px;
+    }
+
+    .panel-body {
+        width: 860px;
+        margin: 0 auto;
+    }
+
+    .bitian-box span{
+        position: absolute;
+        top: 10px;
+        right: -8px;
+        font-size: 10px;
+        color: red;
+    }
+    .warning{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #fcf8e3;
+        padding: 20px 80px;
+        border-radius: 8px;
+
+    }
+    .warning .close{
+        position: absolute;
+        top: -1px;
+        right: 5px;
+    }
+</style>

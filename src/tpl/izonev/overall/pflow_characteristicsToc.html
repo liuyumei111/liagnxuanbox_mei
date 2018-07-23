@@ -1,0 +1,37 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="ocharacteristicsTocCtrl">
+    <div class="col">
+        <div class="wrapper-md"  ng-if="app.exhibition.dataflag">
+            <div class="row">
+                <div ng-repeat="d in alllabel|limitTo:moreChart" repeat-finish="renderFinish()">
+                <!--<div ng-repeat="d in alllabel" repeat-finish="renderFinish()">-->
+                    <div class="wrapper-md">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <h4 class="m-n font-thin font-bold  text-black">{{d.chartype}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrapper-md">
+                        <div ng-repeat="label in d.label ">
+                            <div class="{{label.class}}">
+                                <div class="panel wrapper" ng-style="app.settings.Panel">
+                                    <h4 class="font-bold m-t-none text-muted m_center" ng-style="app.settings.fontColor">
+                                        {{label.title}}</h4>
+                                    <span class="m-b block text-xs text-muted"
+                                          ng-style="app.settings.fontColor">{{proDate}}</span>
+                                    <div style="height:{{label.height}}" id="{{label.id}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+        <div data-ng-include=" 'tpl/izonev/blocks/exhibitionContent.html' " ng-if="app.exhibition.dataflag2">
+        </div>
+    </div>
+</div>
+
+

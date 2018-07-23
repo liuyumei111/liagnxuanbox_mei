@@ -1,0 +1,41 @@
+<div ng-controller="umoduleDelCtrl">
+    <div ui-jq="nestable" class="dd">
+        <ol class="dd-list">
+            <li class="dd-item dd3-item" data-id="15">
+                <div class="dd-handle dd3-handle">Drag</div>
+                <div class="dd3-content">
+                    <span style="padding-right: 20px"> {{arrData.pro_level}}</span>
+                    <label class="checkbox-inline i-checks">
+                        <!--<input type="checkbox" value="option1" id="all"><i></i>全选-->
+                    </label>
+                </div>
+                <ol class="dd-list">
+                    <li class="dd-item dd3-item" data-id="17" ng-repeat="item in arrData.list">
+                        <div class="dd-handle dd3-handle">Drag</div>
+                        <div class="dd3-content">
+                            <span style="padding-right: 20px">{{item.two_level}}</span>
+                            <label class="checkbox-inline i-checks">
+                                <input type="checkbox" value="option1" name="box" module_id="{{item.module_id}}"><i></i>
+                            </label>
+                        </div>
+                        <ol class="dd-list">
+                            <li class="dd-item dd3-item" data-id="17" ng-repeat="itemS in item.list">
+                                <div class="dd-handle dd3-handle">Drag</div>
+                                <div class="dd3-content">
+                                    <span style="padding-right: 20px">{{itemS.three_level}}</span>
+                                    <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="option1" name="box" module_id="{{itemS.module_id}}"><i></i>
+                                    </label>
+
+                                </div>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <button type="submit" class="btn btn-sm btn-primary center-block" ng-click="panelBtn()">提交</button>
+    </div>
+</div>
+
+

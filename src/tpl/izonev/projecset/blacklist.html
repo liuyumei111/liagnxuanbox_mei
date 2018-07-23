@@ -1,0 +1,83 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="blacklistCtrl">
+    <div class="col">
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel no-border">
+                        <div class="row wrapper  b-b">
+                            <div class="col-sm-5 m-b-xs">
+                                <div>
+                                    <h4 class="inline font-bold m-r">黑名单</h4>
+                                    <span class="text-base"> 当前共 25 条</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="text-base font-bold">开启自动添加：</span>
+                                <label class="i-switch bg-success " ng-init="showSpline=true">
+                                    <input type="checkbox" ng-model="showSpline">
+                                    <i></i>
+                                </label>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="input-group">
+                                    <span class="input-group-btn text-right">
+                                        <a class="btn btn-sm btn-default" type="button">批量导入</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="input-group">
+                                    <span class="input-group-btn text-right">
+                                        <a class="btn btn-sm btn-info" type="button">新增单条记录</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover text-center ">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">mac地址</th>
+                                    <th class="text-center">备注</th>
+                                    <th class="text-center">操作</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-xs v-middle">00:00:35:5d:0d:e0</td>
+                                    <td class="text-xs v-middle">小米扫地机</td>
+                                    <td class="text-xs v-middle">
+                                        <div class="buttons">
+                                            <a><i class="fa fa-edit text-lg text-muted m-r"></i></a>
+                                            <a><i class="fa fa-minus-square text-lg text-danger"></i></a>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-sm-4 hidden-xs">
+                                    <jpagination num-pages="totalRow" curr-page="cpage" on-select-page="selectPage(page)"></jpagination>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <small class="text-muted inline m-t-sm m-b-sm">当前第 {{cpage}}页 共 {{totalRow}} 页</small>
+                                </div>
+                                <div class="col-sm-4 text-right text-center-xs"></div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading">
+        </div>
+    </div>
+</div>
+
+

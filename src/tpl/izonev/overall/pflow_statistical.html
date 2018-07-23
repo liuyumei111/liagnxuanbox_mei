@@ -1,0 +1,105 @@
+<style>
+    .ditu{
+        width:180px;
+        height:180px;
+        cursor: pointer;
+    }
+</style>
+<!--客流统计-->
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="ostatisticalCtrl">
+    <div class="col">
+        <div class="wrapper-md" ng-if="app.exhibition.dataflag">
+            <!--封面-->
+            <!--<div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper-sm" ng-style="app.settings.Panel">
+                        <div class="list-group list-group-lg list-group-sp">
+                            <div class="list-group-item clearfix no-padder">
+                                <label for="photo" class="pull-left  m-r hidden-sm hidden-xs ditu">
+                                    <img ng-src="https://jdi.jiguang.cn/iZone/2017/{{traffic.project_url1}}" onerror='nofind(this,"ditu2.png");' alt="" style="width: 100%;height:100%;"><i class="on b-white right"></i>
+                                </label>
+                                <input type="file" id="photo" style="display: none;" onchange="angular.element(this).scope().filechange(this)">
+                                <div class="clear">
+                                    <h4 class="font-bold m-t-none m-b-none text-muted  wrapper-xs clear" ng-style="app.settings.fontColor"  style="line-height: 22px;">
+                                        <input type="text" ng-blur="reply(0)" ng-model="traffic.project_name" class="form-control wrapper-xs w-xl pull-left m-r-md no-border" style="font-size: 18px;width: 400px;height:32px;" maxlength="20" ng-click="titlechange(0)" ng-class="{'b-a':titlefalg[0]}" placeholder="4-20个字符" ng-focus="fouc()">
+                                        <div ng-show="titlefalg[0]" class="pull-left">
+                                            <button class="btn btn-default btn-sm " ng-click="save(0)">保存</button>
+                                            <button class="btn btn-default btn-sm m-r-md" ng-click="cancel(0)">取消</button>
+                                            <span style=" font-size: 12px; {{colorred?'color:red':'color:#999999'}}">小提示：项目名称必填，且不少于4个字符。</span>
+                                        </div>
+                                    </h4>
+                                    <div class="col-md-12 no-padder" >
+                                        <div class="m-t wrapper-xs m-l-xs" style="position: relative;">
+                                            <textarea class="wrapper-xs w-full form-control no-border" style="min-height: 120px; resize: none;" ng-blur="reply(1)" ng-model="traffic.project_desc_client" maxlength="300"  ng-click="titlechange(1)" ng-class="{'b-a':titlefalg[1]}" placeholder="请填写项目简介，300字以内"></textarea>
+                                            <div ng-show="titlefalg[1]" style="position: absolute; bottom: 10px; right: 10px;">
+                                                <div class=" ">
+                                                    <button class="btn btn-default btn-sm " ng-click="save(1)">保存</button>
+                                                    <button class="btn btn-default btn-sm " ng-click="cancel(1)">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!--总体客流规模，总体客流趋势-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">总体客流规模</h4>
+                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{timeName}}</span>
+                        <div class="chartHeight" id="passengerFlowScaleID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">总体客流趋势</h4>
+                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{timeName}}</span>
+                        <div class="chartHeight" id="audienceStatisticalD" ></div>
+                    </div>
+                </div>
+            </div>
+            <!--各区域客流规模-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">各区域客流规模</h4>
+                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{timeName}}</span>
+                        <div class="chartHeight" id="pavilionScalepFlowID" ></div>
+                    </div>
+                </div>
+            </div>
+            <!--各区域客流趋势-->
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <span class="btn btn-sm m-r" >时间维度</span>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('12')">时
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('2')">天
+                            </button>
+
+
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">各区域客流趋势</h4>
+                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{timeName}}</span>
+                        <div class="chartHeight" id="pFlowTrendID" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+        <div data-ng-include=" 'tpl/izonev/blocks/exhibitionContent.html' " ng-if="app.exhibition.dataflag2">
+        </div>
+    </div>
+    <!--ng-show="insight.view.loading"-->
+</div>
+
+

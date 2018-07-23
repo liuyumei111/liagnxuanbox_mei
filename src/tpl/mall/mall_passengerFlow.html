@@ -1,0 +1,146 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="passengerFlowCtrl">
+    <div class="col">
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">行业均值
+                            </button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">平均进店次数</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight" id="averageIntoShopID"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm m-r" ng-style="app.settings.button">
+                                行业均值
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('notIntoShop','D_NoIntoCustScale')">天
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('notIntoShop','W_NoIntoCustScale')">周
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('notIntoShop','M_NoIntoCustScale')">月
+                            </button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">未进店人群比例</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight" id="notIntoShopID"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm m-r" ng-style="app.settings.button">
+                                行业均值
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('stayAccessLength','D_StayTimeWithIntoCustNum')">天
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('stayAccessLength','W_StayTimeWithIntoCustNum')">周
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button"
+                                    ng-click="OnSelectTime('stayAccessLength','M_StayTimeWithIntoCustNum')">月
+                            </button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">每周停留时长 VS
+                            每周访问频次</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="chartHeight" id="stayAccessLengthID"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="panel wrapper" ng-style="app.settings.Panelbg">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客进店次序分析</h4>
+                        <div class="shopChartHeight" id="customersIntoStoreOrderID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm " ng-style="app.settings.button"
+                            ng-click="OnDesc()">升序
+                            </button>
+
+                        </div>
+                        <!--customerShopRank-->
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客落地门店排名</h4>
+                        <div class="shopChartHeight table-responsive ">
+                            <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}"
+                                   ng-style="app.settings.fontColor">
+                                <thead>
+                                <tr>
+                                    <th class="NNewline text-center">排名</th>
+                                    <th class="NNewline text-center">Logo</th>
+                                    <th class="NNewline text-center">门店</th>
+                                    <th class="NNewline text-center">进店人数</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="t in customerShopRank_ResData|limitTo:10">
+                                    <td class="tableHeight NNewline">{{$index+1}}</td>
+                                    <td class="tableHeight NNewline"><a><img src="img/izone/u135.png"></a></td>
+                                    <td class="tableHeight NNewline">{{t.name}}</td>
+                                    <td class="tableHeight NNewline">
+                                        <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                                            <div class="progress-bar bg-success" data-toggle="tooltip"
+                                                 data-original-title="{{t.value/customerShopRank_ValueMax*100}}%" style="width:{{t.value/customerShopRank_ValueMax*100}}%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日出入口人流计数</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="shopChartHeight" id="passengerFlowInOutNumID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">人流动线与热度分析</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="shopChartHeight" id="1ID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">人流动线与热度分析</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{startDate}}-{{endDate}}</span>
+                        <div class="shopChartHeight" id="1I1D">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+    </div>
+</div>
+
+

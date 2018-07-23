@@ -1,0 +1,176 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="businessHomepageCtrl">
+  <div class="col">
+    <div class="bg-light lter b-b wrapper-md" ng-style="app.settings.bgLight" >
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-bold h3 text-black" ng-style="app.settings.fontColor">概览</h1>
+        </div>
+        <div class="col-sm-6 text-right hidden-xs">
+          <div class="inline m-r text-left">
+            <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">{{clock.now}}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-md" >
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">实时客流</h4>
+            <div class="chartHeight"  id="realTimePassengerFlowID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel wrapper" ng-style="app.settings.Panel"  >
+            <!--ng-style="app.settings.Panel"-->
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">本日累计客流量</h4>
+            <div class="chartHeight"  id="dayPassengerFlowSumID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">本周累计客流量</h4>
+            <div class="chartHeight"  id="weekPassengerFlowSumID" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日客流</h4>
+            <div class="chartHeight" id="theDayPassengerFlowID"  >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">进店次数比较</h4>
+            <div class="chartHeight"  id="IntoShopNumID" ></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日出入口人流计数</h4>
+            <div class="shopChartHeight" id="passengerFlowInOutNumID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日客源</h4>
+            <div class="row"  >
+              <div class="col-sm-9">
+                <div class="shopChartHeight" id="hotMapID"></div>
+              </div>
+              <div class="col-sm-3" >
+                <div class="shopChartHeight" id="customerFromContrastID" ></div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日顾客年龄构成</h4>
+            <div class="chartHeight" id="customersAgeID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日顾客文化水平构成</h4>
+            <div class="chartHeight" id="culturalLevelID" >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日顾客收入构成</h4>
+            <div class="chartHeight" id="customerIncomeID" >
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日客流量最高</h4>
+            <div class="shopChartHeight table-responsive" >
+              <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                <thead>
+                <tr>
+                  <th class="NNewline text-center">排名</th>
+                  <th class="NNewline text-center">Logo</th>
+                  <th class="NNewline text-center">门店</th>
+                  <th class="NNewline text-center">进店人数</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="t in traffic">
+                  <td class="tableHeight NNewline">{{$index+1}}</td>
+                  <td class="tableHeight NNewline"><a><img ng-src="{{t.logo}}"></a></td>
+                  <td class="tableHeight NNewline">{{t.name}}</td>
+                  <td class="tableHeight NNewline">
+                    <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                      <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                    </div>
+                  </td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日客流量最低</h4>
+            <div class="shopChartHeight table-responsive" >
+              <table class="table  table-bordered text-center m-b-none {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                <thead>
+                <tr>
+                  <th class="NNewline text-center">排名</th>
+                  <th class="NNewline text-center">Logo</th>
+                  <th class="NNewline text-center">门店</th>
+                  <th class="NNewline text-center">进店人数</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="t in traffic">
+                  <td class="tableHeight NNewline">{{$index+1}}</td>
+                  <td class="tableHeight NNewline"><a><img ng-src="{{t.logo}}"></a></td>
+                  <td class="tableHeight NNewline">{{t.name}}</td>
+                  <td class="tableHeight NNewline">
+                    <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                      <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                    </div>
+                  </td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel wrapper" ng-style="app.settings.Panelbg">
+            <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">今日顾客进店次序</h4>
+            <div class="shopChartHeight" id="customersIntoStoreOrderID"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

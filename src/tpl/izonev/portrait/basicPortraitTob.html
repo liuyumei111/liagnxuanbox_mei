@@ -1,0 +1,153 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="basicPortraitTobCtrl">
+    <div class="col">
+        <div class="bg-light lter b-b wrapper-md" ng-style="app.settings.bgLight" >
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <h1 class="m-n font-bold h3 text-black inline" ng-style="app.settings.fontColor">人群画像</h1>
+                    <!--<a ui-sref="izone.basisPortraitOrigin" class="m-l-md">切换画像来源</a>-->
+                </div>
+                <div class="col-sm-6 text-right hidden-xs">
+                    <div class="inline m-r text-left">
+                        <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-md">
+            <div class="wrapper-md">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <h1 class="m-n font-thin h3 text-black">基本画像</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">性别</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{gender_dateTime}}</span>
+                        <div class="chartHeight" id="genderID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">年龄分布</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{gender_dateTime}}</span>
+                        <div class="chartHeight" id="ageID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">文化水平</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{gender_dateTime}}</span>
+                        <div class="chartHeight" id="culturalLevelID"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="wrapper-md">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <h1 class="m-n font-thin h3 text-black">职业相关</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">职业类型</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{childrenStage_dateTime}}</span>
+                        <div class="chartHeight" id="professionalTypesID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 none">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">所在企业类型</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{childrenStage_dateTime}}</span>
+                        <div class="chartHeight" id="enterpriseTypeID"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="wrapper-md">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <h1 class="m-n font-thin h3 text-black">兴趣偏好</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+            <div class="col-md-4 ">
+                <div class="panel wrapper" ng-style="app.settings.Panel">
+                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">上网目的</h4>
+                    <span class="m-b block text-xs text-muted"
+                          ng-style="app.settings.fontColor">{{gender_dateTime}}</span>
+                    <div class="shopChartHeight" id="internetPurposeID">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">阅读偏好</h4>
+                    <span class="m-b block text-xs text-muted"
+                          ng-style="app.settings.fontColor">{{gender_dateTime}}</span>
+                    <div class="shopChartHeight" id="readingPreferenceID">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">应用使用偏好</h4>
+                    <span class="m-b block text-xs text-muted"
+                          ng-style="app.settings.fontColor">{{gender_dateTime}}</span>
+                    <div class="shopChartHeight" id="appPreferencesID">
+                    </div>
+                </div>
+            </div>
+                <div class="col-md-3 none">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">行业应用渗透率</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{gender_dateTime}}</span>
+                        <div class="shopChartHeight table-responsive">
+                            <table class="table  m-b-none table-bordered {{app.settings.tablestriped}}"
+                                   ng-style="app.settings.fontColor">
+                                <thead>
+                                <tr>
+                                    <th noWrap>APP名称</th>
+                                    <th noWrap>样本渗透率</th>
+                                    <th noWrap>对比全国</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="t in table  |limitTo:20" class="NNewline">
+                                    <td class="tableline" noWrap >{{t.app}}</td>
+                                    <td class="tableline" noWrap >{{t.value}}</td>
+                                    <td class="tableline" noWrap >{{t.compare}}</td>
+
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,105 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="toolAlonePortraitCtrl">
+    <div class="col">
+        <div class="bg-light lter b-b wrapper-md" ng-style="app.settings.bgLight" >
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <h1 class="m-n font-bold h3 text-black" ng-style="app.settings.fontColor">个体画像</h1>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <div class="inline m-r text-left">
+                        <div class="m-b-xs inline">
+                            <input type="text" placeholder="号码包名称" class="form-control input-sm w inline m-r-lg" ng-model="toolName" ng-keyup="serch(toolName)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper-md" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper displayhide" ng-style="app.settings.Panel">
+                        <div class="row" id="AlltagShow_ID">
+                            <div class="col-md-12">
+                                <div class=" ">
+                                    <div class="panel-heading wrapper ">
+                                        <h4 class="font-thin m-t-none m-b-none text-muted">全部标签</h4>
+                                    </div>
+                                    <ul class="list-group list-group-lg m-b-none">
+                                        <li class="type-list" ng-repeat="d in dmpAlltags">
+                                            <input type="checkbox" id={{d.tag}} ng-model="isSelected"
+                                                   ng-checked="master"
+                                                   ng-click="chkdmpAlltags(d.id,d.tag_name,$index,isSelected)"
+                                                   class="biaoq" name={{d.tag}} value={{d.id}}
+                                                   data-labelauty={{d.tag_name}}>
+                                        </li>
+                                    </ul>
+
+                                    <script>
+                                        $('.biaoq').labelauty();
+                                    </script>
+                                    <div class="panel-footer" style=" overflow: hidden; position: absolute; top: 5px; right: 50px;">
+                                        <span class="pull-right ">
+                                        全选: <input type="checkbox" ng-model="master"
+                                                   ng-click="dmpAlltagsBtn(master,dmpAlltags)">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class=" m-t-none  text-muted" ng-style="app.settings.fontColor">共找到{{traffictotalRow}}个号码包：</h4>
+                        <div class="shopChartHeight table-responsive" >
+                            <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                                <thead>
+                                <tr>
+                                    <th class="NNewline text-center">号码包名称</th>
+                                    <th class="NNewline text-center">人群描述</th>
+                                    <th class="NNewline text-center">已匹配人数</th>
+                                    <th class="NNewline text-center">匹配率</th>
+                                    <th class="NNewline text-center">创建者</th>
+                                    <th class="NNewline text-center">画像结果</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="t in traffic">
+                                    <!--<td class="tableHeight NNewline" style="{{(t.taskState==4||t.taskState==9)?'color: #f05050;':''}}">-->
+                                        <!--{{state[t.taskState]}}-->
+                                    <!--</td>-->
+                                    <td class="tableHeight NNewline">{{t.name}}</td>
+                                    <td class="tableHeight NNewline text-left" style="color:#999999;">{{t.peopleDisc}}</td>
+                                    <td class="tableHeight NNewline">{{t.peopleMatch | number}}</td>
+                                    <td class="tableHeight NNewline">{{t.peopleMatchRatio}}</td>
+                                    <td class=" NNewline">
+                                        {{t.contacter}} <br>
+                                        {{t.date}}
+                                    </td>
+                                    <td class="tableHeight NNewline"><a class="text-info {{t.taskState==6?'':'displayhide'}}" ng-click="downloadTag(t.project_id,t.id)">下载</a>
+                                        <!--<a href=""  data-toggle="modal" data-target="#estateModal">233333</a>-->
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="col-sm-12 m-t-xxl {{traffictotalPage==1?'displayhide':''}}"  >
+                                <div class="col-sm-4 hidden-xs"></div>
+                                <div class="col-sm-4 text-center">
+                                    <small class="text-muted inline m-t-sm m-b-sm">共{{traffictotalPage}}页 {{traffictotalRow}}条数据 当前页{{trafficcpage}}</small>
+                                </div>
+                                <div class="col-sm-4 text-right text-center-xs">
+                                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                                        <li ng-class="{true:'disabled'}[trafficstart==0]"><a  href="javascript:void(0);" ng-click="trafficgopage(trafficcpage-1)">上一页</a></li>
+
+                                        <li ng-class="{true:'disabled'}[trafficcpage==traffictotalPage]"><a  href="javascript:void(0);" ng-click="trafficgopage(trafficcpage+1)">下一页</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+        </div>
+    </div>
+</div>

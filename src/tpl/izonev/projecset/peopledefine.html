@@ -1,0 +1,102 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="peopledefineCtrl">
+    <div class="col">
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel no-border">
+                        <div class="row wrapper">
+                            <div class="col-sm-5 m-b-xs">
+                                <div>
+                                    <h4 class="inline font-bold m-r">人群定义</h4>
+                                    <span class="text-base">
+                                        统计周期：
+                                        <input type="number" value="20" class="form-control input-sm inline" style="width: 60px"> 天
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-2">
+
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <span>预置模板：</span>
+                                        <select class="form-control input-sm">
+                                            <option>请选择行业场景</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row wrapper">
+                            <!--inline" style="padding-left: 15px;width: 400px-->
+                            <div class="col-sm-4" ng-repeat="d in d8">
+                                <div class="panel panel-default item {{app.settings.izoneborde}}"
+                                     ng-style="app.settings.Panel">
+                                    <div class="wrapper-sm">
+                                        <span class="h4 font-bold">{{d.name}}</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="form-inline">
+                                            <div>
+                                                <div class="form-group">
+                                                    <select class="form-control input-sm">
+                                                        <option>总停留时长</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select class="form-control input-sm">
+                                                        <option>多于</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="number"value="10" class="form-control input-sm " style="width: 60px!important;"/>
+                                                    <span>分钟</span>
+                                                </div>
+                                                <div class="form-group m-l m-r-xs">
+                                                    <a><i class="fa fa-times text-base text-muted"></i></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <button class="btn btn-success btn-sm m-t">增加条件</button>
+                                    </div>
+                                    <div class="top text-right w-full padding-top-5">
+                                        <a ng-click="proFenceRemove(pro.id)"><i
+                                                class="icon icon-close text-muted m-r-sm"
+                                                ng-style="app.settings.fontColor"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--style="padding-left: 15px;width: 400px"-->
+                            <div class="col-sm-4" >
+                                <div class="panel panel-default item {{app.settings.izoneborde}}"
+                                     ng-style="app.settings.Panel">
+                                    <div class="panel-body text-center">
+                                        <div class="list-group-item clearfix" style="border: none"
+                                             ng-style="app.settings.Panelbg">
+                                            <span class="pull-left w-sm  m-r"></span>
+                                            <span class="clear  padder-v" ng-click="addPeople()">
+                                                <a ng-style="app.settings.fontColor">
+                                                    <i class="icon text-base icon-plus"></i>
+                                                    <span class="text-muted text-base">点击增加人群定义</span>
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading">
+        </div>
+    </div>
+</div>
+
+

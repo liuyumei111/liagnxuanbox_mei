@@ -1,0 +1,76 @@
+<nav ui-nav class="navi">
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span></span>
+  </li>
+  <!--项目名称-->
+  <li>
+    <a>
+      <i class="glyphicon glyphicon-briefcase icon"></i>
+      <span class="font-bold"> {{m_area_name}}</span>
+    </a>
+  </li>
+  <li class="line dk"></li>
+  <!--筛选-->
+  <li>
+    <a>
+      <div class="inline text-left">
+        <div class="sparkline inline">
+          <div class="btn-group dropdown" dropdown>
+            <input class="form-control input-default input-sm inline " ng-style="app.settings.button" id="plustest" ng-model="dateName">
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+  <li class="line dk"></li>
+
+  <!--实时分析-->
+  <li ui-sref-active="active">
+    <a href="#/fulls/realtimewifi">
+      <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+      <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+      <span class="font-bold">实时分析</span>
+    </a>
+  </li>
+  <li class="line dk"></li>
+
+  <!--总体分析-->
+  <li ui-sref-active="active">
+    <a href="#/overall/statistical">
+      <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+      <i class="glyphicon glyphicon-th-large icon text-success"></i>
+      <span class="font-bold">总体分析</span>
+    </a>
+  </li>
+  <li class="line dk"></li>
+
+  <!--区域分析-->
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+      <span class="font-bold">区域分析</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>Apps</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" ng-repeat="menu in menuSecondaryRes">
+        <a ui-sref="{{menu.url}}({pavilion_id:app.exhibition.pavilion_id,pavilion_idPlus:app.exhibition.pavilion_idPlus})">
+          <span>{{menu.menuName}}</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="line dk"></li>
+
+</ul>
+<!-- / list -->
+</nav>

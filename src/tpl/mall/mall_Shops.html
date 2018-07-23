@@ -1,0 +1,414 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="businessShopsCtrl">
+  <div class="" style="padding: 10px 0px">
+    <tabset class="tab-container" ng-style="app.settings.tabContainer">
+      <!--1111111111111111111111111-->
+      <tab>
+        <tab-heading >
+          所有商铺
+        </tab-heading>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <div class="wrapper "ng-style="app.settings.bbcolor" >
+                <div class="btn-group pull-right hidden-sm hidden-xs">
+                  <input class="input-sm form-control" type="search"ng-style="app.settings.input" placeholder="搜门店">
+                </div>
+                <div class="inline">
+                  <h4 class="font-thin m-t-none  text-muted inline" ng-style="app.settings.fontColor">业态类型：</h4>
+                  <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">全部（456家）</button>
+                  <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">零售（126家）</button>
+                  <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">娱乐（27家） </button>
+                  <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">餐饮（127家） </button>
+                  <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button"> 体验（127家）</button>
+
+                </div>
+                <div class="inline padder">
+                  <h4 class="font-thin m-t-none  text-muted inline" ng-style="app.settings.fontColor">排序：</h4>
+                  <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">进店人数
+                    <i class="fa  fa-long-arrow-down"></i>
+                    <i class="fa  fa-long-arrow-up"></i>
+                  </button>
+                  <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">带动进店
+                    <i class="fa  fa-long-arrow-down"></i>
+                    <i class="fa  fa-long-arrow-up"></i>
+                  </button>
+                  <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">平效
+                    <i class="fa  fa-long-arrow-down"></i>
+                    <i class="fa  fa-long-arrow-up"></i>
+                  </button>
+
+
+                </div>
+
+              </div>
+              <ul class="list-group list-group-lg m-b-none text-center m-t-md">
+                <li class=" pull-left izone-m-r list-nostyled item imgInfor" ng-repeat="all in Allshop">
+                  <div class="infor-tip">
+                    <p>
+                      <span class="block izone-font-size-11" ng-style="app.settings.fontColor">进店人数:昨日{{all.inyesterday}}人次,环比增长5.3%</span>
+                      <span class="block izone-font-size-11" ng-style="app.settings.fontColor">带动进店：昨日:{{all.driveyesterday}}人次,环比降低1.3%</span>
+                    </p>
+                  </div>
+                  <a  ui-sref="izone.shopDetails" class="w-sm list-group-item {{app.settings.izoneborde}}">
+                    <img ng-src="{{all.img}}"class="r r-2x" >
+                  </a>
+                  <a class="block wrapper-xs" ng-style="app.settings.fontColor">{{all.name}}</a>
+                </li>
+                <li class=" pull-left izone-m-r list-nostyled item imgInfor" ng-repeat="all in Allshop">
+                  <div class="infor-tip">
+                    <p>
+                      <span class="block izone-font-size-11" ng-style="app.settings.fontColor">进店人数:昨日{{all.inyesterday}}人次,环比增长5.3%</span>
+                      <span class="block izone-font-size-11" ng-style="app.settings.fontColor">带动进店：昨日:{{all.driveyesterday}}人次,环比降低1.3%</span>
+                    </p>
+                  </div>
+                  <a  ui-sref="izone.shopDetails" class="w-sm list-group-item {{app.settings.izoneborde}}">
+                    <img ng-src="{{all.img}}"class="r r-2x" >
+                  </a>
+                  <a class="block wrapper-xs" ng-style="app.settings.fontColor">{{all.name}}</a>
+                </li>
+                <li class=" pull-left izone-m-r list-nostyled item imgInfor" ng-repeat="all in Allshop">
+                  <div class="infor-tip">
+                    <p>
+                      <span class="block izone-font-size-11" ng-style="app.settings.fontColor">进店人数:昨日{{all.inyesterday}}人次,环比增长5.3%</span>
+                      <span class="block izone-font-size-11" ng-style="app.settings.fontColor">带动进店：昨日:{{all.driveyesterday}}人次,环比降低1.3%</span>
+                    </p>
+                  </div>
+                  <a  ui-sref="izone.shopDetails" class="w-sm list-group-item {{app.settings.izoneborde}}">
+                    <img ng-src="{{all.img}}"class="r r-2x" >
+                  </a>
+                  <a class="block wrapper-xs" ng-style="app.settings.fontColor">{{all.name}}</a>
+                </li>
+              </ul>
+              <div style="clear:both;"></div>
+              <div class="izone-page-pd">
+                <!--<pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm m-t-sm m-b" boundary-links="true" ></pagination>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        </tab>
+      <tab>
+        <tab-heading >
+          客流排名
+        </tab-heading>
+        <div class="bg-light lter  wrapper-md "ng-style="app.settings.Paneleading">
+          <div class="row">
+            <div class="col-sm-2 col-xs-12">
+            </div>
+            <div class="col-sm-10 col-xs-12 text-right hidden-xs">
+              <div class="inline m-r text-left">
+                <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">筛选:</span></div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm" ng-style="app.settings.select">
+                    <option>全部等级</option>
+                    <option>主力店</option>
+                    <option>次主力店</option>
+                    <option>一般 商铺</option>
+                  </select>
+                </div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm" ng-style="app.settings.select">
+                    <option>全部业态</option>
+                    <option>零售</option>
+                    <option>娱乐</option>
+                    <option>餐饮</option>
+                    <option>体验</option>
+                  </select>
+                </div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm" ng-style="app.settings.select">
+                    <option>第一层</option>
+                    <option>第二层</option>
+                    <option>第三层</option>
+                  </select>
+                </div>
+                <div class="m-b-xs inline"><span class="text-muted" ng-style="app.settings.fontColor">时间:</span></div>
+                <div class="sparkline inline">
+                  <div class="btn-group dropdown" dropdown>
+                    <button class="btn btn-default btn-sm" dropdown-toggle ng-style="app.settings.button">本周 <span class="caret"></span></button>
+                    <ul class="dropdown-menu izone-dropdown-menu">
+                      <li><a href>今天</a></li>
+                      <li><a href>本周</a></li>
+                      <li><a href>本月</a></li>
+                      <li class="divider">今年</li>
+                      <li><a href>过去7天</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">客流量最高</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+              <div class="shopChartHeight " >
+                <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                  <thead>
+                  <tr>
+                    <th class="NNewline text-center">排名</th>
+                    <th class="NNewline text-center">Logo</th>
+                    <th class="NNewline text-center">门店</th>
+                    <th class="NNewline text-center">进店人数</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="t in traffic">
+                    <td class="tableHeight">{{$index+1}}</td>
+                    <td class="tableHeight"><a><img ng-src="{{t.logo}}"></a></td>
+                    <td class="tableHeight">{{t.name}}</td>
+                    <td class="tableHeight">
+                      <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                        <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">客流量最低</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+              <div class="shopChartHeight " >
+                <table class="table  table-bordered text-center m-b-none {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                  <thead>
+                  <tr>
+                    <th class="NNewline text-center">排名</th>
+                    <th class="NNewline text-center">Logo</th>
+                    <th class="NNewline text-center">门店</th>
+                    <th class="NNewline text-center">进店人数</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="t in traffic">
+                    <td class="tableHeight">{{$index+1}}</td>
+                    <td class="tableHeight"><a><img ng-src="{{t.logo}}"></a></td>
+                    <td class="tableHeight">{{t.name}}</td>
+                    <td class="tableHeight">
+                      <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                        <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">客流环比上升最快</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+              <div class="shopChartHeight " >
+                <table class="table  table-bordered text-center m-b-none {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                  <thead>
+                  <tr>
+                    <th class="NNewline text-center">排名</th>
+                    <th class="NNewline text-center">Logo</th>
+                    <th class="NNewline text-center">门店</th>
+                    <th class="NNewline text-center">进店人数</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="t in traffic">
+                    <td class="tableHeight">{{$index+1}}</td>
+                    <td class="tableHeight"><a><img ng-src="{{t.logo}}"></a></td>
+                    <td class="tableHeight">{{t.name}}</td>
+                    <td class="tableHeight">
+                      <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                        <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">客流环比下降最快</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+              <div class="shopChartHeight " >
+                <table class="table  table-bordered text-center m-b-none {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                  <thead>
+                  <tr>
+                    <th class="NNewline text-center">排名</th>
+                    <th class="NNewline text-center">Logo</th>
+                    <th class="NNewline text-center">门店</th>
+                    <th class="NNewline text-center">进店人数</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="t in traffic">
+                    <td class="tableHeight">{{$index+1}}</td>
+                    <td class="tableHeight"><a><img ng-src="{{t.logo}}"></a></td>
+                    <td class="tableHeight">{{t.name}}</td>
+                    <td class="tableHeight">
+                      <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                        <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </tab>
+      <tab ng-click="tab2init()">
+        <tab-heading >
+          贡献度分析
+        </tab-heading>
+        <div class="bg-light lter  wrapper-md " ng-style="app.settings.Paneleading">
+          <div class="row">
+            <div class="col-sm-2 col-xs-12">
+            </div>
+            <div class="col-sm-10 col-xs-12 text-right hidden-xs">
+              <div class="inline m-r text-left">
+                <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">指标选取:</span></div>
+                <div class="sparkline inline m-r">
+                  <div class="btn-group">
+                    <button class="btn btn-default btn-sm" ng-style="app.settings.button">按租金</button>
+                    <button class="btn btn-default btn-sm" ng-style="app.settings.button">按坪效</button>
+                  </div>
+
+                </div>
+                <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">筛选:</span></div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm" ng-style="app.settings.select">
+                    <option>全部等级</option>
+                    <option>主力店</option>
+                    <option>次主力店</option>
+                    <option>一般 商铺</option>
+                  </select>
+                </div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm" ng-style="app.settings.select">
+                    <option>全部业态</option>
+                    <option>零售</option>
+                    <option>娱乐</option>
+                    <option>餐饮</option>
+                    <option>体验</option>
+                  </select>
+                </div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm" ng-style="app.settings.select">
+                    <option>第一层</option>
+                    <option>第二层</option>
+                    <option>第三层</option>
+                  </select>
+                </div>
+                <div class="m-b-xs inline"><span class="text-muted" ng-style="app.settings.fontColor">时间:</span></div>
+                <div class="sparkline inline">
+                  <div class="btn-group dropdown" dropdown>
+                    <button class="btn btn-default btn-sm" dropdown-toggle ng-style="app.settings.button">本周 <span class="caret"></span></button>
+                    <ul class="dropdown-menu izone-dropdown-menu">
+                      <li><a href>今天</a></li>
+                      <li><a href>本周</a></li>
+                      <li><a href>本月</a></li>
+                      <li class="divider">今年</li>
+                      <li><a href>过去7天</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <!--<div class="btn-group pull-right">-->
+                <!--<button type="button" class="btn btn-default btn-sm">按绝对值</button>-->
+                <!--<button type="button" class="btn btn-default btn-sm">按每平效率</button>-->
+              <!--</div>-->
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">商铺贡献度分析</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+              <div class="shopChartHeight" id="shopContributionID" >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">贡献度最高</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+              <div class="shopChartHeight " >
+                <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                  <thead>
+                  <tr>
+                    <th class="NNewline text-center">排名</th>
+                    <th class="NNewline text-center">Logo</th>
+                    <th class="NNewline text-center">门店</th>
+                    <th class="NNewline text-center">进店人数</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="t in traffic">
+                    <td class="tableHeight">{{$index+1}}</td>
+                    <td class="tableHeight"><a><img ng-src="{{t.logo}}"></a></td>
+                    <td class="tableHeight">{{t.name}}</td>
+                    <td class="tableHeight">
+                      <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                        <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+              <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">贡献度最低</h4>
+              <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+              <div class="shopChartHeight " >
+                <table class="table  table-bordered text-center m-b-none {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                  <thead>
+                  <tr>
+                    <th class="NNewline text-center">排名</th>
+                    <th class="NNewline text-center">Logo</th>
+                    <th class="NNewline text-center">门店</th>
+                    <th class="NNewline text-center">进店人数</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="t in traffic">
+                    <td class="tableHeight">{{$index+1}}</td>
+                    <td class="tableHeight"><a><img ng-src="{{t.logo}}"></a></td>
+                    <td class="tableHeight">{{t.name}}</td>
+                    <td class="tableHeight">
+                      <div class="progress progress-sm progress-striped active m-t-md m-b-none">
+                        <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </tab>
+      </tabset>
+  </div>
+</div>

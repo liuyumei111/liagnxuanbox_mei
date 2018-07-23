@@ -1,0 +1,89 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="cInterestsHobbiesCtrl">
+    <div class="col">
+        <div class="wrapper-md" >
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">兴趣爱好</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="shopChartHeight"  id="interestsID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">消费偏好</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="shopChartHeight"  id="consumerPreferencesID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">消费品级</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="shopChartHeight"  id="consumerGradeID" >
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">阅读偏好</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="shopChartHeight"  id="readingPreferenceID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">上网目的</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="shopChartHeight"  id="internetPurposeID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">应用使用偏好</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="shopChartHeight"  id="appPreferencesID" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"  ng-class="{'displayhide':appdisplay}">
+                <div class="col-md-6 ">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">常去休闲娱乐场所</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight"  id="oftengoToPlayplaceID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">常去餐饮场所</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight"  id="oftengoToEatplaceID" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

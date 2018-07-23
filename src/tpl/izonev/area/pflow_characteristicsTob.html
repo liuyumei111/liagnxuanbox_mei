@@ -1,0 +1,129 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="acharacteristicsTobCtrl">
+    <div class="col">
+        <div class="wrapper-md">
+            <div class="wrapper-md">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <h1 class="m-n font-thin h3 text-black">基本画像</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">性别</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="chartHeight" id="genderID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">年龄分布</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="chartHeight" id="ageID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">文化水平</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="chartHeight" id="culturalLevelID" ></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="wrapper-md">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <h1 class="m-n font-thin h3 text-black">职业相关</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">婚姻状况</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="chartHeight" id="marriageID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">职业类型</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="chartHeight" id="professionalID" ></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="wrapper-md">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <h1 class="m-n font-thin h3 text-black">兴趣偏好</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">上网目的</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="shopChartHeight" id="demoData1ID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">阅读偏好</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="shopChartHeight" id="demoData3ID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">应用使用偏好</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="shopChartHeight" id="demoData4ID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-3 displayhide">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">行业应用渗透率</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
+                        <div class="shopChartHeight table-responsive" >
+                            <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                                <thead>
+                                <tr>
+                                    <th class="NNewline text-center"></th>
+                                    <th class="NNewline text-center">APP名称</th>
+                                    <th class="NNewline text-center">样本渗透率</th>
+                                    <th class="NNewline text-center">对比全国</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="t in traffic">
+                                    <td class="tableHeight NNewline">{{$index+1}}</td>
+                                    <td class="tableHeight NNewline">{{t.name}}</td>
+                                    <td class="tableHeight NNewline">
+                                        {{t.permea}}
+                                        <!--<div class="progress progress-sm progress-striped active m-t-md m-b-none">-->
+                                            <!--<div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>-->
+                                        <!--</div>-->
+                                    </td>
+                                    <td class="tableHeight NNewline">{{t.contrast}}</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+    </div>
+</div>
+
+

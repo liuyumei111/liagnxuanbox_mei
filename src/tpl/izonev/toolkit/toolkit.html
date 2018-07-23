@@ -1,0 +1,48 @@
+<style>
+    .hover:hover{
+        background-color: #00a8f3;
+        color: #fff;
+    }
+    .hover:hover a{
+        color: #fff;
+    }
+</style>
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="toolkitController">
+    <div class="col">
+        <div class="wrapper-md" >
+            <div class="panel wrapper" ng-repeat="traffic in traffic">
+                <div class="row">
+                    <div class="col-md-12  no-border-xs">
+                        <h3 class="font-weight m-t-none m-b-md text-muted"><i class="m-r {{traffic.ticon}}"></i>{{traffic.title}}</h3>
+                       <div class="wrapper-md col-md-4" style="height: 182px" ng-repeat="data in traffic.data">
+                            <span class="w-sm pull-left m-b-md">
+                                <img ng-src="{{data.img}}" style="height: 108px;">
+                            </span>
+                           <div class="clear m-b">
+                               <div class="m-b m-t-sm">
+                                   <span class="h5 text-black">{{data.tit}}</span>
+                               </div>
+                               <p  class="m-b">
+                                   {{data.con}}
+                               </p>
+                               <div class="m-b">
+                                   <a ng-repeat="succ in data.succ track by $index" class="m-r text-info  {{data.state==0?'displayhide':''}} {{data.urlx?'displayhide':''}}" ui-sref="{{data.url[$index]}}">{{succ}}</a>
+                                   <a ng-repeat="succ in data.succ track by $index" class="m-r text-info  {{data.state==0?'displayhide':''}} {{data.urlx?'':'displayhide'}}" href="{{data.urlx[$index]}}">{{succ}}</a>
+                                   <span class="{{data.state==0?'':'displayhide'}}" style="color: #949494;">{{data.err}}</span>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" >
+        </div>
+    </div>
+    <!--ng-show="insight.view.loading"-->
+</div>
+
+

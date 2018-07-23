@@ -1,0 +1,89 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="allShopsCtrl">
+  <div class="col">
+    <div class="wrapper-md" >
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel wrapper" ng-style="app.settings.Panel">
+            <div class="wrapper "ng-style="app.settings.bbcolor" >
+              <div class="btn-group pull-right hidden-sm hidden-xs">
+                <input class="input-sm form-control" type="search"ng-style="app.settings.input" placeholder="搜门店">
+              </div>
+              <div class="inline">
+                <h4 class="font-thin m-t-none  text-muted inline" ng-style="app.settings.fontColor">业态类型：</h4>
+                <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">全部（456家）</button>
+                <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">零售（126家）</button>
+                <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">娱乐（27家） </button>
+                <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">餐饮（127家） </button>
+                <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button"> 体验（127家）</button>
+
+              </div>
+              <div class="inline padder">
+                <h4 class="font-thin m-t-none  text-muted inline" ng-style="app.settings.fontColor">排序：</h4>
+                <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">进店人数
+                  <i class="fa  fa-long-arrow-down"></i>
+                  <i class="fa  fa-long-arrow-up"></i>
+                </button>
+                <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">带动进店
+                  <i class="fa  fa-long-arrow-down"></i>
+                  <i class="fa  fa-long-arrow-up"></i>
+                </button>
+                <button class="btn m-b-xs btn-sm btn-default" ng-style="app.settings.button">平效
+                  <i class="fa  fa-long-arrow-down"></i>
+                  <i class="fa  fa-long-arrow-up"></i>
+                </button>
+              </div>
+
+            </div>
+            <ul class="list-group list-group-lg m-b-none text-center m-t-md">
+              <li class=" pull-left izone-m-r list-nostyled item imgInfor" ng-repeat="all in Allshop">
+                <div class="infor-tip">
+                  <p>
+                    <span class="block izone-font-size-11" ng-style="app.settings.fontColor">进店人数:昨日{{all.inyesterday}}人次,环比增长5.3%</span>
+                    <span class="block izone-font-size-11" ng-style="app.settings.fontColor">带动进店：昨日:{{all.driveyesterday}}人次,环比降低1.3%</span>
+                  </p>
+                </div>
+                <a   ng-click="getkshopID(all.name)" class="w-sm list-group-item {{app.settings.izoneborde}}">
+                  <img ng-src="{{all.img}}"class="r r-2x" >
+                </a>
+                <a class="block wrapper-xs" ng-style="app.settings.fontColor">{{all.name}}</a>
+              </li>
+              <li class=" pull-left izone-m-r list-nostyled item imgInfor" ng-repeat="all in Allshop">
+                <div class="infor-tip">
+                  <p>
+                    <span class="block izone-font-size-11" ng-style="app.settings.fontColor">进店人数:昨日{{all.inyesterday}}人次,环比增长5.3%</span>
+                    <span class="block izone-font-size-11" ng-style="app.settings.fontColor">带动进店：昨日:{{all.driveyesterday}}人次,环比降低1.3%</span>
+                  </p>
+                </div>
+                <a  ng-click="getkshopID(all.name)" class="w-sm list-group-item {{app.settings.izoneborde}}">
+                  <img ng-src="{{all.img}}"class="r r-2x" >
+                </a>
+                <a class="block wrapper-xs" ng-style="app.settings.fontColor">{{all.name}}</a>
+              </li>
+              <li class=" pull-left izone-m-r list-nostyled item imgInfor" ng-repeat="all in Allshop">
+                <div class="infor-tip">
+                  <p>
+                    <span class="block izone-font-size-11" ng-style="app.settings.fontColor">进店人数:昨日{{all.inyesterday}}人次,环比增长5.3%</span>
+                    <span class="block izone-font-size-11" ng-style="app.settings.fontColor">带动进店：昨日:{{all.driveyesterday}}人次,环比降低1.3%</span>
+                  </p>
+                </div>
+                <a  ng-click="getkshopID(all.name)" class="w-sm list-group-item {{app.settings.izoneborde}}">
+                  <img ng-src="{{all.img}}"class="r r-2x" >
+                </a>
+                <a class="block wrapper-xs" ng-style="app.settings.fontColor">{{all.name}}</a>
+              </li>
+            </ul>
+            <div style="clear:both;"></div>
+            <div class="izone-page-pd">
+              <!--<pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm m-t-sm m-b" boundary-links="true" ></pagination>-->
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

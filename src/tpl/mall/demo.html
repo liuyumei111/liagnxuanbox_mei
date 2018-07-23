@@ -1,0 +1,119 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="demoCtrl">
+    <div class="col">
+        <div class="wrapper-md" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel  clearfix" ng-style="app.settings.Panel">
+                        <div class="panel-body">
+                            <a href class="w-xl pull-left m-r hidden-sm hidden-xs">
+                                <img src="img/izone/u587.png" style="width: 100%">
+                            </a>
+                            <div class="clear" ng-style="app.settings.fontColor">
+                                <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor" >北京东直门来福士购物中心</h4>
+                                <div>
+                                    <p>
+                                        北京来福士广场位于北京市东直门立交桥西南角、东二环的核心商圈地带，北临东直门内大街，东面东二环路，紧邻第二使馆区，周边遍布写字楼、大型购物中心、酒店和文化中心。
+                                        <br><br>
+                                        项目占地 13854.07平方米，总建筑面积为 103184平方米。由写字楼、零售商场、附属用房和停车场组成。凯德集团将其建成集高档公寓、商务写字楼、零售商场于一体的综合项目。 北京来福士广场于2009年竣工，地下直接连通东直门交通枢纽。凭借轨道交通及近在咫尺的东二环、机场高速，最为便捷的交通网络和绝佳的地理位置。
+                                    </p>
+                                </div>
+                                <div class="text-muted m-t-lg" >
+                                    <a><i class="fa fa-user text-success "></i>
+                                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">地址：北京市东城区东直门南大街1号</span>
+                                    </a>
+                                    <a> <i class="fa fa-clock-o text-info "></i>
+                                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">占地面积：13854.07㎡，建筑面积：103184㎡</span>
+                                    </a>
+                                    <a><i class="fa fa-comment-o text-info "></i>
+                                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">入驻商户：1023 户</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('day')" ng-style="app.settings.button">天</button>
+                            <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('week')" ng-style="app.settings.button">周</button>
+                            <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectTime('month')" ng-style="app.settings.button">月</button>
+                        </div>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">{{storeOperations.trafficAnalysis.title}}</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{storeOperations.trafficAnalysis.time}}</span>
+                        <div class="chartHeight" id="trafficAnalysisID" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客来源对比</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                        <div class="shopChartHeight" id="customerFromContrastID" ></div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+            <span class="text-xs text-muted pull-right">
+              <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span></div>
+                <div class="sparkline inline">
+                  <select class="form-control input-sm" ng-style="app.settings.select">
+                    <option>工作地</option>
+                    <option>居住地</option>
+                  </select>
+                </div>
+               <div class="m-b-xs inline m-l"> <span class="text-muted" ng-style="app.settings.fontColor">分析区域：</span></div>
+               <div class="btn-group">
+                 <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('area')" >区域</button>
+                 <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('city')" >城市</button>
+                 <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button" ng-click="OnSelectArea('province')" >省份</button>
+
+               </div>
+
+              </span>
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">顾客来源展示</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                        <div class="row"  >
+                            <div class="col-sm-10">
+                                <div class="shopChartHeight" id="hotMapID"></div>
+                            </div>
+                            <div class="col-sm-2" >
+                                <div class="shopChartHeight table-responsive">
+                                    <table class="table table-striped m-b-none table-bordered" ng-style="app.settings.fontColor">
+                                        <thead>
+                                        <tr>
+                                            <th class="NNewline">排名</th>
+                                            <th class="NNewline">小区</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="t in table">
+                                            <td class="" style="line-height: 260%">
+                                                {{$index+1}}
+                                            </td>
+                                            <td class="NNewline">
+                                                <span>{{t.name}}</span>
+                                                <span class="block izone-font-size-11">{{t.value}}</span>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

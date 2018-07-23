@@ -1,0 +1,80 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="cBasicPortraitCtrl">
+    <div class="col">
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">性别</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="genderID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">年龄分布</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="ageID">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">婚育情况</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="marriageID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 " ng-class="{'displayhide':appdisplay}">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">家庭成员数量</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="familyNumID">
+                        </div>
+                    </div>
+                </div>
+                <div class="{{appdisplay?'col-md-12':'col-md-6 '}}">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">子女阶段</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="childrenStageID">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row ">
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">职业类型</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight"  id="professionalTypesID" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">文化水平</h4>
+                        <span class="m-b block text-xs text-muted"
+                              ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="culturalLevelID"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

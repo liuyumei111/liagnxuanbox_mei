@@ -1,0 +1,154 @@
+<!-- navbar -->
+<div ng-controller="areaMainCtrl">
+
+    <div data-ng-include=" 'tpl/izonev/blocks/header.html' " class="app-header navbar"></div>
+
+
+    <!-- <div class="app-aside hidden-xs {{app.settings.asideColor}}" style="margin-top: 20px" data-ng-include=" 'tpl/blocks/nav-area.html'">
+    </div> -->
+
+    <div class="app-aside hidden-xs {{app.settings.asideColor}}" style="margin-top: 20px">
+            <nav ui-nav class="navi">
+                    <!-- list -->
+                    <ul class="nav">
+                      <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        <span></span>
+                      </li>
+                      <!--项目名称-->
+                      <li>
+                        <a>
+                          <i class="glyphicon glyphicon-briefcase icon"></i>
+                          <span class="font-bold"> {{m_area_name}}</span>
+                        </a>
+                      </li>
+                      <li class="line dk"></li>
+                      <!--筛选-->
+                      <li>
+                        <a>
+                          <div class="inline text-left">
+                            <div class="sparkline inline">
+                              <div class="btn-group dropdown" dropdown>
+                                <input class="form-control input-default input-sm inline " ng-style="app.settings.button" id="plustest" ng-model="dateName">
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="line dk"></li>
+                    
+                      <!--实时分析-->
+                      <li ui-sref-active="active">
+                        <a href="#/fulls/realtimewifi">
+                          <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+                          <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+                          <span class="font-bold">实时分析</span>
+                        </a>
+                      </li>
+                      <li class="line dk"></li>
+                    
+                      <!--总体分析-->
+                      <li ui-sref-active="active">
+                        <a href="#/overall/statistical">
+                          <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+                          <i class="glyphicon glyphicon-th-large icon text-success"></i>
+                          <span class="font-bold">总体分析</span>
+                        </a>
+                      </li>
+                      <li class="line dk"></li>
+                    
+                      <!--区域分析-->
+                      <li>
+                        <a href class="auto">
+                          <span class="pull-right text-muted">
+                            <i class="fa fa-fw fa-angle-right text"></i>
+                            <i class="fa fa-fw fa-angle-down text-active"></i>
+                          </span>
+                          <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                          <span class="font-bold">区域分析</span>
+                        </a>
+                        <ul class="nav nav-sub dk">
+                          <li class="nav-sub-header">
+                            <a href>
+                              <span>Apps</span>
+                            </a>
+                          </li>
+                          <li ui-sref-active="active" ng-repeat="menu in menuSecondaryRes">
+                            <a ui-sref="{{menu.url}}({pavilion_id:app.exhibition.pavilion_id,pavilion_idPlus:app.exhibition.pavilion_idPlus})">
+                              <span>{{menu.menuName}}</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="line dk"></li>
+                    
+                    </ul>
+                    <!-- / list -->
+                    </nav>
+    </div>
+
+
+    <!-- content -->
+        <div class="app-content m_app-content">
+        <div ui-butterbar></div>
+            <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a>
+            <div class="app-content-body " ui-view ng-style="app.settings.contentBody"></div>
+    </div>
+    <!-- /content -->
+    <!--<div data-ng-include=" 'tpl/izonev/blocks/footer.html' " ></div>-->
+
+</div>
+
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .m_list>ul{
+        margin: 0;
+    }
+    .m_list>ul>.m_nav_one{
+        line-height: 50px;
+        text-align: center;
+        border-bottom: 1px solid #efe0e0;
+        position: relative;
+        color: #000;
+    }
+    .m_nav_two>li{
+        border-bottom: 1px solid #e7dddd;
+    }
+    .m_nav_two>li:nth-child(2){
+        border-top: 1px solid #e7dddd;
+    }
+    .m_nav_two>li:nth-child(5){
+        border-bottom: none;
+    }
+    .m_nav_two>li>a{
+        padding: 14px;
+    }
+    .m_nav_two>li>a>span{
+        width: 100%;
+    }
+    .m_left-logo>a>span{
+        font-size: 22px;
+    }
+    .m_left-logo>a>img{
+        display:block;
+        width: 60px;
+        margin: 0 auto;
+    }
+    .app-content{
+        width: 82%;
+        margin-left: 16%;
+    }
+    .m_app-content{
+        margin-left: 210px;
+    }
+    @media screen and (max-width: 767px) {
+        .m_app-content{
+            margin-left: 0px!important;
+            width: 100%;
+        }
+    }
+</style>

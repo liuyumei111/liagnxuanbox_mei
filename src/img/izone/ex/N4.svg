@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="197.8px" height="70px" viewBox="0 0 197.8 70" enable-background="new 0 0 197.8 70" xml:space="preserve">
+<g id="LUNKUO-01">
+	<g id="LWPOLYLINE">
+		
+			<polygon fill="#FCFBE3" stroke="#020000" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			-0.02,4.934 -0.02,65.025 -0.02,70.073 6.252,70.073 166.083,70.073 191.789,70.073 191.789,65.046 198.02,65.046 198.02,4.934 
+			191.789,4.934 191.789,-0.073 177.99,-0.073 6.252,-0.073 -0.02,-0.073 		"/>
+	</g>
+</g>
+<g id="障碍物">
+	<g id="LWPOLYLINE_1_">
+		
+			<polygon fill="#DDDDDD" stroke="#020000" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			0.041,-0.013 10.354,-0.013 10.354,19.878 10.354,27.474 10.354,50.073 10.354,50.311 10.354,69.934 0.041,69.934 		"/>
+	</g>
+	<g id="LWPOLYLINE_4_">
+		
+			<polygon fill="#DDDDDD" stroke="#020000" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			189.626,7.083 189.626,12.34 187.423,12.34 187.423,57.659 189.626,57.659 189.626,62.917 197.869,62.917 197.869,5.125 
+			191.772,5.125 191.772,7.083 		"/>
+	</g>
+</g>
+<g id="楼梯">
+	<g id="LWPOLYLINE_2_">
+		
+			<rect x="184.729" y="65.896" fill="#C9F3F7" stroke="#000005" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.209" height="3.055"/>
+	</g>
+	<g id="LWPOLYLINE_3_">
+		
+			<rect x="184.729" y="1.199" fill="#C9F3F7" stroke="#000005" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.209" height="3.055"/>
+	</g>
+</g>
+<g id="展会商铺">
+	<g id="LWPOLYLINE_5_">
+		
+			<rect x="14.379" y="11.205" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="7.011" height="8.014"/>
+	</g>
+	<g id="LWPOLYLINE_6_">
+		
+			<rect x="26.603" y="7.978" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="13.521" height="8.012"/>
+	</g>
+	<g id="LWPOLYLINE_7_">
+		
+			<rect x="43.128" y="7.978" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8.012" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_8_">
+		
+			<rect x="14.379" y="22.222" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="7.011" height="8.013"/>
+	</g>
+	<g id="LWPOLYLINE_9_">
+		
+			<rect x="13.379" y="37.018" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8.012" height="8.013"/>
+	</g>
+	<g id="LWPOLYLINE_10_">
+		
+			<rect x="13.379" y="49.036" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8.012" height="10.015"/>
+	</g>
+	<g id="LWPOLYLINE_11_">
+		
+			<rect x="26.603" y="18.994" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="9.014" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_12_">
+		
+			<rect x="35.617" y="18.994" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_13_">
+		
+			<rect x="26.579" y="28.004" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="14.522" height="5.008"/>
+	</g>
+	<g id="LWPOLYLINE_14_">
+		
+			<rect x="26.579" y="38.02" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="15.023" height="8.015"/>
+	</g>
+	<g id="LWPOLYLINE_15_">
+		
+			<rect x="26.579" y="52.04" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="13.02" height="8.013"/>
+	</g>
+	<g id="LWPOLYLINE_16_">
+		
+			<rect x="30.16" y="1.421" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.507" height="4.006"/>
+	</g>
+	<g id="LWPOLYLINE_17_">
+		
+			<rect x="34.667" y="1.421" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.507" height="4.006"/>
+	</g>
+	<g id="LWPOLYLINE_18_">
+		
+			<rect x="39.173" y="1.421" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.507" height="4.006"/>
+	</g>
+	<g id="LWPOLYLINE_19_">
+		
+			<rect x="43.68" y="1.421" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.507" height="4.006"/>
+	</g>
+	<g id="LWPOLYLINE_20_">
+		
+			<rect x="48.187" y="1.421" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.507" height="4.006"/>
+	</g>
+	<g id="LWPOLYLINE_21_">
+		
+			<rect x="52.694" y="2.422" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_22_">
+		
+			<rect x="55.698" y="2.422" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_23_">
+		
+			<rect x="58.703" y="2.422" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_24_">
+		
+			<rect x="34.591" y="65.064" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_25_">
+		
+			<rect x="37.596" y="65.064" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_26_">
+		
+			<rect x="42.103" y="65.064" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_27_">
+		
+			<rect x="45.107" y="65.064" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_28_">
+		
+			<rect x="48.112" y="65.064" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_29_">
+		
+			<rect x="52.619" y="65.064" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_30_">
+		
+			<rect x="58.627" y="65.064" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_31_">
+		
+			<rect x="53.93" y="7.98" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="17.026" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_32_">
+		
+			<rect x="44.13" y="16.991" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.013" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_33_">
+		
+			<rect x="50.144" y="16.991" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.012" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_34_">
+		
+			<rect x="58.935" y="16.496" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_35_">
+		
+			<rect x="64.946" y="16.496" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_36_">
+		
+			<rect x="45.135" y="25.508" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.008" height="7.511"/>
+	</g>
+	<g id="LWPOLYLINE_37_">
+		
+			<rect x="50.143" y="25.508" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.007" height="7.511"/>
+	</g>
+	<g id="LWPOLYLINE_38_">
+		
+			<rect x="58.432" y="25.005" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="12.524" height="8.014"/>
+	</g>
+	<g id="LWPOLYLINE_39_">
+		
+			<rect x="45.606" y="37.973" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="11.518" height="8.012"/>
+	</g>
+	<g id="LWPOLYLINE_40_">
+		
+			<rect x="60.629" y="37.973" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.006" height="8.012"/>
+	</g>
+	<g id="LWPOLYLINE_41_">
+		
+			<rect x="64.635" y="37.973" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="8.012"/>
+	</g>
+	<g id="LWPOLYLINE_42_">
+		
+			<rect x="43.403" y="52.995" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="7.011"/>
+	</g>
+	<g id="LWPOLYLINE_43_">
+		
+			<rect x="53.618" y="51.994" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="7.011" height="5.508"/>
+	</g>
+	<g id="LWPOLYLINE_44_">
+		
+			<rect x="53.618" y="57.502" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="7.011" height="2.504"/>
+	</g>
+	<g id="LWPOLYLINE_45_">
+		
+			<rect x="64.635" y="50.992" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_46_">
+		
+			<rect x="64.635" y="53.997" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_47_">
+		
+			<rect x="77.844" y="2.162" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.012" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_48_">
+		
+			<rect x="83.856" y="2.162" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_49_">
+		
+			<rect x="86.861" y="2.162" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_50_">
+		
+			<rect x="89.867" y="2.162" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_51_">
+		
+			<rect x="95.876" y="2.162" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_52_">
+		
+			<rect x="74.965" y="7.973" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="9.016" height="6.013"/>
+	</g>
+	<g id="LWPOLYLINE_53_">
+		
+			<rect x="83.98" y="7.973" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.007" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_54_">
+		
+			<rect x="92.994" y="7.807" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="12.019" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_55_">
+		
+			<rect x="74.965" y="17.987" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.014" height="6.013"/>
+	</g>
+	<g id="LWPOLYLINE_56_">
+		
+			<rect x="80.979" y="17.987" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.008" height="6.013"/>
+	</g>
+	<g id="LWPOLYLINE_57_">
+		
+			<rect x="99.005" y="17.825" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_58_">
+		
+			<rect x="99.005" y="23.834" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="9.014"/>
+	</g>
+	<g id="LWPOLYLINE_59_">
+		
+			<rect x="90.993" y="23.834" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.007" height="9.014"/>
+	</g>
+	<g id="LWPOLYLINE_60_">
+		
+			<rect x="74.965" y="27.007" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="12.022" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_61_">
+		
+			<rect x="74.647" y="38.016" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.008" height="6.008"/>
+	</g>
+	<g id="LWPOLYLINE_62_">
+		
+			<rect x="82.66" y="38.025" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_63_">
+		
+			<rect x="92.174" y="38.016" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.008"/>
+	</g>
+	<g id="LWPOLYLINE_64_">
+		
+			<rect x="98.184" y="38.016" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_65_">
+		
+			<rect x="98.184" y="41.02" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_66_">
+		
+			<rect x="101.188" y="38.016" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.008"/>
+	</g>
+	<g id="LWPOLYLINE_67_">
+		
+			<rect x="74.647" y="47.027" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.01"/>
+	</g>
+	<g id="LWPOLYLINE_68_">
+		
+			<rect x="80.657" y="47.027" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_69_">
+		
+			<rect x="80.657" y="50.032" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_70_">
+		
+			<rect x="83.657" y="50.032" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_71_">
+		
+			<rect x="86.661" y="50.032" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_72_">
+		
+			<rect x="83.657" y="47.027" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_73_">
+		
+			<rect x="92.174" y="47.027" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_74_">
+		
+			<rect x="92.174" y="50.032" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_75_">
+		
+			<rect x="98.184" y="47.027" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_76_">
+		
+			<rect x="98.184" y="50.032" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_77_">
+		
+			<rect x="101.188" y="47.027" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.01"/>
+	</g>
+	<g id="LWPOLYLINE_78_">
+		
+			<rect x="74.647" y="56.042" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_79_">
+		
+			<rect x="80.657" y="56.042" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_80_">
+		
+			<rect x="80.657" y="59.046" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_81_">
+		
+			<rect x="83.662" y="59.046" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_82_">
+		
+			<rect x="86.666" y="56.042" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_83_">
+		
+			<rect x="86.666" y="59.046" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_84_">
+		
+			<rect x="95.179" y="56.042" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="12.02" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_85_">
+		
+			<rect x="79.574" y="65.557" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_86_">
+		
+			<rect x="85.583" y="65.557" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_87_">
+		
+			<rect x="91.092" y="65.557" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_88_">
+		
+			<rect x="94.096" y="65.557" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_89_">
+		
+			<rect x="97.101" y="65.557" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_90_">
+		
+			<rect x="115.393" y="2.125" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.012" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_91_">
+		
+			<rect x="121.404" y="2.125" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_92_">
+		
+			<rect x="124.41" y="2.125" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_93_">
+		
+			<rect x="127.416" y="2.125" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_94_">
+		
+			<rect x="130.421" y="2.125" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_95_">
+		
+			<rect x="133.425" y="2.125" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_96_">
+		
+			<rect x="111.023" y="7.81" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_97_">
+		
+			<rect x="117.033" y="7.81" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_98_">
+		
+			<rect x="127.041" y="7.81" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.015" height="3.008"/>
+	</g>
+	<g id="LWPOLYLINE_99_">
+		
+			<rect x="127.041" y="10.818" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.015" height="3.001"/>
+	</g>
+	<g id="LWPOLYLINE_100_">
+		
+			<rect x="133.053" y="7.81" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.009" height="3.008"/>
+	</g>
+	<g id="LWPOLYLINE_101_">
+		
+			<rect x="133.053" y="10.818" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.009" height="3.001"/>
+	</g>
+	<g id="LWPOLYLINE_102_">
+		
+			<rect x="136.062" y="7.81" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_103_">
+		
+			<rect x="111.023" y="17.825" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="12.02" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_104_">
+		
+			<rect x="111.023" y="26.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_105_">
+		
+			<rect x="117.033" y="26.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_106_">
+		
+			<rect x="127.048" y="17.825" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="15.021" height="15.022"/>
+	</g>
+	<g id="LWPOLYLINE_107_">
+		
+			<rect x="113.21" y="37.837" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_108_">
+		
+			<rect x="119.22" y="37.837" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_109_">
+		
+			<rect x="119.22" y="40.842" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_110_">
+		
+			<rect x="130.737" y="37.837" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_111_">
+		
+			<rect x="136.746" y="37.837" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_112_">
+		
+			<rect x="136.746" y="40.842" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_113_">
+		
+			<rect x="139.751" y="37.837" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_114_">
+		
+			<rect x="113.21" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.01"/>
+	</g>
+	<g id="LWPOLYLINE_115_">
+		
+			<rect x="119.22" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_116_">
+		
+			<rect x="119.22" y="49.855" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_117_">
+		
+			<rect x="122.225" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_118_">
+		
+			<rect x="122.225" y="49.855" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_119_">
+		
+			<rect x="130.737" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.01"/>
+	</g>
+	<g id="LWPOLYLINE_120_">
+		
+			<rect x="136.746" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.01"/>
+	</g>
+	<g id="LWPOLYLINE_121_">
+		
+			<rect x="113.21" y="55.864" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.01"/>
+	</g>
+	<g id="LWPOLYLINE_122_">
+		
+			<rect x="119.22" y="55.864" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_123_">
+		
+			<rect x="122.225" y="55.864" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_124_">
+		
+			<rect x="119.22" y="58.869" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_125_">
+		
+			<rect x="122.225" y="58.869" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_126_">
+		
+			<rect x="130.737" y="55.864" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_127_">
+		
+			<rect x="133.742" y="55.864" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_128_">
+		
+			<rect x="136.746" y="55.864" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_129_">
+		
+			<rect x="130.737" y="58.869" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_130_">
+		
+			<rect x="133.742" y="58.869" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_131_">
+		
+			<rect x="136.746" y="58.869" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_132_">
+		
+			<rect x="116.619" y="65.379" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_133_">
+		
+			<rect x="119.623" y="65.379" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_134_">
+		
+			<rect x="122.626" y="65.379" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_135_">
+		
+			<rect x="125.632" y="65.379" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_136_">
+		
+			<rect x="128.636" y="65.379" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_137_">
+		
+			<rect x="131.641" y="65.379" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_138_">
+		
+			<rect x="155.271" y="1.529" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_139_">
+		
+			<rect x="158.276" y="1.529" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_140_">
+		
+			<rect x="161.28" y="1.529" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_141_">
+		
+			<rect x="164.285" y="1.529" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_142_">
+		
+			<rect x="167.291" y="1.529" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_143_">
+		
+			<rect x="146.074" y="7.797" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_144_">
+		
+			<rect x="146.074" y="10.802" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.014" height="3.013"/>
+	</g>
+	<g id="LWPOLYLINE_145_">
+		
+			<rect x="152.096" y="7.797" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.002" height="6.017"/>
+	</g>
+	<g id="LWPOLYLINE_146_">
+		
+			<rect x="164.111" y="7.81" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="12.02" height="15.023"/>
+	</g>
+	<g id="LWPOLYLINE_147_">
+		
+			<rect x="183.587" y="8.925" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_148_">
+		
+			<rect x="146.074" y="16.824" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_149_">
+		
+			<rect x="146.074" y="19.828" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_150_">
+		
+			<rect x="149.078" y="16.824" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_151_">
+		
+			<rect x="149.078" y="19.828" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_152_">
+		
+			<rect x="152.083" y="16.824" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.008" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_153_">
+		
+			<rect x="152.083" y="19.828" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.008" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_154_">
+		
+			<rect x="146.074" y="26.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_155_">
+		
+			<rect x="152.083" y="26.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.008" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_156_">
+		
+			<rect x="152.083" y="29.843" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.008" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_157_">
+		
+			<rect x="164.305" y="26.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_158_">
+		
+			<rect x="164.305" y="29.843" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_159_">
+		
+			<rect x="167.31" y="26.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_160_">
+		
+			<rect x="167.31" y="29.843" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_161_">
+		
+			<rect x="170.313" y="26.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_162_">
+		
+			<rect x="146.763" y="37.837" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_163_">
+		
+			<rect x="155.776" y="37.837" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="6.011"/>
+	</g>
+	<g id="LWPOLYLINE_164_">
+		
+			<rect x="164.787" y="37.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.008" height="6.009"/>
+	</g>
+	<g id="LWPOLYLINE_165_">
+		
+			<rect x="170.794" y="37.839" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_166_">
+		
+			<rect x="170.794" y="40.843" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_167_">
+		
+			<rect x="173.8" y="40.843" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_168_">
+		
+			<rect x="182.313" y="38.111" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="15.021"/>
+	</g>
+	<g id="LWPOLYLINE_169_">
+		
+			<rect x="182.313" y="53.136" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_170_">
+		
+			<rect x="146.763" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_171_">
+		
+			<rect x="146.763" y="49.855" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_172_">
+		
+			<rect x="152.771" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_173_">
+		
+			<rect x="152.771" y="49.855" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_174_">
+		
+			<rect x="155.776" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_175_">
+		
+			<rect x="155.776" y="49.855" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_176_">
+		
+			<rect x="158.781" y="46.852" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_177_">
+		
+			<rect x="158.781" y="49.855" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_178_">
+		
+			<rect x="164.787" y="46.854" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_179_">
+		
+			<rect x="164.787" y="49.855" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_180_">
+		
+			<rect x="170.794" y="46.854" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_181_">
+		
+			<rect x="170.794" y="49.857" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="3.006"/>
+	</g>
+	<g id="LWPOLYLINE_182_">
+		
+			<rect x="146.763" y="55.864" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_183_">
+		
+			<rect x="146.763" y="58.869" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.009" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_184_">
+		
+			<rect x="154.774" y="55.864" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_185_">
+		
+			<rect x="154.774" y="58.869" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_186_">
+		
+			<rect x="162.783" y="55.866" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_187_">
+		
+			<rect x="165.787" y="55.866" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.006" height="3.004"/>
+	</g>
+	<g id="LWPOLYLINE_188_">
+		
+			<rect x="162.783" y="58.87" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.01" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_189_">
+		
+			<rect x="170.794" y="55.82" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_190_">
+		
+			<rect x="170.794" y="58.825" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="6.011" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_191_">
+		
+			<rect x="152.753" y="65.384" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_192_">
+		
+			<rect x="155.757" y="65.384" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_193_">
+		
+			<rect x="158.762" y="65.384" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_194_">
+		
+			<rect x="161.767" y="65.384" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.005" height="3.005"/>
+	</g>
+	<g id="LWPOLYLINE_195_">
+		
+			<rect x="164.771" y="65.384" fill="#FFDEC7" stroke="#020002" stroke-width="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.004" height="3.005"/>
+	</g>
+</g>
+<g id="LUNKUO-02">
+	<g id="LWPOLYLINE_196_">
+		<polygon fill="none" points="-0.02,4.934 -0.02,65.025 -0.02,70.073 6.252,70.073 166.083,70.073 191.789,70.073 191.789,65.046 
+			198.02,65.046 198.02,4.934 191.789,4.934 191.789,-0.073 177.99,-0.073 6.252,-0.073 -0.02,-0.073 		"/>
+	</g>
+</g>
+<g id="device">
+	<circle id="E4:95:6E:4C:0A:62" fill="#FF0310" cx="17.464" cy="40.748" r="0.5"/>
+	<circle id="E4:95:6E:4C:0A:7E" fill="#FF0310" cx="17.884" cy="14.489" r="0.5"/>
+	<circle id="E4:95:6E:4C:09:C4" fill="#FF0310" cx="33.089" cy="56.047" r="0.5"/>
+	<circle id="E4:95:6E:4C:09:68" fill="#FF0310" cx="38.622" cy="22" r="0.5"/>
+	<circle id="E4:95:6E:4C:0A:90" fill="#FF0310" cx="47.639" cy="29.264" r="0.5"/>
+	<circle id="E4:95:6E:4C:09:B2" fill="#FF0310" cx="67.64" cy="41.979" r="0.5"/>
+	<circle id="E4:95:6E:4C:0A:8E" fill="#FF0310" cx="62.443" cy="10.812" r="0.5"/>
+	<circle id="E4:95:6E:4C:09:BF" fill="#FF0310" cx="77.651" cy="59.046" r="0.5"/>
+	<circle id="E4:95:6E:4C:09:82" fill="#FF0310" cx="101.189" cy="59.046" r="0.5"/>
+	<circle id="E4:95:6E:4C:09:BE" fill="#FF0310" cx="102.009" cy="28.341" r="0.5"/>
+	<circle id="E4:95:6E:4C:55:5D" fill="#FF0310" cx="99.687" cy="10.984" r="0.5"/>
+	<circle id="E4:95:6E:4C:54:17" fill="#FF0310" cx="139.751" cy="60.549" r="0.5"/>
+	<circle id="E4:95:6E:4C:54:72" fill="#FF0310" cx="133.742" cy="41.031" r="0.5"/>
+	<circle id="E4:95:6E:4C:55:53" fill="#FF0310" cx="134.927" cy="25.005" r="0.5"/>
+	<circle id="E4:95:6E:4E:65:5E" fill="#FF0310" cx="139.251" cy="10.818" r="0.5"/>
+	<circle id="E4:95:6E:4E:62:FE" fill="#FF0310" cx="155.087" cy="21.33" r="0.5"/>
+	<circle id="E4:95:6E:4C:54:1E" fill="#FF0310" cx="173.8" cy="60.328" r="0.5"/>
+	<circle id="E4:95:6E:4C:09:F5" fill="#FF0310" cx="173.8" cy="39.34" r="0.5"/>
+	<circle id="E4:95:6E:4C:55:74" fill="#FF0310" cx="170.794" cy="14.989" r="0.5"/>
+</g>
+<g id="展会大门">
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 22.0376 4.3828)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">1</text>
+			<text transform="matrix(1.0002 0 0 1 22.811 4.3789)" fill="#020002" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="26.581" y1="2.69" x2="26.581" y2="0.065"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="26.503" y1="0.065" x2="26.503" y2="2.69"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				23.956,0.065 24.059,0.872 24.45,1.625 25.021,2.196 25.775,2.561 26.581,2.69 			"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="21.305" y1="2.69" x2="21.305" y2="0.065"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="21.383" y1="0.065" x2="21.383" y2="2.69"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				21.305,2.69 22.111,2.561 22.865,2.196 23.436,1.625 23.826,0.872 23.956,0.065 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 70.3667 4.3848)" fill="#050005" font-family="'Arial-BoldMT'" font-size="1.3749">2</text>
+			<text transform="matrix(1.0002 0 0 1 71.144 4.3809)" fill="#050005" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="74.632" y1="2.69" x2="74.632" y2="0.065"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="74.554" y1="0.065" x2="74.554" y2="2.69"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				71.979,0.065 72.111,0.872 72.475,1.625 73.073,2.196 73.8,2.561 74.632,2.69 			"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="69.33" y1="2.69" x2="69.33" y2="0.065"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="69.408" y1="0.065" x2="69.408" y2="2.69"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="69.33,2.69 
+				70.161,2.561 70.889,2.196 71.488,1.625 71.851,0.872 71.979,0.065 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 106.2983 4.3818)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">3</text>
+			<text transform="matrix(1.0002 0 0 1 107.0747 4.3867)" fill="#020002" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="110.652" y1="2.69" x2="110.652" y2="0.065"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="110.571" y1="0.065" x2="110.571" y2="2.69"/>
+			<polyline fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				107.999,0.065 108.131,0.872 108.518,1.625 109.09,2.196 109.844,2.561 110.652,2.69 			"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="105.374" y1="2.69" x2="105.374" y2="0.065"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="105.452" y1="0.065" x2="105.452" y2="2.69"/>
+			<polyline fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				105.374,2.69 106.18,2.561 106.908,2.196 107.504,1.625 107.87,0.872 107.999,0.065 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 142.4595 4.376)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">4</text>
+			<text transform="matrix(1.0002 0 0 1 143.2397 4.3809)" fill="#020002" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="146.668" y1="2.69" x2="146.668" y2="0.065"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="146.592" y1="0.065" x2="146.592" y2="2.69"/>
+			<polyline fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				144.045,0.065 144.176,0.872 144.54,1.6 145.11,2.196 145.864,2.561 146.668,2.69 			"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="141.395" y1="2.69" x2="141.395" y2="0.065"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="141.471" y1="0.065" x2="141.471" y2="2.69"/>
+			<polyline fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				141.395,2.69 142.202,2.561 142.955,2.196 143.524,1.6 143.913,0.872 144.045,0.065 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 178.4985 4.1895)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">5</text>
+			<text transform="matrix(1.0002 0 0 1 179.2808 4.1934)" fill="#020002" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="182.715" y1="2.561" x2="182.715" y2="-0.089"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="182.635" y1="-0.089" x2="182.635" y2="2.561"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				180.061,-0.089 180.193,0.715 180.555,1.47 181.154,2.042 181.881,2.432 182.715,2.561 			"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="177.412" y1="2.561" x2="177.412" y2="-0.089"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="177.492" y1="-0.089" x2="177.492" y2="2.561"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				177.412,2.561 178.243,2.432 178.971,2.042 179.569,1.47 179.932,0.715 180.061,-0.089 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 22.2529 66.5039)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">6</text>
+			<text transform="matrix(1.0002 0 0 1 23.0078 66.5)" fill="#020002" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="26.581" y1="67.285" x2="26.581" y2="69.932"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="26.503" y1="69.932" x2="26.503" y2="67.285"/>
+			<polyline fill="none" stroke="#000000" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				23.956,69.932 24.059,69.127 24.45,68.377 25.021,67.804 25.775,67.414 26.581,67.285 			"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="21.305" y1="67.285" x2="21.305" y2="69.932"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="21.383" y1="69.932" x2="21.383" y2="67.285"/>
+			<polyline fill="none" stroke="#000000" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				21.305,67.285 22.111,67.414 22.865,67.804 23.436,68.377 23.826,69.127 23.956,69.932 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 70.2681 66.5059)" font-family="'Arial-BoldMT'" font-size="1.3749">7</text>
+			<text transform="matrix(1.0002 0 0 1 71.042 66.502)" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="74.632" y1="67.285" x2="74.632" y2="69.932"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="74.554" y1="69.932" x2="74.554" y2="67.285"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				71.979,69.932 72.111,69.127 72.475,68.377 73.073,67.804 73.8,67.414 74.632,67.285 			"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="69.33" y1="67.285" x2="69.33" y2="69.932"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="69.408" y1="69.932" x2="69.408" y2="67.285"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				69.33,67.285 70.161,67.414 70.889,67.804 71.488,68.377 71.851,69.127 71.979,69.932 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 106.2964 66.8721)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">8</text>
+			<text transform="matrix(1.0002 0 0 1 107.0757 66.8682)" fill="#020002" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="110.652" y1="67.285" x2="110.652" y2="69.932"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="110.571" y1="69.932" x2="110.571" y2="67.285"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				107.999,69.932 108.131,69.127 108.518,68.377 109.09,67.804 109.844,67.414 110.652,67.285 			"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="105.374" y1="67.285" x2="105.374" y2="69.932"/>
+			
+				<line fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="105.452" y1="69.932" x2="105.452" y2="67.285"/>
+			<polyline fill="none" stroke="#020002" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				105.374,67.285 106.18,67.414 106.908,67.804 107.504,68.377 107.87,69.127 107.999,69.932 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 142.4595 66.3281)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">9</text>
+			<text transform="matrix(1.0002 0 0 1 143.2378 66.3242)" fill="#020002" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="146.668" y1="67.311" x2="146.668" y2="69.932"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="146.592" y1="69.932" x2="146.592" y2="67.311"/>
+			<polyline fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				144.045,69.932 144.176,69.127 144.54,68.377 145.11,67.804 145.864,67.439 146.668,67.311 			"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="141.395" y1="67.311" x2="141.395" y2="69.932"/>
+			
+				<line fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="141.471" y1="69.932" x2="141.471" y2="67.311"/>
+			<polyline fill="none" stroke="#050005" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				141.395,67.311 142.202,67.439 142.955,67.804 143.524,68.377 143.913,69.127 144.045,69.932 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1.0002 0 0 1 177.9546 66.8701)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">1</text>
+			<text transform="matrix(1.0002 0 0 1 178.7085 66.8701)" fill="#020002" font-family="'Arial-BoldMT'" font-size="1.3749">0</text>
+			<text transform="matrix(1.0002 0 0 1 179.52 66.8662)" fill="#020002" font-family="'SimSun'" font-size="1.4008">号门</text>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#070007" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="182.715" y1="67.439" x2="182.715" y2="70.09"/>
+			
+				<line fill="none" stroke="#070007" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="182.635" y1="70.09" x2="182.635" y2="67.439"/>
+			<polyline fill="none" stroke="#070007" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				180.061,70.09 180.193,69.258 180.555,68.529 181.154,67.935 181.881,67.568 182.715,67.439 			"/>
+			
+				<line fill="none" stroke="#070007" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="177.412" y1="67.439" x2="177.412" y2="70.09"/>
+			
+				<line fill="none" stroke="#070007" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" x1="177.492" y1="70.09" x2="177.492" y2="67.439"/>
+			<polyline fill="none" stroke="#070007" stroke-width="0.01" stroke-linecap="square" stroke-miterlimit="10" points="
+				177.412,67.439 178.243,67.568 178.971,67.935 179.569,68.529 179.932,69.258 180.061,70.09 			"/>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,467 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="shopDetailsCtrl">
+
+    <div class="col">
+        <div class="wrapper-md" >
+            <div class="row" >
+                <div class="col-md-12">
+                    <div class="panel  clearfix" style="border: none">
+                        <div class="panel-body" ng-style="app.settings.Panel">
+                            <a href class="w-xl pull-left m-r hidden-xs hidden-sm">
+                                <img src="img/izone/u587.png" class="" style="width: 100%">
+                            </a>
+                            <div class="clear">
+                                <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor" >杰克·琼斯</h4>
+                                <div>
+                                    <p ng-style="app.settings.fontColor">
+                                        JACK & JONES（杰克琼斯）诞生于1989年，是丹麦BESTSELLER集团旗下的主要品牌之一，主营欧式风格设计男装。
+                                        <br><br>
+                                        专注男装设计和流行趋势，代表着都市精英一丝不苟的穿衣品味。JACK & JONES（杰克琼斯）坚持“成就最好的男人”的品牌承诺，授予展现天性的力量，赞扬率性造型的能力，展现雄性本能与野心，打造女性渴望的男人，让男性散发出非凡气度，无论身在职场还是生活中都能以最佳姿态迈向成功。
+                                  <br><br>
+                                        其考究的做工，不流于浮夸的剪裁,让职场精英们尽显自信和独到着装品味。独有的简洁设计，丰富多样的服装与各式配件极大程度上满足了都市男性对服装的全方位诉求，为都市男性塑造专属的个人风格。
+                                    </p>
+                                </div>
+                                <div class="text-muted m-t-lg">
+                                    <a ><i class="fa fa-user  text-info h3"></i>
+                                    <span class="m-l-sm m-r" ng-style="app.settings.fontColor">地址：北京市东城区东直门南大街1号</span>
+                                    </a>
+                                    <a> <i class="fa fa-clock-o  text-success h3"></i>
+                                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">占地面积：13854.07㎡，建筑面积：103184㎡</span>
+                                    </a>
+                                    <a><i class="fa fa-comment-o  text-info h3"></i>
+                                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">入驻商户：1023 户</span>
+                                    </a>
+                                    <a><i class="fa fa-comment-o  text-info h3 "></i>
+                                        <span class="m-l-sm m-r" ng-style="app.settings.fontColor">联系人：刘春梅，13233849021</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="" >
+                <div class="inline pull-right ">
+
+                    <div class="inline text-left">
+                        <!--<div class="m-b-xs inline hidden-xs hidden-sm"><span class="text-muted" ng-style="app.settings.fontColor">时间:</span></div>-->
+                        <div class="sparkline inline">
+                            <div class="btn-group dropdown" dropdown>
+                                <button class="btn btn-default btn-sm" ng-style="app.settings.button" dropdown-toggle ng-style="app.settings.button">本周 <span class="caret"></span></button>
+                                <ul class="list-group list-group-lg m-b-none dropdown-menu izone-dropdown-menu">
+                                    <li class="">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <ul class="list-unstyled l-h-2x" style="padding-left: 10px">
+                                                    <li  >
+                                                        <a class="text-muted "ng-style="app.settings.fontColor" ng-click="OnselectConditions(left.value,left.name)">今天</a>
+                                                    </li>
+                                                    <li  >
+                                                        <a class="text-muted "ng-style="app.settings.fontColor" ng-click="OnselectConditions(left.value,left.name)">本周</a>
+                                                    </li>
+                                                    <li  >
+                                                        <a class="text-muted "ng-style="app.settings.fontColor" ng-click="OnselectConditions(left.value,left.name)">本月</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6 b-l b-light">
+                                                <ul class="list-unstyled l-h-2x" style="padding-left: 4px">
+                                                    <li  >
+                                                        <a class="text-muted "ng-style="app.settings.fontColor" ng-click="OnselectConditions(right.value,right.name)">昨天</a>
+                                                    </li>
+                                                    <li  >
+                                                        <a class="text-muted "ng-style="app.settings.fontColor" ng-click="OnselectConditions(right.value,right.name)">上周</a>
+                                                    </li>
+                                                    <li  >
+                                                        <a class="text-muted "ng-style="app.settings.fontColor" ng-click="OnselectConditions(right.value,right.name)">上月</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <tabset class="tab-container ">
+                    <!--1111111111111111111111111-->
+                    <tab>
+                        <tab-heading >
+                            门店信息
+                        </tab-heading>
+                        <div class="row bg-white" ng-style="app.settings.Panel">
+                            <div class="col-md-6 col-sm-12 b-r " ng-style="app.settings.bgLight1">
+                                <div class="row ">
+                                    <div class="col-sm-12 ">
+                                        <div class="pull-right pull-none-xs text-center">
+                                            <a href class="thumb-lg  m-r m-t">
+                                                <img src="img/izone/u3128.png" >
+                                            </a>
+                                        </div>
+                                        <div class="clear m-b">
+                                            <div class="m-b m-t-sm">
+                                                <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">杰克·琼斯</h4>
+                                                <div class="m-t">
+                                                    <a href class="btn btn-sm btn-default  btn-rounded"ng-style="app.settings.button">快时尚</a>
+                                                    <a href class="btn btn-sm btn-default  btn-rounded"ng-style="app.settings.button">流行服饰</a>
+                                                    <a href class="btn btn-sm btn-default  btn-rounded"ng-style="app.settings.button">知名品牌</a>
+                                                </div>
+
+                                            </div>
+                                            <div class="m-b">
+                                                <h5 ng-style="app.settings.fontColor">简介</h5>
+                                                <p class="" ng-style="app.settings.fontColor">
+                                                    JACK & JONES（杰克琼斯）诞生于1989年，是丹麦BESTSELLER集团旗下的主要品牌之一，主营欧式风格设计男装。
+                                                </p>
+                                                <p class="" ng-style="app.settings.fontColor">
+                                                    专注男装设计和流行趋势，代表着都市精英一丝不苟的穿衣品味。JACK & JONES（杰克琼斯）坚持“成就最好的男人”的品牌承诺，授予展现天性的力量，赞扬率性造型的能力，展现雄性本能与野心，打造女性渴望的男人，让男性散发出非凡气度，无论身在职场还是生活中都能以最佳姿态迈向成功。
+                                                </p>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="line line-dashed b-b line-lg pull-in"ng-style="app.settings.bbcolor"></div>
+                                    <div class="col-sm-12">
+                                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">基本信息</h4>
+                                        <div class="form-inline ">
+                                            <div class="block m-b">
+                                                <div class="inline m-r ">
+                                                    <label class="m-r"ng-style="app.settings.fontColor" >
+                                                        地址：&nbsp;&nbsp;&nbsp;
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select  class="form-control input-sm" ng-style="app.settings.select" >
+                                                        <option>1层</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control input-sm"  placeholder="1105号" ng-style="app.settings.input">
+                                                </div>
+                                            </div>
+                                            <div class="block m-b">
+                                                <div class="inline m-r ">
+                                                    <label class="m-r" ng-style="app.settings.fontColor">
+                                                        联系人：
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select  class="form-control input-sm"ng-style="app.settings.select" >
+                                                        <option>1层</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control input-sm"  placeholder="1105号" ng-style="app.settings.input">
+                                                </div>
+                                            </div>
+                                            <div class="block m-b">
+                                                <div class="inline m-r ">
+                                                    <label class="m-r" ng-style="app.settings.fontColor">
+                                                        店铺等级分类：
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select  class="form-control input-sm"ng-style="app.settings.select" >
+                                                        <option>主力店</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="block m-b">
+                                                <div class="inline m-r ">
+                                                    <label class="m-r" ng-style="app.settings.fontColor">
+                                                        店铺业态分类：
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select  class="form-control input-sm" ng-style="app.settings.select">
+                                                        <option>零售</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="line line-dashed b-b line-lg pull-in"ng-style="app.settings.bbcolor"></div>
+
+                                    <div class="col-sm-12">
+
+                                        <div class="row wrapper">
+                                            <div class="col-sm-4 m-b-xs">
+                                                <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">门店面积与租金</h4>
+                                            </div>
+                                            <div class="col-sm-3">
+
+                                            </div>
+                                            <div class="col-sm-5 m-b-xs">
+                                                <select class="input-sm form-control w-sm inline v-middle pull-right" ng-style="app.settings.select">
+                                                    <option value="0">2017</option>
+                                                    <option value="1">2016</option>
+                                                    <option value="2">2015</option>
+                                                    <option value="3">2014</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table  m-b-none table-bordered {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                                                <thead>
+                                                <tr>
+                                                    <th>月份</th>
+                                                    <th>面积(㎡)</th>
+                                                    <th>租金(万元)</th>
+                                                    <th>备注</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr ng-repeat="t in table">
+                                                    <td>{{t.date}}</td>
+                                                    <td>{{t.area}}</td>
+                                                    <td>{{t.rent}}</td>
+                                                    <td>{{t.note}}</td>
+
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <footer class="panel-footer " ng-style="app.settings.Panel"  style="border-top: none">
+                                            <div class="row">
+                                                <div class="col-sm-8 hidden-xs">
+                                                    <input class="input-sm form-control w-sm inline v-middle " placeholder="面积" ng-style="app.settings.input">&nbsp;<span ng-style="app.settings.fontColor">㎡</span>
+                                                    <input class="input-sm form-control w-sm inline v-middle m-l" placeholder="租金" ng-style="app.settings.input">&nbsp;<span ng-style="app.settings.fontColor">万元</span>
+                                                </div>
+                                                <div class="col-sm-4 text-right text-center-xs">
+                                                </div>
+                                            </div>
+                                        </footer>
+                                    </div>
+                                    <div class="line line-dashed  line-lg pull-in" ng-style="app.settings.bbcolor"></div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-sm-12" >
+                                <div class="m-b m-t-sm">
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">管理笔记</h4>
+                                    <div class="line line-dashed b-b line-lg pull-in" ng-style="app.settings.bbcolor"></div>
+                                </div>
+                                <div class="panel panel-default m-t-md m-b-n-sm pos-rlt" ng-style="app.settings.bbcolor" >
+                                    <!--<span class="arrow top pull-left"></span>-->
+                                    <form ng-style="app.settings.Panelbg">
+                                        <textarea class="form-control no-border" rows="3" placeholder="Your comment..."ng-style="app.settings.input"></textarea>
+                                    </form>
+                                    <div class="panel-footer  lter" ng-style="app.settings.Panelbg" style="border-top: none;">
+                                        <button class="btn btn-info pull-right btn-sm" ng-style="app.settings.button">Comment</button>
+                                        <ul class="nav nav-pills nav-sm">
+                                            <li><a href><i class="fa fa-camera text-muted" ng-style="app.settings.fontColor"></i></a></li>
+                                            <li><a href><i class="fa fa-video-camera text-muted" ng-style="app.settings.fontColor"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-lg m-b-none" >
+                                    <li class="list-group-item" ng-repeat="c in comments" ng-style="app.settings.Panel">
+                                        <p  class="m-r" ng-style="app.settings.fontColor">
+                                            {{c.user}}  ：{{c.content}}
+                                        </p>
+                                        <span ng-style="app.settings.fontColor">{{c.date}}</span>
+                                        <a ng-style="app.settings.fontColor">删除</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </tab>
+                    <tab ng-click="tab2init()">
+                        <tab-heading  >
+                            经营分析
+                        </tab-heading>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">客流量统计</h4>
+                                    <span class=" block text-xs text-muted" ng-style="app.settings.fontColor">-</span>
+                                    <div class="chartHeight" id="theDayPassengerFlowID"  >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">租金与平效</h4>
+                                    <span class=" block text-xs text-muted" ng-style="app.settings.fontColor">2017年8月 - 2017年9月</span>
+                                    <div class="chartHeight" id="rentBenefitsID"  >
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+                                    <div class="btn-group pull-right">
+                                        <button type="button" class="btn btn-default btn-sm m-r" ng-style="app.settings.button">行业均值</button>
+                                        <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                                        <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                                        <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+                                    </div>
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">门店捕获率</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+                                    <div class="chartHeight"  id="storesTocaptureID">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+                                    <div class="btn-group pull-right">
+                                        <button type="button" class="btn btn-default btn-sm m-r" ng-style="app.settings.button">行业均值</button>
+                                        <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                                        <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                                        <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+                                    </div>
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">平均停留时长</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+                                    <div class="chartHeight" id="averageStayTimeID">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </tab>
+                    <tab ng-click="tab3init()">
+                        <tab-heading >
+                            顾客画像
+                        </tab-heading>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">性别</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="chartHeight"  id="genderID" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">年龄分布</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="chartHeight"  id="ageID" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">婚姻状况</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="chartHeight"  id="marriageID" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">收入水平</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="chartHeight"  id="incomeLevelID" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">文化水平</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="chartHeight"  id="culturalLevelID" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">消费水平</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="chartHeight"  id="consumptionLevelID" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">职业类型</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="shopChartHeight" id="professionalID"  >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">兴趣爱好</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="shopChartHeight" id="interestID" ></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">消费偏好</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">本周</span>
+                                    <div class="shopChartHeight" id="consumerPreferencesID" ></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel wrapper"  ng-style="app.settings.Panel">
+                                    <div class="btn-group pull-right">
+                                        <div class="inline m-r text-left">
+                                            <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析指标：</span></div>
+                                            <div class="sparkline inline">
+                                                <select class="form-control input-sm" ng-style="app.settings.select">
+                                                    <option>年龄段</option>
+                                                    <option>性别</option>
+                                                    <option>婚姻状况</option>
+                                                    <option>收入水平</option>
+                                                    <option>消费水平</option>
+                                                    <option>职业类型</option>
+                                                    <option>兴趣爱好</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="inline m-r text-left">
+                                            <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span></div>
+                                            <div class="sparkline inline">
+                                                <div class="btn-group ">
+                                                    <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">天</button>
+                                                    <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">周</button>
+                                                    <button type="button" class="btn btn-default btn-sm" ng-style="app.settings.button">月</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">按时段分析顾客构成</h4>
+                                    <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">2017.09.04 - 2017.09.10</span>
+                                    <div class="chartHeight"  id="customersAgeID" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+       </div>
+
+    </div>
+</div>

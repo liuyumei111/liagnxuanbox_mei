@@ -1,0 +1,209 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="RealEstateCtrl">
+    <!-- main -->
+    <div class="col">
+        <!-- main header -->
+        <div class=" lter b-b ">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <h1 class="m-n font-thin h3 text-black">会展监控</h1>
+                </div>
+                <div class="col-sm-6 text-right hidden-xs">
+                    <div class="inline m-r text-left">
+                        <div class="m-b-xs">
+                            1290
+                            <span class="text-muted">items</span>
+                        </div>
+                        <div ng-init="data1=[ 106,108,110,105,110,109,105,104,107,109,105,100,105,102,101,99,98 ]" ui-jq="sparkline" ui-options="{{data1}}, {type:'bar', height:20, barWidth:5, barSpacing:1, barColor:'#dce5ec'}" class="sparkline inline">
+                            loading...
+                        </div>
+                    </div>
+                    <div class="inline text-left">
+                        <div class="m-b-xs">
+                            $30,000
+                            <span class="text-muted">revenue</span>
+                        </div>
+                        <div ng-init="data2=[ 105,102,106,107,105,104,101,99,98,109,105,100,108,110,105,110,109 ]" ui-jq="sparkline" ui-options="{{data2}}, {type:'bar', height:20, barWidth:5, barSpacing:1, barColor:'#dce5ec'}" class="sparkline inline">
+                            loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / main header -->
+        <div class="wrapper-md">
+            <!-- stats -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row row-sm ">
+                        <div class="col-md-12 ly_sideBar">
+                            <div class="panel " style="border: none">
+                                <!--bg-light-->
+                                <div class="panel-heading wrapper ly_sideBarTop1">
+                                    <i class="fa fa-cubes facol " ></i>
+                                    <h4 class="ly_pFontsize m-t-none m-b-none ">来源省份分布</h4>
+                                </div>
+                                <div class="">
+                                    <div  id="districtmap3" class="test tableheght" style="width: 100%;">
+                                    </div>
+                                </div>
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="col-md-12 ly_sideBar">
+                            <div class="panel " style="border: none">
+                                <!--bg-light-->
+                                <div class="panel-heading wrapper ly_sideBarTop1">
+                                    <i class="fa fa-cubes facol " ></i>
+                                    <h4 class="ly_pFontsize m-t-none m-b-none ">监控人口行为性别</h4>
+                                </div>
+                                <div class="">
+                                    <div id="districtmap1" class="test " style="width: 100%;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ly_sideBar">
+                    <div class="panel " style="border: none">
+
+                        <div class="row bg-footer">
+                            <div class="col-sm-4 m-b-xs">
+                                <div class="panel-heading wrapper ">
+                                    <span class="ly_pmFontsize m-t-none m-b-none ">住宅板块人口数量</span>
+                                </div>
+                                <div class="ly_fullnum">
+                                    <span>12345000</span>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="panel-heading wrapper ">
+                                    <span class="ly_pmFontsize m-t-none m-b-none ">商业板块人口数量</span>
+                                </div>
+                                <div class="ly_fullnum">
+                                    <span>12345000</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="panel-heading wrapper ">
+                                    <span class="ly_pmFontsize m-t-none m-b-none ">长租人口数量</span>
+                                </div>
+                                <div class="ly_fullnum">
+                                    <span>12345000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-heading wrapper ly_sideBarTop1">
+                            <i class="fa fa-cubes facol " ></i>
+                            <h4 class="ly_pFontsize m-t-none m-b-none ">人口热力图</h4>
+                        </div>
+                        <div class="">
+                            <div id="districtmap5" class="test " style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row row-sm ">
+                        <div class="col-md-12 ly_sideBar">
+                            <div class="panel " style="border: none">
+                                <!--bg-light-->
+                                <div class="panel-heading wrapper ly_sideBarTop1">
+                                    <i class="fa fa-cubes facol " ></i>
+                                    <h4 class="ly_pFontsize m-t-none m-b-none ">消费能力Top10</h4>
+                                </div>
+                                <div class="">
+                                    <div id="districtmap6" class="test " style="width: 100%;">
+                                    </div>
+
+                                </div>
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="col-md-12 ly_sideBar">
+                            <div class="panel " style="border: none">
+                                <!--bg-light-->
+                                <div class="panel-heading wrapper ly_sideBarTop1">
+                                    <i class="fa fa-cubes facol " ></i>
+                                    <h4 class="ly_pFontsize m-t-none m-b-none ">板块价值Top10</h4>
+                                </div>
+                                <div class="">
+                                    <div id="districtmap7" class="test " style="width: 100%;">
+                                    </div>
+                                </div>
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / stats -->
+        </div>
+        <div class="wrapper-md">
+            <!-- stats -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row row-sm ">
+                        <div class="col-md-12 ly_sideBar">
+                            <div class="panel " style="border: none">
+                                <!--bg-light-->
+                                <div class="panel-heading wrapper ly_sideBarTop1">
+                                    <i class="fa fa-cubes facol " ></i>
+                                    <h4 class="ly_pFontsize m-t-none m-b-none ">监控人口行为年龄</h4>
+                                </div>
+                                <div class="">
+                                    <div id="districtmap8" class="test " style="width: 100%;">
+                                    </div>
+
+                                </div>
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ly_sideBar">
+                    <div class="panel " style="border: none">
+                        <!--bg-light-->
+                        <div class="panel-heading wrapper ly_sideBarTop1">
+                            <i class="fa fa-cubes facol " ></i>
+                            <h4 class="ly_pFontsize m-t-none m-b-none ">人口趋势变化</h4>
+                        </div>
+                        <div class="">
+                            <div id="districtmap2" class="test " style="width: 100%;">
+                            </div>
+
+                        </div>
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row row-sm ">
+                        <div class="col-md-12 ly_sideBar">
+                            <div class="panel " style="border: none">
+                                <!--bg-light-->
+                                <div class="panel-heading wrapper ly_sideBarTop1">
+                                    <i class="fa fa-cubes facol " ></i>
+                                    <h4 class="ly_pFontsize m-t-none m-b-none ">职住板块排名 Top10</h4>
+                                </div>
+                                <div class="">
+                                    <div id="districtmap" class="test " style="width: 100%;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / stats -->
+        </div>
+    </div>
+</div>
+<style>
+    .app-header-fixed {
+        padding-top: 0px;
+    }
+</style>

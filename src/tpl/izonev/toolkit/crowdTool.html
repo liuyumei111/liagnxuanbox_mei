@@ -1,0 +1,171 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="toolCrowdToolCtrl">
+    <div class="col">
+        <div class="bg-light lter b-b wrapper-md" ng-style="app.settings.bgLight" >
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <h1 class="m-n font-bold h3 text-black" ng-style="app.settings.fontColor">人群号码包</h1>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <div class="inline m-r text-left">
+                        <div class="m-b-xs inline">
+                            <input type="text" placeholder="号码包名称" class="form-control input-sm w inline m-r-lg" ng-model="toolName" ng-keyup="serch(toolName)">
+                            <a class="h3" ng-style="app.settings.fontColor" data-toggle="modal" data-target="#estateModal">
+                                <span class="btn btn-sm btn-sm-b btn-info" ng-style="app.settings.fontColor" ng-click="addCompeting()">创建人群号码包</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade estatemodal" id="estateModal" tabindex="-1" role="dialog" aria-labelledby="estateModalLabel" aria-hidden="true" >
+            <!--<div >-->
+            <div class="modal-dialog " style="width: 80%; margin: 10px auto;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" style="font-weight: bold;" id="estateModalLabel">
+                            创建人群号码包
+                        </h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <div class="wrapper col-sm-12 clearfix">
+                            <div class="col-sm-6 no-padder">
+                                <div class="clearfix" style="line-height: 30px;">
+                                    <span class="text-right col-lg-2 no-padder"><sup style="color:red; top: -.2em">*</sup>人群名称：</span>
+                                    <div class="col-lg-6 no-padder">
+                                        <input type="text" class="form-control input-sm" placeholder="最多不超过32个字符" ng-model="inpName">
+                                    </div>
+                                </div>
+                                <div class="clearfix m-t-sm m-b-sm">
+                                    <span class="text-right col-lg-2 no-padder">人群描述：</span>
+                                    <div class="col-lg-6 no-padder">
+                                        <textarea class="input-sm form-control " style="resize: none; height: 90px;" placeholder="最多不超过100个字符" ng-model="txtCon"></textarea>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <span class="text-right col-lg-2 no-padder"><sup style="color:red; top: -.2em">*</sup>上传文件：</span>
+                                    <div class="col-lg-8 wrapper-sm" style="background-color: #eee;">
+                                        <div class="clearfix">
+                                            <span class="col-md-3 no-padder">数据类型：</span>
+                                            <div class="col-md-6 no-padder">
+                                                <select name="" id="content" class="form-control input-sm inline" ng-model="select" ng-options="item.value as item.name for item in optionList" ng-change="linkage(select)">
+                                                    <option value="">--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="m-t-sm clearfix" ng-show="select=='phone'">
+                                            <span class="col-md-3 no-padder">示例格式：</span><span class="w-md ">17800502196</span>
+                                        </div>
+                                        <div class="m-t-sm clearfix" ng-show="if">
+                                            <span class="col-md-3 no-padder">加密格式：</span>
+                                            <div class="col-md-8 no-padder">
+                                                <select name="" id="format" class="form-control input-sm inline">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <input type="file" id="browse"  onchange="angular.element(this).scope().filechange(this)" style="display: none;">
+                                        <div class="m-t-sm col-md-10 no-padder">
+                                            <input type="text" disabled class="form-control input-sm inline no-border">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 no-padder">
+                                        <label for="browse" class="">
+                                            <span  class="btn btn-sm btn-sm-b bg-info r-3x w-xxs m-l-sm " style="color: #fff; padding: 3px 10px;">浏览</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-group col-sm-6 no-padder hidden-sm">
+                                <span>上传要求：</span>
+                                <ol style="padding: 0; list-style: none;">
+                                    <li ng-repeat="v in ask" ng-bind-html="v"></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="text-align: center;">
+                        <button type="button" class="btn btn-sm btn-sm-b bg-info" data-dismiss="modal" style="color: #fff;" ng-click="create()" ng-disabled="disab">创建
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal" ng-click="close()">关闭
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="wrapper-md" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class=" m-t-none  text-muted" ng-style="app.settings.fontColor">共找到{{traffictotalRow}}个号码包：</h4>
+                        <div class="shopChartHeight table-responsive" >
+                            <table class="table  table-bordered m-b-none text-center {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
+                                <thead>
+                                <tr>
+                                    <th class="NNewline text-center">审核状态</th>
+                                    <th class="NNewline text-center">号码包名称</th>
+                                    <th class="NNewline text-center">人群描述</th>
+                                    <th class="NNewline text-center">记录类型</th>
+                                    <th class="NNewline text-center">记录条数</th>
+                                    <th class="NNewline text-center">不符合规范记录</th>
+                                    <th class="NNewline text-center">已匹配人数</th>
+                                    <th class="NNewline text-center">匹配率</th>
+                                    <th class="NNewline text-center">创建者</th>
+                                    <th class="NNewline text-center">操  作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="t in traffic">
+                                    <td class="tableHeight NNewline" style="{{(t.taskState==4||t.taskState==9)?'color: #f05050;':''}}">
+                                        {{state[t.taskState]}}
+                                    </td>
+                                    <td class="tableHeight NNewline">{{t.name}}</td>
+                                    <td class="tableHeight NNewline text-left" style="color:#999999;">{{t.peopleDisc}}</td>
+                                    <td class="tableHeight NNewline">{{t.dataType}}</td>
+                                    <td class="tableHeight NNewline">{{t.peopleNum | number}}</td>
+                                    <td class="tableHeight NNewline" style="color: #f05050;">{{t.errorNum==0?null:t.errorNum | number}}</td>
+                                    <td class="tableHeight NNewline">{{t.peopleMatch | number}}</td>
+                                    <td class="tableHeight NNewline">{{t.peopleMatchRatio}}</td>
+                                    <td class=" NNewline">
+                                        {{t.contacter}} <br>
+                                        {{t.date}}
+                                    </td>
+                                    <td class="tableHeight NNewline">
+                                        <!--<a ui-sref="izone.basicPortraitTob({filename:t.fileName,username:t.userName,type:'crowd_tool'})"><i class=" icon-users"></i></a>-->
+                                        <!--<i class=" fa fa-trash-o " ng-click="delete(t.id)"></i>-->
+                                        <a ui-sref="fulls.basicPortraitToc({filename:t.id,project_id:t.project_id,type:'people_portrayal'})" class="{{t.taskState==6?'':'displayhide'}}">人群画像</a>
+                                        <a ng-click="audit(t.id)" class="{{(t.taskState==1||t.taskState==4)?'':'displayhide'}} ">提交审核</a>
+                                        <a ng-click="delete(t.id)" class="{{(t.taskState==2||t.taskState==5)?'displayhide':''}}">删除</a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+                            <div class="col-sm-12 m-t-xxl {{traffictotalPage==1?'displayhide':''}}"  >
+                                <div class="col-sm-4 hidden-xs"></div>
+                                <div class="col-sm-4 text-center">
+                                    <small class="text-muted inline m-t-sm m-b-sm">共{{traffictotalPage}}页 {{traffictotalRow}}条数据 当前页{{trafficcpage}}</small>
+                                </div>
+                                <div class="col-sm-4 text-right text-center-xs">
+                                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                                        <li ng-class="{true:'disabled'}[trafficstart==0]"><a  href="javascript:void(0);" ng-click="trafficgopage(trafficcpage-1)">上一页</a></li>
+
+                                        <li ng-class="{true:'disabled'}[trafficcpage==traffictotalPage]"><a  href="javascript:void(0);" ng-click="trafficgopage(trafficcpage+1)">下一页</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>号码包，是指需要分析的人群的手机号、设备号的集合。创建号码包后，常见的使用场景有：分析该人群的行为与画像、以该人群为种子进行相似客户扩展。</div>
+                        <div>由于号码包运算占用服务器资源，上传后请提交审核，审核完成后将开始匹配并画像。</div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

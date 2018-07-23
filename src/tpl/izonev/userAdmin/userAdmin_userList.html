@@ -1,0 +1,113 @@
+<div ng-controller="uuserlistCtrl" class="userList-box">
+    <!--账号列表层-->
+    <div class="modify-box" ng-repeat="item in userManageDataS">
+        <div class="col-sm-2">
+            <div class="panel b-a border-radius-6">
+                <div class="panel-heading bg-info dk no-border wrapper-lg"></div>
+                <div class="text-center m-b clearfix">
+                    <div class="thumb-lg avatar m-t-n-xxl">
+                        <img src="img/a5.jpg" alt="..." class="b b-3x b-white">
+                        <div class="h4 font-thin m-t-sm over-hide">{{item.username}}</div>
+                    </div>
+                </div>
+                <div class="hbox text-center b-t b-light">
+                    <a href class="col padder-v text-muted b-r b-light" ng-click="userEdit(item.user_id)">编辑</a>
+                    <a href class="col padder-v text-muted" ng-click="userRemove(item.username)">删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改层-->
+    <div class="panel-body">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">用户名</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" placeholder="" disabled value="{{panelData.username}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">创建时间</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" placeholder="" disabled value="{{panelData.createtime}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">所属公司</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="" value="{{panelData.company}}" id="m_company">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">修改密码</label>
+            <div class="col-lg-10 bitian-box">
+                <span>必填</span>
+                <input type="text" class="form-control" placeholder="" value="{{panelData.password}}" id="m_password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">手机号</label>
+            <div class="col-lg-10 bitian-box">
+                <span>必填</span>
+                <input type="text" class="form-control" placeholder="" value="{{panelData.phone}}" id="m_tpl">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">邮箱</label>
+            <div class="col-lg-10 bitian-box">
+                <span>必填</span>
+                <input type="text" class="form-control" placeholder="" value="{{panelData.email}}" id="m_email">
+            </div>
+        </div>
+    </div>
+    <!--标题-->
+    <h3 class="m-n font-thin h3 userList-title">用户信息管理</h3>
+</div>
+
+<style>
+    .userList-box {
+        padding: 100px 20px 0 10px;
+        position: relative;
+    }
+
+    input {
+        margin-bottom: 24px;
+    }
+
+    .control-label {
+        line-height: 32px;
+        width: 100px;
+    }
+
+    .panel-body {
+        width: 860px;
+        margin: 0 auto;
+        display: none;
+        position: relative;
+    }
+
+    .over-hide {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+    .bitian-box{
+        position: relative;
+    }
+    .bitian-box span{
+        position: absolute;
+        top: 10px;
+        right: -8px;
+        font-size: 10px;
+        color: red;
+    }
+    .userList-title{
+        position: absolute;
+        top: 20px;
+        left: 8px;
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+    }
+</style>

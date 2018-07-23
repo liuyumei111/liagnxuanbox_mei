@@ -1,0 +1,79 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="cCustomerValueCtrl">
+    <div class="col">
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="{{appdisplay?'col-md-4':'col-md-3'}}">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">月收入水平</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="incomeLevelID"></div>
+                    </div>
+                </div>
+                <div class="{{appdisplay?'col-md-4':'col-md-3'}}">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">月消费水平</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="consumptionLevelID"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 " ng-class="{'displayhide':appdisplay}">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">是否有房</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="isHaveRoomID"></div>
+                    </div>
+                </div>
+                <div class="{{appdisplay?'col-md-4':'col-md-3'}}">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">是否有车</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="isHaveCarID"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" ng-class="{'displayhide':appdisplay}">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">家庭年收入水平</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="householdIncomeLevelID"></div>
+                    </div>
+                </div>
+                <div class="{{appdisplay?'col-md-12':'col-md-6'}}">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">所在企业类型</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="enterpriseTypeID"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">车辆品牌</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="vehicleBrandID"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">手机品牌</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="phoneBrandID"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel wrapper" ng-style="app.settings.Panel">
+                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">手机型号</h4>
+                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{proDate}}</span>
+                        <div class="chartHeight" id="phoneModelsID"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,144 @@
+<div ng-controller="adminHomeCtrl">
+    <!--公共头部-->
+    <div data-ng-include=" 'tpl/izonev/blocks/header-home.html' "></div>
+    <!--左侧导航-->
+    <div class="app-aside hidden-xs {{app.settings.asideColor}}" style="margin-top: 20px">
+        <nav ui-nav class="navi">
+            <!-- list -->
+            <ul class="nav">
+                <li class="hidden-folded padder m-t m-b-sm text-muted text-xs" style="margin: 20px 0">
+                    <span></span>
+                </li>
+                <!--实时分析-->
+                <li class="line dk"></li>
+                <li ui-sref-active="active">
+                    <a href="javascript:;">
+                        <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+                        <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+                        <span class="font-bold">账号信息</span>
+                    </a>
+                </li>
+                <!--用户管理-->
+                <li class="line dk"></li>
+                <li>
+                    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+                        <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+                        <i class="glyphicon glyphicon-th-large icon text-success"></i>
+                        <span class="font-bold">用户管理</span>
+                    </a>
+                    <ul class="nav nav-sub dk">
+                        <li class="nav-sub-header">
+                            <a href>
+                                <span translate="aside.nav.DASHBOARD">Dashboard</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a>
+                                <span>用户信息管理</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a>
+                                <span>用户项目管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--项目管理-->
+                <li class="line dk"></li>
+                <li>
+                    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+                        <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+                        <i class="glyphicon glyphicon-th-large icon text-success"></i>
+                        <span class="font-bold">项目管理</span>
+                    </a>
+                    <ul class="nav nav-sub dk">
+                        <li class="nav-sub-header">
+                            <a href>
+                                <span translate="aside.nav.DASHBOARD">Dashboard</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a>
+                                <span>项目权限管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span>项目信息管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- / list -->
+        </nav>
+    </div>
+    <!--右侧内容-->
+    <div style="margin-left: 200px;width: 100%;">
+        <div class="wrapper-lg bg-white-opacity">
+            <div class="col-sm-7" style="margin-bottom: 20px;">
+                <a href class="thumb-lg pull-left m-r">
+                    <img src="img/a0.jpg" class="img-circle">
+                </a>
+                <div class="clear m-b">
+                    <div class="m-b m-t-sm">
+                        <span class="h3 text-black">liangxuan</span>
+                        <small class="m-l">中国,北京</small>
+                    </div>
+                    <a href class="btn btn-sm btn-success btn-rounded">管理员</a>
+                </div>
+            </div>
+            <div class="panel-body" style="width: 40%;">
+                <form class="bs-example">
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">用户名</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" placeholder="liangxuan" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">所属公司</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" placeholder="良轩" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">创建时间</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" placeholder="2018.5.4" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">手机号</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" placeholder="13121487675" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">邮箱</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" placeholder="13121487675@qq.com" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<style>
+    input{
+        margin-bottom: 14px;
+    }
+</style>

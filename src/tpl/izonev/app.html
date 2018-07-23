@@ -1,0 +1,15 @@
+  <!-- navbar -->
+  <div data-ng-include=" 'tpl/izonev/blocks/header.html' " class="app-header navbar">
+  </div>
+  <!-- / navbar -->
+
+  <!-- content -->
+  <div class="app-content">
+    <div ui-butterbar></div>
+    <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside" ></a>
+    <div class="app-content-body " ui-view ng-style="app.settings.contentBody"></div>
+    <!--ng-style="app.settings.contentBody"-->
+  </div>
+  <!-- /content -->
+  <div data-ng-include=" 'tpl/izonev/blocks/footer.html' " >
+  </div>
