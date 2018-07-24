@@ -15,29 +15,29 @@ app
         //请求总体分析--权限接口
         $http({
             method: 'GET',
-            url: USP_SERVER_ROOT1 + 'project/module' + '?project_id=' + projectId ,
+            url: USP_SERVER_ROOT1 + 'project/module' + '?project_id=' + projectId,
         }).success(function (data, status, headers) {
-            $scope.menuSecondaryRes=data.overall;
+            $scope.menuSecondaryRes = data.overall;
             console.log($scope.menuSecondaryRes)
-           /* $scope.menuSecondaryRes = [
+            /* $scope.menuSecondaryRes = [
 
-                {
-                    "menuName": "客流统计",
-                    "url": "overall.statistical"
-                },
-                {
-                    "menuName": "客流行为 ",
-                    "url": "overall.behavior"
-                },
-                {
-                    "menuName": "客流来源 ",
-                    "url": "overall.source"
-                },
-                {
-                    "menuName": "客流特征 ",
-                    "url": "overall.characteristicsToc"
-                }
-            ];*/
+                 {
+                     "menuName": "客流统计",
+                     "url": "overall.statistical"
+                 },
+                 {
+                     "menuName": "客流行为 ",
+                     "url": "overall.behavior"
+                 },
+                 {
+                     "menuName": "客流来源 ",
+                     "url": "overall.source"
+                 },
+                 {
+                     "menuName": "客流特征 ",
+                     "url": "overall.characteristicsToc"
+                 }
+             ];*/
 
         })
             .error(function (data, status, headers) {
@@ -90,7 +90,8 @@ app
                     }
                     $scope.m_project_name = res.data[0].project_name
                     // console.log(res.data[0].pid)
-                    sessionStorage.setItem("pid", res.data[0].pid)
+                    // sessionStorage.setItem("pid", res.data[0].pid)
+                    // console.log(res.data[0].pid)
                 }).error(function (data) {
 
                 });
@@ -115,7 +116,7 @@ app
             $scope.defaultendtime = $scope.endtime;
 
             $scope.timeName = $scope.defaultmktime + ' - ' + $scope.defaultendtime
-            console.log("第二次"+$scope.timeName)
+            console.log("第二次" + $scope.timeName)
 
             $scope.app.exhibition.startDate = new Date($scope.defaultmktime).format("yyyyMMdd");
             $scope.app.exhibition.endDate = agodate;
@@ -145,7 +146,7 @@ app
             $scope.defaultendtime = $scope.endtime;
 
             $scope.timeName = $scope.defaultmktime + ' - ' + $scope.defaultendtime;
-            console.log("第三次"+$scope.timeName)
+            console.log("第三次" + $scope.timeName)
 
             $scope.app.exhibition.startDate = new Date($scope.defaultmktime).format("yyyyMMdd");
             $scope.app.exhibition.endDate = new Date($scope.defaultendtime).format("yyyyMMdd");
@@ -162,7 +163,7 @@ app
                 $scope.app.exhibition.startDate = value.split(" - ")[0].split("-").join("");
                 $scope.app.exhibition.endDate = value.split(" - ")[1].split("-").join("");
                 $scope.timeName = value;
-                console.log("第一次"+$scope.timeName)
+                console.log("第一次" + $scope.timeName)
                 $scope.$apply();
 
                 // console.log(value);
@@ -184,10 +185,10 @@ app
             return val;
         };
 
-        $scope.nav600 = function() {
+        $scope.nav600 = function () {
             $('.m_app-left').show()
         };
-        $scope.navHide600 = function() {
+        $scope.navHide600 = function () {
             $('.m_app-left').hide()
         };
 

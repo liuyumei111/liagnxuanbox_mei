@@ -13,6 +13,7 @@ app.controller('ocharacteristicsTocCtrl', ['$scope', '$http', '$state', '$q', '$
     $scope.loading = true;
     $scope.dataToken = sessionStorage.getItem("dataToken");
     $scope.pid = window.sessionStorage.getItem("pid");
+    console.log($scope.pid)
     $scope.projectId = window.sessionStorage.getItem("projectId");
     $scope.alllabel = [];
 
@@ -183,7 +184,7 @@ app.controller('ocharacteristicsTocCtrl', ['$scope', '$http', '$state', '$q', '$
             $scope.loading = true;
             var deferred = $q.defer();
             $scope.alllabel = [];
-            console.log($scope.app.fullUrl)
+            // console.log($scope.app.fullUrl)
             $http({
                 method: 'get',
                 // url: $scope.app.fullUrl + "/manage/findChartData",
@@ -192,7 +193,7 @@ app.controller('ocharacteristicsTocCtrl', ['$scope', '$http', '$state', '$q', '$
                 withCredentials: true
             }).success(function (res) {
                 $scope.chartRes = res.data;
-                console.log($scope.chartRes);
+                // console.log($scope.chartRes);
                 // $scope.chartRes=$filter("orderBy")($scope.chartRes,"order_by",false);
                 var d1 = [];
                 var d2 = [];

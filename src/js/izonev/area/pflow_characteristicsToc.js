@@ -13,6 +13,9 @@ app.controller('acharacteristicsTocCtrl', ['$scope', '$http', '$state', '$q', '$
     $scope.app.exhibition.pavilion_id=$stateParams.pavilion_id;
     $scope.app.exhibition.pavilion_idPlus=$stateParams.pavilion_idPlus;
 
+    $scope.projectId=sessionStorage.getItem('projectId')
+    // console.log($scope.projectId)
+
     $scope.dataToken = sessionStorage.getItem("dataToken");
     $scope.pid=window.sessionStorage.getItem("pid");
     if(window.sessionStorage.getItem("ProjectName")=="zhejiangsh"){
@@ -1145,7 +1148,34 @@ app.controller('acharacteristicsTocCtrl', ['$scope', '$http', '$state', '$q', '$
             $scope.moreChart = 1;
             mainhttp.funfindChartData().then(function () {
                 if ($scope.alllabel.length != 0) {
-                    init();
+                    //客流特征--权限接口
+                    var featureList = [];
+                    $http({
+                        method: 'GET',
+                        url: USP_SERVER_ROOT1 + 'project/module/areafeature' + '?proId=' + $scope.projectId,
+                    }).success(function (data, status, headers) {
+                        for (var i = 0; i < data.feature.length; i++) {
+                            // featureList.push(data.feature[i].module_name)
+                            if (data.feature[i].three_level == '') {
+                                continue;
+                            } else {
+                                featureList.push(data.feature[i].three_level)
+                            }
+                        }
+                        var obj = featureList.map(function (item) {
+                            return $scope.alllabel.find(function (tem) {
+                                return item === tem["chartype"] ? tem : ""
+                            });
+                        });
+                        // console.log(obj);
+                        //重新赋值$scope.alllabel，经过筛差数据
+                        $scope.alllabel = obj;
+                        //初始化图表数据
+                        init();
+                    })
+                        .error(function (data, status, headers) {
+                            $scope.authError = data.message;
+                        });
                 }
             });
         // }else{

@@ -7,32 +7,43 @@ app
         $scope.endtime = window.sessionStorage.getItem("endtime");
 
         var projectId = window.sessionStorage.getItem("projectId");
+        //区域id
         $scope.app.exhibition.pavilion_id = $stateParams.pavilion_id;
         $scope.app.exhibition.pavilion_idPlus = $stateParams.pavilion_idPlus;
-       /* //存一份到sessionStorage
-        localStorage.setItem("aid", $scope.app.exhibition.pavilion_idPlus);
-        if($scope.app.exhibition.pavilion_id=='undefined'){
-            $scope.app.exhibition.pavilion_idPlus=localStorage.getItem('aid')
-        }*/
-        $scope.menuSecondaryRes = [
 
-            {
-                "menuName": "客流统计",
-                "url": "area.astatistical"
-            },
-            {
-                "menuName": "客流行为 ",
-                "url": "area.abehavior"
-            },
-            {
-                "menuName": "客流来源 ",
-                "url": "area.asource"
-            },
-            {
-                "menuName": "客流特征 ",
-                "url": "area.acharacteristicsToc"
-            }
-        ];
+        /*    $scope.menuSecondaryRes = [
+
+                {
+                    "menuName": "客流统计",
+                    "url": "area.astatistical"
+                },
+                {
+                    "menuName": "客流行为 ",
+                    "url": "area.abehavior"
+                },
+                {
+                    "menuName": "客流来源 ",
+                    "url": "area.asource"
+                },
+                {
+                    "menuName": "客流特征 ",
+                    "url": "area.acharacteristicsToc"
+                }
+            ];*/
+
+        //请求区域分析--权限接口
+        $http({
+            method: 'GET',
+            url: USP_SERVER_ROOT1 + 'project/areaModule' + '?project_id=' + projectId,
+        }).success(function (data, status, headers) {
+            $scope.menuSecondaryRes = data.overall;
+            // console.log($scope.menuSecondaryRes)
+        })
+            .error(function (data, status, headers) {
+                $scope.authError = data.message;
+                console.log($scope.authError)
+            });
+
 
         var thttp = {
             serch: function () {
@@ -188,6 +199,7 @@ app
                 // console.log(value);
             }
         });
+
         function addDate(date, days) {
             var d = new Date(date);
             d.setDate(d.getDate() + days);
@@ -203,10 +215,10 @@ app
             return val;
         }
 
-        $scope.nav600 = function() {
+        $scope.nav600 = function () {
             $('.m_app-left').show()
         };
-        $scope.navHide600 = function() {
+        $scope.navHide600 = function () {
             $('.m_app-left').hide()
         };
 

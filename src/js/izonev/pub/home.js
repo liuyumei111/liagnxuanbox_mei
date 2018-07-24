@@ -238,6 +238,7 @@ app
             }
             // sessionStorage.setItem("city", pro.city);
             sessionStorage.setItem("pid", pro.pid);
+            console.log(pro.pid)
             sessionStorage.setItem("key", pro.key);
             sessionStorage.setItem("projectId", pro.project_id);
             sessionStorage.setItem("project_name", pro.project_name);

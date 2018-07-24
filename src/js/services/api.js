@@ -7,8 +7,8 @@
 var USP_SERVER_ROOT = 'api/login';
 //正式
 // var USP_SERVER_ROOT1 = 'http://54.223.30.252:8080/lx_box_pro/v1/';
-// var USP_SERVER_ROOT1 = 'http://192.168.1.116:8080/lx_box_pro/v1/';
-var USP_SERVER_ROOT1 = 'http://214a3s8745.iok.la:22403/lx_box_pro/v1/';
+var USP_SERVER_ROOT1 = 'http://192.168.1.116:8080/lx_box_pro/v1/';
+// var USP_SERVER_ROOT1 = 'http://214a3s8745.iok.la:22403/lx_box_pro/v1/';
 //用户管理正式
 // var admin_ROOT = 'http://54.223.30.252:8080/lx_box_pro/v1/';
 //测试

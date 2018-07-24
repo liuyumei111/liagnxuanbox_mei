@@ -73,8 +73,8 @@
                             </a>
                           </li>
                           <li ui-sref-active="active" ng-repeat="menu in menuSecondaryRes">
-                            <a ui-sref="{{menu.url}}({pavilion_id:app.exhibition.pavilion_id,pavilion_idPlus:app.exhibition.pavilion_idPlus})">
-                              <span>{{menu.menuName}}</span>
+                            <a ui-sref="{{menu.url?menu.url:false}}({pavilion_id:app.exhibition.pavilion_id,pavilion_idPlus:app.exhibition.pavilion_idPlus})">
+                              <span>{{menu.two_level}}</span>
                             </a>
                           </li>
                         </ul>
