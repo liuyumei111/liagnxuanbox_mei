@@ -1,5 +1,5 @@
 <div ng-controller="umoduleCtrl" class="userPro-box">
-    <!--标题-->
+    <!--标题11-->
     <h3 class="m-n font-thin h3 userList-title">项目模块管理</h3>
     <form class="navbar-form navbar-form-sm navbar-left shift m_margin20 search-box">
         <!--搜索框-->
@@ -35,8 +35,8 @@
                         <span class="proBtn" ng-click="moduleDel(item.project_id)">删除</span>
                     </td>
                     <td ng-show="userRName!=='liangxuan'">
-                        <span class="proBtn">增加</span>
-                        <span class="proBtn">删除</span>
+                        <span class="proBtn" ng-click="identity()">增加</span>
+                        <span class="proBtn" ng-click="identity()">删除</span>
                     </td>
                 </tr>
                 </tbody>

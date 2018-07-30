@@ -6,6 +6,7 @@ app
         $scope.mktime = window.sessionStorage.getItem('mktime');
         $scope.endtime = window.sessionStorage.getItem("endtime");
 
+
         $scope.app.exhibition.dataflag = false;
         $scope.app.exhibition.dataflag2 = false;
 
@@ -152,6 +153,8 @@ app
             $scope.app.exhibition.endDate = new Date($scope.defaultendtime).format("yyyyMMdd");
         }
 
+        console.log($scope.mktime)
+        console.log($scope.endtime)
         laydate.render({
             elem: '#plustest', //指定元素
             value: $scope.defaultmktime + ' - ' + $scope.defaultendtime,

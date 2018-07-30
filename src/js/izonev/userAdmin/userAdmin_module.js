@@ -45,7 +45,7 @@ app
                             });
                         }
                         $('.moduleMask').show();
-                        var setting = {
+                        $scope.setting = {
                             //check属性放在data属性之后，复选框不起作用
                             check: {
                                 //是否显示多选框
@@ -66,25 +66,25 @@ app
                                 }*/
                             }
                         };
-                        let datas =data.list;
-                        let jsonToNavList = function (json) {
+                        var datas =data.list;
+                        var jsonToNavList = function (json) {
                             //找出所有一级菜单
-                            let navOnes = init(["pro_level"]);
+                            var navOnes = init(["pro_level"]);
                             //找出所有二级菜单
-                            let navTwos = init(["pro_level", "two_level"]);
+                            var navTwos = init(["pro_level", "two_level"]);
                             //找出所有三级菜单
-                            let newTrees = json;
+                            var newTrees = json;
 
                             //三级菜单归类到二级菜单中
-                            newTrees.map(c => {
-                                navTwos.map(b => {
+                            newTrees.map(function(c) {
+                                navTwos.map(function(b){
                                     if (c.pro_level == b.pro_level && c.two_level == b.two_level && c.three_level)
                                         b.children.push(c)
                                 })
                             })
                             // 二级菜单归类到一级菜单中
-                            navTwos.map(b => {
-                                navOnes.map(a => {
+                            navTwos.map(function(b) {
+                                navOnes.map(function(a) {
                                     if (b.pro_level == a.pro_level && b.two_level)
                                         a.children.push(b)
                                 })
@@ -95,11 +95,11 @@ app
                              * @param {String} keys 属性值数组
                              */
                             function init(keys) {
-                                let newList = [], _tmp = [];
-                                for (let i = 0; i < json.length; i++) {
-                                    let item = { ...json[i] };
-                                    let keyVal = "";
-                                    for (let j = 0; j < keys.length; j++) keyVal += item[keys[j]];
+                                var newList = [], _tmp = [];
+                                for (var i = 0; i < json.length; i++) {
+                                    var item = JSON.parse(JSON.stringify(json[i]));
+                                    var keyVal = "";
+                                    for (var j = 0; j < keys.length; j++) keyVal += item[keys[j]];
 
                                     if (keys.length == 1) //获取一级跳过二、三级
                                         if (item.three_level || item.two_level) continue;
@@ -115,9 +115,9 @@ app
                                 return newList;
                             }
                             return navOnes;
-                        }
+                        };
                         // console.log(jsonToNavList(datas))
-                        $.fn.zTree.init($("#tree"), setting, jsonToNavList(datas));
+                        $.fn.zTree.init($("#tree"), $scope.setting, jsonToNavList(datas));
                         // console.log(jsonToNavList(datas))
                         var treeObj = $.fn.zTree.getZTreeObj("tree");
                         treeObj.expandAll(true);
@@ -126,9 +126,8 @@ app
                             title: '提示~'
                             ,content: '没有项目模块可以增加'
                         });
-                        setTimeout(function () {
-                            // $state.go('userAdmin.module');
-                        },1000)
+                        console.log('没有项目模块可以增加400')
+                        $.fn.zTree.init($("#tree"), $scope.setting,'');
                     }
                 })
                     .error(function (data, status, headers) {
@@ -154,8 +153,7 @@ app
                         }
                         //把后台返回的一维数组处理成二维数组
                         $('.moduleMask').show();
-
-                        var setting = {
+                        $scope.setting1 = {
                             //check属性放在data属性之后，复选框不起作用
                             check: {
                                 //是否显示多选框
@@ -176,25 +174,25 @@ app
                                  }*/
                             }
                         };
-                        let datas =data.list;
-                        let jsonToNavList = function (json) {
+                        var datas =data.list;
+                        var jsonToNavList = function (json) {
                             //找出所有一级菜单
-                            let navOnes = init(["pro_level"]);
+                            var navOnes = init(["pro_level"]);
                             //找出所有二级菜单
-                            let navTwos = init(["pro_level", "two_level"]);
+                            var navTwos = init(["pro_level", "two_level"]);
                             //找出所有三级菜单
-                            let newTrees = json;
+                            var newTrees = json;
 
                             //三级菜单归类到二级菜单中
-                            newTrees.map(c => {
-                                navTwos.map(b => {
+                            newTrees.map(function(c) {
+                                navTwos.map(function(b){
                                     if (c.pro_level == b.pro_level && c.two_level == b.two_level && c.three_level)
                                         b.children.push(c)
                                 })
                             })
                             //二级菜单归类到一级菜单中
-                            navTwos.map(b => {
-                                navOnes.map(a => {
+                            navTwos.map(function(b){
+                                navOnes.map(function(a){
                                     if (b.pro_level == a.pro_level && b.two_level)
                                         a.children.push(b)
                                 })
@@ -205,11 +203,11 @@ app
                              * @param {String} keys 属性值数组
                              */
                             function init(keys) {
-                                let newList = [], _tmp = [];
-                                for (let i = 0; i < json.length; i++) {
-                                    let item = { ...json[i] };
-                                    let keyVal = "";
-                                    for (let j = 0; j < keys.length; j++) keyVal += item[keys[j]];
+                                var newList = [], _tmp = [];
+                                for (var i = 0; i < json.length; i++) {
+                                    var item = JSON.parse(JSON.stringify(json[i]));
+                                    var keyVal = "";
+                                    for (var j = 0; j < keys.length; j++) keyVal += item[keys[j]];
 
                                     if (keys.length == 1) //获取一级跳过二、三级
                                         if (item.three_level && item.two_level) continue;
@@ -226,7 +224,7 @@ app
                             }
                             return navOnes;
                         }
-                        $.fn.zTree.init($("#tree"), setting, jsonToNavList(datas));
+                        $.fn.zTree.init($("#tree"), $scope.setting1, jsonToNavList(datas));
                         // console.log(jsonToNavList(datas))
                         var treeObj = $.fn.zTree.getZTreeObj("tree");
                         treeObj.expandAll(true);
@@ -236,9 +234,7 @@ app
                             title: '提示~'
                             ,content: '没有项目模块可以删除'
                         });
-                        setTimeout(function () {
-                            $state.go('userAdmin.module');
-                        },1000)
+                        $.fn.zTree.init($("#tree"), $scope.setting1,'');
                     }
                 })
                     .error(function (data, status, headers) {
@@ -321,7 +317,9 @@ app
                     // console.log(module_id);
                     mainHttp.projectManageAjax(operation_type,project_type,project_Id,module_id,module_name)
                 },
-                btn2: function(){}
+                btn2: function(){
+                    // window.location.reload()
+                }
             });
             return;
         };
@@ -359,7 +357,9 @@ app
                         // console.log(module_id)
                         mainHttp.projectManageAjax(operation_type,project_type,project_Id,module_id,module_name)
                 },
-                btn2: function(){}
+                btn2: function(){
+                    // window.location.reload()
+                }
             });
         };
         //搜索
@@ -374,6 +374,12 @@ app
                 mainHttp.searchAjax($scope.searchInput)
             }
         };
+
+        //普通用户点击提示无权限
+        $scope.identity=function(){
+            layer.msg('暂无权限，请联系管理员');
+        };
+
         //input没有值的时候显示默认数据
         $('#searchInput').bind('input oninput', function () {
             if ($(this).val() == '') {

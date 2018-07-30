@@ -31,6 +31,7 @@
                         <tr>
                             <th>用户名</th>
                             <th>公司</th>
+                            <th>项目数</th>
                             <th>操作</th>
                         </tr> 
                     </thead>
@@ -38,6 +39,7 @@
                         <tr ng-repeat="item in userManageDataS">
                             <td>{{item.username}}</td>
                             <td>{{item.company}}</td>
+                            <td>{{item.numproject}}</td>
                             <td>
                                 <span class="proBtn" ng-click="addProBtn(item.username,item.user_id)">增加</span>
                                 <span class="proBtn" ng-click="remProBtn(item.username,item.user_id)">删除</span>

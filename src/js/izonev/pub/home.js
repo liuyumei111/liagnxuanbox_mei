@@ -140,6 +140,7 @@ app
                     $scope.loading = false;
                     $('.pagination').show()
                     $scope.projectS = data.project_list.list;
+                    console.log($scope.projectS)
 
                     //分页渲染
                     var totalPage = data.project_list.totalPage
@@ -197,6 +198,7 @@ app
                     url: USP_SERVER_ROOT1 + 'manage/search' + '?username=' + $scope.userRName + "&project_name=" + $scope.searchInput,
                 }).success(function (data, status, headers) {
                     $scope.projectS = data.sucess
+                    console.log($scope.projectS)
                     $('.pagination').hide()
                     if (data.searchFail == 'No match found!') {
                         $('.m_none').show()
@@ -237,8 +239,8 @@ app
                 sessionStorage.setItem("endtime", pro.accredit_end_time);
             }
             // sessionStorage.setItem("city", pro.city);
-            sessionStorage.setItem("pid", pro.pid);
-            console.log(pro.pid)
+            //极光数据源更改了请求参数值 sessionStorage.setItem("pid", pro.pid)  直接改成了 sessionStorage.setItem("pid", pro.project_id);
+            sessionStorage.setItem("pid", pro.project_id);
             sessionStorage.setItem("key", pro.key);
             sessionStorage.setItem("projectId", pro.project_id);
             sessionStorage.setItem("project_name", pro.project_name);

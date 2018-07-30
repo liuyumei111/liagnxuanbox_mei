@@ -5,23 +5,16 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 var USP_SERVER_ROOT = 'api/login';
-//正式
-// var USP_SERVER_ROOT1 = 'http://54.223.30.252:8080/lx_box_pro/v1/';
-var USP_SERVER_ROOT1 = 'http://192.168.1.116:8080/lx_box_pro/v1/';
-// var USP_SERVER_ROOT1 = 'http://214a3s8745.iok.la:22403/lx_box_pro/v1/';
-//用户管理正式
-// var admin_ROOT = 'http://54.223.30.252:8080/lx_box_pro/v1/';
-//测试
-var admin_ROOT = 'http://192.168.1.116:8080/lx_box_pro/v1/';
-// var admin_ROOT = 'http://214a3s8745.iok.la:22403/lx_box_pro/v1/';
-// var admin_ROOT = 'http://52.80.137.218:8080/lx_box_pro/v1/';
-//测试
-// var USP_SERVER_ROOT1 = 'http://192.168.1.177:8080/lx_box_pro/v1/';
-//水街
-// var USP_SERVER_ROOT1 = 'http://192.168.0.105:8080/lx_box_pro/v1/';
 
-//测试
-// var API_FORMAL="http://183.232.42.231:8088/jdi-api/v1/manage";
+// 测试    前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
+var USP_SERVER_ROOT1 = 'http://192.168.1.116:8080/lx_box_pro/v1/';
+var admin_ROOT = 'http://192.168.1.116:8080/lx_box_pro/v1/';
+
+//正式     前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
+// var USP_SERVER_ROOT1 = 'http://54.223.30.252:8080/lx_box_pro/v1/';
+// var admin_ROOT = 'http://54.223.30.252:8080/lx_box_pro/v1/';
+
+
 //正式
 var API_FORMAL="https://api-jdi.jiguang.cn/v1/manage";
 var token = localStorage.getItem("access_token");

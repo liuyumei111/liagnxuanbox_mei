@@ -11,6 +11,13 @@ app
         $scope.stateNum = "NA";
         $scope.loading = true;
 
+        if($scope.userRName=='liangxuan'){
+            $scope.identity='管理员'
+        }else {
+            $scope.identity='普通用户'
+        }
+
+
         var mainHttp = {
             userinfoAjax: function () {
                 var userName = localStorage.getItem('userName')
@@ -31,14 +38,6 @@ app
             },
         }
         mainHttp.userinfoAjax()
-
-
-
-
-
-
-
-
 
 
         }]);

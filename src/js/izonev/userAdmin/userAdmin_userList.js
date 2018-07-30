@@ -39,6 +39,7 @@ app
                         layer.msg('修改成功', {icon: 1});
                         setTimeout(function () {
                             layer.closeAll();
+                            window.location.reload()
                         }, 1000)
                     }
                 })
@@ -76,7 +77,12 @@ app
         $scope.userEdit = function (id) {
             for (var i = 0; i < $scope.userManageDataS.length; i++) {
                 if ($scope.userManageDataS[i].user_id == id) {
-                    $scope.panelData = $scope.userManageDataS[i];
+                    $('#m_username').val($scope.userManageDataS[i].username)
+                    $('#m_createtime').val($scope.userManageDataS[i].createtime)
+                    $('#m_company').val($scope.userManageDataS[i].company)
+                    $('#m_password').val($scope.userManageDataS[i].password)
+                    $('#m_tpl').val($scope.userManageDataS[i].phone)
+                    $('#m_email').val($scope.userManageDataS[i].email)
                 }
             }
             layer.open({
@@ -88,9 +94,9 @@ app
                 shade: 0, //不显示遮罩
                 yes: function () {
                     // 用户名
-                    var m_username = $scope.panelData.username;
+                    var m_username = $('#m_username').val();
                     //创建时间
-                    var m_createtime = $scope.panelData.createtime;
+                    var m_createtime = $('#m_createtime').val();
                     //所属公司
                     var m_company = $('#m_company').val();
                     //密码
@@ -140,9 +146,7 @@ app
                     mainHttp.updateUserInfoAjax(m_username, m_createtime, m_company, m_password, m_tpl, m_email)
 
                 },
-                btn2: function () {
-                    window.location.reload()
-                }
+                btn2: function () {}
             });
         };
 

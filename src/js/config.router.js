@@ -316,17 +316,6 @@ angular.module('app')
                                 }]
                         }
                     })
-                    // 用户管理--增加项目
-                    .state('userAdmin.addProject', {
-                        url: '/addProject?project_id',
-                        templateUrl: 'tpl/izonev/userAdmin/userAdmin_addProject.html',
-                        resolve: {
-                            deps: ['$ocLazyLoad',
-                                function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load(['js/izonev/userAdmin/userAdmin_addProject.js']);
-                                }]
-                        }
-                    })
 
                     // 用户管理--项目模块管理
                     .state('userAdmin.module', {
@@ -339,28 +328,7 @@ angular.module('app')
                                 }]
                         }
                     })
-                    // 用户管理--项目模块管理(增加)
-                    .state('userAdmin.moduleAdd', {
-                        url: '/moduleAdd?projectId',
-                        templateUrl: 'tpl/izonev/userAdmin/userAdmin_moduleAdd.html',
-                        resolve: {
-                            deps: ['$ocLazyLoad',
-                                function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load(['js/izonev/userAdmin/userAdmin_moduleAdd.js']);
-                                }]
-                        }
-                    })
-                    // 用户管理--项目模块管理（删除）
-                    .state('userAdmin.moduleDel', {
-                        url: '/moduleDel?projectId',
-                        templateUrl: 'tpl/izonev/userAdmin/userAdmin_moduleDel.html',
-                        resolve: {
-                            deps: ['$ocLazyLoad',
-                                function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load(['js/izonev/userAdmin/userAdmin_moduleDel.js']);
-                                }]
-                        }
-                    })
+
                     // 用户管理--探针管理-（用户列表）
                     .state('userAdmin.userListPerception', {
                         url: '/userListPerception',
@@ -898,7 +866,7 @@ angular.module('app')
                                         }
                                         angular.forEach(MODULE_CONFIG, function (module) {
                                             if (module.name == src) {
-                                                name = module.name;
+                                              name = module.name;
                                             } else {
                                                 name = src;
                                             }

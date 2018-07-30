@@ -16,10 +16,8 @@
             </div>
         </div>
         <!--增加项目-->
-        <!--<a href class="btn btn-sm btn-default btn-addon" ui-sref="userAdmin.addProject"><i-->
-                <!--class="fa fa-plus fa-fw m-r-xs"></i>增加项目</a>-->
         <a href class="btn btn-sm btn-default btn-addon" ng-click="addProClick()" ng-show="userRName=='liangxuan'"><i class="fa fa-plus fa-fw m-r-xs"></i>增加项目</a>
-        <a href class="btn btn-sm btn-default btn-addon" ng-show="userRName!=='liangxuan'"><i class="fa fa-plus fa-fw m-r-xs"></i>增加项目</a>
+        <a href class="btn btn-sm btn-default btn-addon" ng-click="identity()" ng-show="userRName!=='liangxuan'"><i class="fa fa-plus fa-fw m-r-xs"></i>增加项目</a>
     </form>
     <!--项目信息列表-->
     <div class="proListCon">
@@ -51,8 +49,8 @@
                            ng-click="proDel(item.project_id,item.project_name)">删除</a>
                     </div>
                     <div class="hbox text-center b-t b-light" ng-show="userRName!=='liangxuan'">
-                        <a href class="col padder-v text-muted b-r b-light">编辑</a>
-                        <a href class="col padder-v text-muted">删除</a>
+                        <a href class="col padder-v text-muted b-r b-light" ng-click="identity()">编辑</a>
+                        <a href class="col padder-v text-muted" ng-click="identity()">删除</a>
                     </div>
                 </div>
             </div>

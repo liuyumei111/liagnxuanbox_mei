@@ -54,7 +54,6 @@ app
                     if (data.sucess == '200') {
                         layer.msg('添加成功', {icon: 1});
                         setTimeout(function () {
-                            // window.location.reload()
                             layer.closeAll();
                         },1000)
                     }
@@ -126,9 +125,14 @@ app
                     var project_id = '';
                     $("input[name=box]").each(function (index, item) {
                         if ($(item).is(':checked')) {
-                            project_id += $(this).attr('id') + ','
+                            if($(this).attr('id')==undefined){
+                                return;
+                            }else {
+                                project_id += $(this).attr('id') + ','
+                            }
                         }
                     });
+
                     //去除末尾逗号
                     project_id = project_id.substr(0, project_id.length - 1);
                     // console.log(project_id)

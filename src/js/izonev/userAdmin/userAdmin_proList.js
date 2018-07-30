@@ -181,6 +181,20 @@ app
 
         //增加项目
         $scope.addProClick=function () {
+            $('.project_id-box').show();
+            //清空所有值
+            $scope.pid = '';
+            $scope.project_id='';
+            $scope.project_name = '';
+            $scope.project_desc = '';
+            $scope.accredit_start_time = '';
+            $scope.accredit_end_time = '';
+            $scope.project_company = '';
+            $scope.project_city = '';
+            $scope.project_address = '';
+            $scope.project_province = '';
+            $scope.project_county = '';
+            $scope.project_desc_client = '';
             layer.open({
                 title: '增加项目',
                 type: 1,
@@ -195,7 +209,7 @@ app
                     // 1增加项目   2删除项目   3修改项目
                     var operation_type = '1';
                     //模块id  暂时写死
-                    var module_id = '1';
+                    var module_id = '1,2,3,4,5,6,7,8,9,10,11,18,19,20,21,22,23,24,25,26,27,28,29,30';
                     //1项目信息管理   2模块管理
                     var project_type = '1';
 
@@ -211,6 +225,7 @@ app
                     var project_province = $('#project_province').val();
                     var project_county = $('#project_county').val();
                     var project_desc_client = $('#project_desc_client').val();
+
 
 
                     if (pid == undefined || pid == '') {
@@ -321,10 +336,15 @@ app
 
                 },
                 btn2: function () {
-                    window.location.reload()
+                    // window.location.reload()
                 }
             });
 
+        };
+
+        //普通用户点击提示无权限
+        $scope.identity=function(){
+            layer.msg('暂无权限，请联系管理员');
         };
 
 
