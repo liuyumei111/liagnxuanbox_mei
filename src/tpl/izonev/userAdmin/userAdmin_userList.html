@@ -1,4 +1,9 @@
 <div ng-controller="uuserlistCtrl" class="userList-box">
+
+    <!--增加项目-->
+    <a href class="btn btn-sm btn-default btn-addon" ng-click="addUser()" ng-show="userRName=='liangxuan'"><i class="fa fa-plus fa-fw m-r-xs"></i>增加用户</a>
+    <a href class="btn btn-sm btn-default btn-addon" ng-click="identity()" ng-show="userRName!=='liangxuan'"><i class="fa fa-plus fa-fw m-r-xs"></i>增加用户</a>
+
     <!--账号列表层-->
     <div class="modify-box" ng-repeat="item in userManageDataS">
         <div class="col-sm-2">
@@ -17,8 +22,9 @@
             </div>
         </div>
     </div>
+
     <!--修改层-->
-    <div class="panel-body">
+    <div class="panel-body updateUser">
         <div class="form-group">
             <label class="col-lg-2 control-label">用户名</label>
             <div class="col-lg-10">
@@ -60,6 +66,45 @@
             </div>
         </div>
     </div>
+
+    <!--增加用户层-->
+    <div class="panel-body addUser">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">用户名</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="" id="add_username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">公司</label>
+            <div class="col-lg-10 bitian-box">
+                <span class="m_company-bitian">必填</span>
+                <input type="text" class="form-control" placeholder="" id="add_company">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">设置密码</label>
+            <div class="col-lg-10 bitian-box">
+                <span>必填</span>
+                <input type="text" class="form-control" placeholder="" id="add_password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">手机号</label>
+            <div class="col-lg-10 bitian-box">
+                <span>必填</span>
+                <input type="text" class="form-control" placeholder="" id="add_tpl">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">邮箱</label>
+            <div class="col-lg-10 bitian-box">
+                <span>必填</span>
+                <input type="text" class="form-control" placeholder="" id="add_email">
+            </div>
+        </div>
+    </div>
     <!--标题-->
     <h3 class="m-n font-thin h3 userList-title">用户信息管理</h3>
 </div>
@@ -92,22 +137,28 @@
         white-space: nowrap;
 
     }
-    .bitian-box{
+
+    .bitian-box {
         position: relative;
     }
-    .bitian-box span{
+
+    .bitian-box span {
         position: absolute;
         top: 10px;
         right: -8px;
         font-size: 10px;
         color: red;
     }
-    .userList-title{
+
+    .userList-title {
         position: absolute;
         top: 20px;
         left: 8px;
         width: 100%;
         padding: 20px;
         background: #fff;
+    }
+    .btn-default{
+        margin-bottom: 10px;
     }
 </style>

@@ -6,9 +6,13 @@
 // In this case it is a simple value service.
 var USP_SERVER_ROOT = 'api/login';
 
-// 测试    前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
+// 本地    前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
 var USP_SERVER_ROOT1 = 'http://192.168.1.116:8080/lx_box_pro/v1/';
 var admin_ROOT = 'http://192.168.1.116:8080/lx_box_pro/v1/';
+
+// 测试    前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
+// var USP_SERVER_ROOT1 = 'http://52.80.137.218:8080/lx_box_pro/v1/';
+// var admin_ROOT = 'http://52.80.137.218:8080/lx_box_pro/v1/';
 
 //正式     前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
 // var USP_SERVER_ROOT1 = 'http://54.223.30.252:8080/lx_box_pro/v1/';

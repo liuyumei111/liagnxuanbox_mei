@@ -1,4 +1,5 @@
 
+
 function nofind(img,imgName){
     if(imgName===undefined){
         imgName= "ditu1.png";
@@ -67,21 +68,26 @@ var chartapp = {
 
 //===============================================================================================================
 var echartsDl = function (url, data) {
-    var access_token = localStorage.getItem("access_token");
-    data = JSON.parse(data);
-    data = data.data;
-    var d = [];
+    var appkey="9c418970093b352d1a8fb7e8";
+    var secret="13f9644a74ba92c3ebe916a3";
+    var m_token =Base64.encode(appkey+":"+secret);
+    //access_token暂时没用---日期2018.5.4
+    var access_token=localStorage.getItem("access_token");
+
+    data=JSON.parse(data)
+    data=data.data;
+    var d=[];
+
     $.ajax({
-        url: url+"v1/mall/downData",
+        url: url,
         type: 'post',
         async: true,
         data: JSON.stringify(data),
-        contentType: 'application/json;charset=utf-8', //设置请求头信息
-        headers: {'Authorization': "Token " + access_token},
+        contentType : 'application/json;charset=utf-8', //设置请求头信息
+        headers: { 'Authorization': "Bearer "+m_token},
         success: function (response, status, request) {
-            if (response !== "" && response != undefined) {
-                // window.location.href = "http://izone-apitest-in.jpushoa.com/down_data/chart_data/" + response.data;
-                window.location.href = apis.apiFormal+"down_data/chart_data/" + response.data;
+            if(response!==""&&response!=undefined){
+                window.location.href="https://api-jdi.jiguang.cn/down_data/chart_data/"+response.data;
             }
         },
     });

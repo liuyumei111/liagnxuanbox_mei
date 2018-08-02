@@ -1,82 +1,101 @@
 <div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="asourceCtrl">
     <div class="col">
-        <div class="wrapper-md" >
+        <div class="wrapper-md" ng-if="app.exhibition.dataflag" >
             <div class="row">
 
-                <div class="col-md-3">
-                    <div class="panel wrapper" ng-style="app.settings.Panel">
-                        <h4 class="font-bold m-t-none text-muted m_center" ng-style="app.settings.fontColor">观众来源对比</h4>
-                        <span class="m-b block text-xs text-muted m_center" ng-style="app.settings.fontColor">{{dateName}}</span>
-                        <div class="shopChartHeight" id="customerFromContrastID" ></div>
+                <div ng-repeat="d in alllabel">
+                    <div class="wrapper-md">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <h4 class="m-n font-thin font-bold  text-black">{{d.chartype}}</h4>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="panel wrapper" ng-style="app.settings.Panel">
-                        <span class="text-xs text-muted pull-right" id="distpicker5">
+                    <div class="row ">
+                        <div ng-repeat="label in d.label ">
+                            <div class="{{label.class}}">
+                                <div class="panel wrapper" ng-style="app.settings.Panel">
 
-                            <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析区域：</span></div>
-                            <div class="sparkline inline">
-                                <label class="sr-only" for="province10">省</label>
-                                <select class="form-control input-sm"id="province10" ng-style="app.settings.select">
+                                    <span class="text-xs text-muted pull-right" ng-if="label.chart_id==51">
+                                        <div class="m-b-xs inline m-l">
+                                            <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span>
+                                        </div>
+                                        <div class="sparkline inline">
+                                            <select class="form-control input-sm" ng-style="app.settings.select"
+                                                    ng-model="homeOrWorkData"
+                                                    ng-options="ex.id as ex.name for ex in  homeOrWork"
+                                                    ng-change="selectConditions(homeOrWorkData,label,'1')">
 
-                                </select>
-                            </div>
-                            <div class="sparkline inline">
-                                <label class="sr-only" for="city10">市</label>
-                                <select class="form-control input-sm" id="city10" ng-style="app.settings.select">
-                                </select>
-                            </div>
-                            <div class="sparkline inline m-r">
-                                <label class="sr-only" for="district10">区</label>
-                                <select class="form-control input-sm"id="district10" ng-style="app.settings.select">
+                                            </select>
+                                        </div>
+                                    </span>
+                                    <span class="text-xs text-muted pull-right" ng-if="label.chart_id==47">
+                                        <div class="m-b-xs inline m-l">
+                                            <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span>
+                                        </div>
+                                        <div class="sparkline inline">
+                                            <select class="form-control input-sm" ng-style="app.settings.select"
+                                                    ng-model="homeOrWorkData"
+                                                    ng-options="ex.id as ex.name for ex in  homeOrWork"
+                                                    ng-change="selectConditions(homeOrWorkData,label,'1')">
 
-                                </select>
-                            </div>
-                            <div class="m-b-xs inline"> <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span></div>
-                            <div class="sparkline inline">
-                                <select class="form-control input-sm" ng-style="app.settings.select"
-                                        ng-change="onselectHomeOrWork()"
-                                        ng-model="selectHomeOrWork"
-                                        ng-options="menu.id as menu.name for menu in  homeOrWork">
+                                            </select>
+                                        </div>
+                                    </span>
+                                    <span class="text-xs text-muted pull-right" ng-if="label.chart_id==48">
+                                        <div class="m-b-xs inline m-l">
+                                            <span class="text-muted" ng-style="app.settings.fontColor">分析维度：</span>
+                                        </div>
+                                        <div class="sparkline inline">
+                                            <select class="form-control input-sm" ng-style="app.settings.select"
+                                                    ng-model="granularity"
+                                                    ng-options="ex.id as ex.name for ex in  addType"
+                                                    ng-change="selectConditions(granularity,label,'2')">
 
-                                </select>
-                            </div>
+                                            </select>
+                                        </div>
+                                    </span>
+                                    <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">
+                                        {{label.title}}<span ng-if="label.chart_id==48">（{{regionName}}）</span></h4>
+                                    <span class="m-b block text-xs text-muted"
+                                          ng-style="app.settings.fontColor">{{proDate}}</span>
+                                    <div ng-if="label.chart_id==47" class="btn-group pull-right"
+                                         style="position: absolute;top: 90px;right: 40px;z-index: 99999">
+                                        <button type="button" class="btn btn-default btn-sm"
+                                                ng-click="selectConditions('mapHot',label,'3')" ng-style="app.settings.button">热力图
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-sm"
+                                                ng-click="selectConditions('grid',label,'3')" ng-style="app.settings.button">网格图
+                                        </button>
+                                    </div>
+                                    <div ng-if="label.chart_id==51">
+                                        <div style="height: {{label.height}}" class="table-responsive">
+                                            <table class="table  m-b-none table-bordered {{app.settings.tablestriped}}"
+                                                   ng-style="app.settings.fontColor">
+                                                <thead>
+                                                <tr>
+                                                    <th noWrap class="v-middle"> 客源地</th>
+                                                    <th noWrap class="v-middle" ng-repeat="bus in TableTh[0].bus track by $index ">{{bus}}</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr ng-repeat="t in TableData" class="NNewline">
+                                                    <td class="tableline v-middle" noWrap >
+                                                        <span>{{t.name}}</span>
+                                                    </td>
+                                                    <td class="NNewline tableline v-middle" ng-repeat="v in t.value track by $index">
+                                                        <span>{{v}}</span>
+                                                    </td>
 
-                        </span>
-                        <h4 class="font-bold m-t-none  text-muted" ng-style="app.settings.fontColor">观众来源展示</h4>
-                        <span class="m-b block text-xs text-muted" ng-style="app.settings.fontColor">{{dateName}}</span>
-                        <div class="row"  >
-                            <div class="col-sm-9">
-                                <div class="shopChartHeight" id="hotMapID"></div>
-                                <div class="btn-group pull-right" style="position: absolute;top: 10px;left: 20px">
-                                    <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectMap('mapHot')" ng-style="app.settings.button">热力图</button>
-                                    <button type="button" class="btn btn-default btn-sm"ng-click="OnSelectMap('grid')" ng-style="app.settings.button">网格图</button>
-                                    <!--<button type="button" class="btn btn-default btn-sm"ng-click="setOpacityValue(80)" ng-style="app.settings.button">测试</button>-->
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div ng-if="label.chart_id!=51" style="height: {{label.height}}" id="{{label.id}}"></div>
+
                                 </div>
-                            </div>
-                            <div class="col-sm-3" >
-                                <div class="shopChartHeight table-responsive">
-                                    <table class="table  m-b-none table-bordered {{app.settings.tablestriped}}" ng-style="app.settings.fontColor">
-                                        <thead>
-                                        <tr>
-                                            <th class="NNewline">地址</th>
-                                            <th class="NNewline">数量</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr ng-repeat="t in districtRankingDataRes|limitTo:10">
-                                            <td class="NNewline" style="line-height: 260%">
-                                                {{t.name}}
-                                            </td>
-                                            <td class="NNewline">
-                                                <span>{{t.value}}</span>
-                                            </td>
-                                        </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -85,6 +104,11 @@
         </div>
         <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" >
         </div>
+        <div data-ng-include=" 'tpl/izonev/blocks/exhibitionContent.html' " ng-if="app.exhibition.dataflag2">
+        </div>
     </div>
     <!--ng-show="insight.view.loading"-->
 </div>
+
+
+

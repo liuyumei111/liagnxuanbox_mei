@@ -27,6 +27,6 @@ app
                     });
             },
         }
-        mainHttp.userListAjax()
+        // mainHttp.userListAjax()
 
     }]);

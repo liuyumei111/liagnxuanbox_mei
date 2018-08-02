@@ -8,6 +8,7 @@ app.controller('areaAnalysis', ['$scope', '$http', '$state', '$q', '$interval', 
     $scope.app.exhibition.dataflag = false;
     $scope.app.exhibition.dataflag2 = false;
     var projectId = window.sessionStorage.getItem("projectId");
+    $scope.project_name=sessionStorage.getItem('project_name')
 
     $scope.traffic = [];
 

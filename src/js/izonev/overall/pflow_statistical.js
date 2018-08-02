@@ -46,6 +46,9 @@ app.controller('ostatisticalCtrl', ['$scope', '$http', '$state', '$q', '$interva
                 (res.data[0].project_province==undefined) && (res.data[0].project_province="");
                 (res.data[0].project_city==undefined) && (res.data[0].project_city="");
                 (res.data[0].project_county==undefined) && (res.data[0].project_county="");
+
+
+
                 var city=res.data[0].project_city;
                 sessionStorage.setItem('city',city);
                 $scope.traffic=res.data[0];
@@ -292,10 +295,7 @@ app.controller('ostatisticalCtrl', ['$scope', '$http', '$state', '$q', '$interva
                                 series.forEach(function (item) {
                                     if(item.name==undefined){
                                         item.name="--"
-                                    }else {
-                                        title.push(item.name);
                                     }
-
                                     tdHeads += '<td class="NoNewline">' + item.name + '</td>';
                                 });
                                 var table = '<table class="table table-striped m-b-none table-bordered table-hover"><tbody><tr>' + tdHeads + ' </tr>';

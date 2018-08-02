@@ -180,7 +180,8 @@ app.controller('osourceCtrl', ['$scope', '$http', '$state', '$q', '$interval', f
         }else {
             $scope.xname="人数";
         }
-        showChart.chart($scope.ctype,$scope.resData, 2, $scope.cid, $scope.xname,$scope.app.devUrl);
+        console.log($scope.app.echartsDl)
+        showChart.chart($scope.ctype,$scope.resData, 2, $scope.cid, $scope.xname,$scope.app.echartsDl);
         if($scope.ctype==="7"){
             $scope.heatMapData = $scope.resData;
             $scope.HeatMapRes = $scope.heatMapData;

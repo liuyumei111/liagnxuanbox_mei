@@ -1,23 +1,57 @@
-<style>
-    .hover:hover{
-        background-color: #00a8f3;
-        color: #fff;
-    }
-    .hover:hover a{
-        color: #fff;
-    }
-    .ditu{
-        display: block;
-        cursor: pointer;
-        width: 640px;
-        height: 700px;
-        margin:0 auto;
-    }
-</style>
 
 <div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="areaAnalysis">
     <div class="col">
-        <div class="wrapper-md" ng-if="app.exhibition.dataflag" >
+        <div class="app-aside hidden-xs {{app.settings.asideColor}}" style="margin-top: 20px">
+            <nav ui-nav class="navi">
+                <!-- list -->
+                <ul class="nav">
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        <span></span>
+                    </li>
+                    <!--项目名称-->
+                    <li>
+                        <a>
+                            <i class="glyphicon glyphicon-briefcase icon"></i>
+                            <span class="font-bold"> {{project_name}}</span>
+                        </a>
+                    </li>
+                    <li class="line dk"></li>
+
+                    <!--实时分析-->
+                    <li ui-sref-active="active">
+                        <a href="#/fulls/realtimewifi">
+                            <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+                            <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+                            <span class="font-bold">实时分析</span>
+                        </a>
+                    </li>
+                    <li class="line dk"></li>
+
+                    <!--总体分析-->
+                    <li ui-sref-active="active">
+                        <a href="#/overall/statistical">
+                            <!--<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>-->
+                            <i class="glyphicon glyphicon-th-large icon text-success"></i>
+                            <span class="font-bold">总体分析</span>
+                        </a>
+                    </li>
+                    <li class="line dk"></li>
+
+                    <!--区域分析-->
+                    <li ui-sref-active="active" >
+                        <a href="#/fulls/areaAnalysis">
+                            <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                            <span class="font-bold">区域分析</span>
+                        </a>
+                    </li>
+                    <li class="line dk"></li>
+
+
+                </ul>
+                <!-- / list -->
+            </nav>
+        </div>
+        <div class="wrapper-md m_app-content" ng-if="app.exhibition.dataflag" >
             <div class="panel wrapper" ng-style="app.settings.Panel">
                 <div class="row">
                     <div class="col-md-6 b-r b-light no-border-xs">
@@ -64,8 +98,7 @@
                 </div>
             </div>
         </div>
-        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" >
-        </div>
+        <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
         <div data-ng-include=" 'tpl/izonev/blocks/exhibitionContent.html' " ng-if="app.exhibition.dataflag2">
         </div>
     </div>
@@ -73,3 +106,66 @@
 </div>
 
 
+<style>
+    .hover:hover{
+        background-color: #00a8f3;
+        color: #fff;
+    }
+    .hover:hover a{
+        color: #fff;
+    }
+    .ditu{
+        display: block;
+        cursor: pointer;
+        width: 640px;
+        height: 700px;
+        margin:0 auto;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .m_list>ul{
+        margin: 0;
+    }
+    .m_list>ul>.m_nav_one{
+        line-height: 50px;
+        text-align: center;
+        border-bottom: 1px solid #efe0e0;
+        position: relative;
+        color: #000;
+    }
+    .m_nav_two>li{
+        border-bottom: 1px solid #e7dddd;
+    }
+    .m_nav_two>li:nth-child(2){
+        border-top: 1px solid #e7dddd;
+    }
+    .m_nav_two>li:nth-child(5){
+        border-bottom: none;
+    }
+    .m_nav_two>li>a{
+        padding: 14px;
+    }
+    .m_nav_two>li>a>span{
+        width: 100%;
+    }
+    .m_left-logo>a>span{
+        font-size: 22px;
+    }
+    .m_left-logo>a>img{
+        display:block;
+        width: 60px;
+        margin: 0 auto;
+    }
+    .m_app-content{
+        margin-left: 210px;
+    }
+    @media screen and (max-width: 767px) {
+        .m_app-content{
+            margin-left: 0px!important;
+            width: 100%;
+        }
+    }
+</style>

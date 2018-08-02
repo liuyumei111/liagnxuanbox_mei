@@ -10,6 +10,7 @@ app.controller('realtimewifiCtrl', ['$scope', '$http', '$state', '$q', '$interva
     var randomInt = function (nMin, nMax) {
         return Math.floor(Math.random() * (nMax - nMin) + nMin + 0.5);
     };
+    $scope.project_name=sessionStorage.getItem('project_name')
     //********************************************************************************************************************
 
 
@@ -473,7 +474,7 @@ app.controller('realtimewifiCtrl', ['$scope', '$http', '$state', '$q', '$interva
                         },
                         saveAsImage: {
                             show: true,
-                            name: "iZone",
+                            name: "laingxuan",
                             icon: $scope.app.icon.screenshots,
                             iconStyle: {
                                 normal: {
@@ -513,7 +514,7 @@ app.controller('realtimewifiCtrl', ['$scope', '$http', '$state', '$q', '$interva
                                 res.unshift(title);
                                 var str = JSON.stringify(res);
                                 str = '{' + '"data":' + str + '}';
-                                echartsDl($scope.app.devUrl, str)
+                                echartsDl($scope.app.echartsDl, str)
 
                             }
                         }

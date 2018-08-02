@@ -28,14 +28,23 @@ app
             },
 
             //查找可增加项目列表
-            searchCustomerNoExistsProAjax: function (name, id) {
+            searchCustomerNoExistsProAjax: function (name, id, project_name) {
+                if (project_name == undefined) {
+                    project_name = ''
+                }
                 $http({
                     method: 'GET',
-                    url: admin_ROOT + 'user/searchCustomerNoExistsPro' + '?user_id=' + id + '&username=' + name,
+                    url: admin_ROOT + 'user/searchCustomerNoExistsPro' + '?user_id=' + id + '&username=' + name + '&project_name=' + project_name,
                 }).success(function (data, status, headers) {
                     $scope.loading = false;
                     if (data.sucess == '200') {
-                        $scope.NoExistsData = data.result
+                        $scope.NoExistsData = data.result;
+
+                    } else if (data.error == "没有此项目") {
+                        layer.msg('没有此项目', {icon: 2});
+                    }else if(data.error == '500'){
+                        layer.msg('没有可增加项目', {icon: 2});
+                        $scope.NoExistsData =[]
                     }
                 })
                     .error(function (data, status, headers) {
@@ -45,17 +54,18 @@ app
             },
 
             //确定增加项目
-            addProjectToCustomerAjax: function (name, id,project_id) {
+            addProjectToCustomerAjax: function (name, id, project_id) {
                 $http({
                     method: 'GET',
-                    url: admin_ROOT + 'user/addProjectToCustomer' + '?user_id=' + id + '&username=' + name+'&project_id='+project_id,
+                    url: admin_ROOT + 'user/addProjectToCustomer' + '?user_id=' + id + '&username=' + name + '&project_id=' + project_id,
                 }).success(function (data, status, headers) {
                     $scope.loading = false;
                     if (data.sucess == '200') {
                         layer.msg('添加成功', {icon: 1});
                         setTimeout(function () {
                             layer.closeAll();
-                        },1000)
+                            window.location.reload()
+                        }, 1000)
                     }
                 })
                     .error(function (data, status, headers) {
@@ -65,21 +75,21 @@ app
             },
 
             //查找可删除项目列表
-            prolistAjax: function (name) {
+            prolistAjax: function (name, project_name) {
+                if (project_name == undefined) {
+                    project_name = ''
+                }
                 $http({
                     method: 'GET',
-                    url: admin_ROOT + 'project/prolist' + '?username=' + name,
+                    url: admin_ROOT + 'project/prolist' + '?username=' + name + '&project_name=' + project_name,
                 }).success(function (data, status, headers) {
                     $scope.loading = false;
                     if (data.sucess == '200') {
+                        $scope.project_listData = data.project_list;
 
-                        $scope.project_listData = data.project_list
-                    }else if(data.findProId=='601'){
+                    } else if (data.findProId == '601') {
                         $scope.project_listData = [];
                         layer.msg('此用户无可删除项目');
-                        setTimeout(function () {
-                            // window.location.reload()
-                        },1000)
                     }
                 })
                     .error(function (data, status, headers) {
@@ -89,19 +99,34 @@ app
             },
 
             //确定删除项目
-            delCustomerProjectAjax: function (name, id,project_id) {
+            delCustomerProjectAjax: function (name, id, project_id) {
                 $http({
                     method: 'GET',
-                    url: admin_ROOT + 'user/delCustomerProject' + '?user_id=' + id + '&username=' + name+'&project_id='+project_id,
+                    url: admin_ROOT + 'user/delCustomerProject' + '?user_id=' + id + '&username=' + name + '&project_id=' + project_id,
                 }).success(function (data, status, headers) {
                     $scope.loading = false;
                     if (data.sucess == '200') {
                         layer.msg('删除成功', {icon: 1});
                         setTimeout(function () {
-                            // window.location.reload()
                             layer.closeAll();
-                        },1000)
+                            window.location.reload()
+                        }, 1000)
                     }
+                })
+                    .error(function (data, status, headers) {
+                        $scope.authError = data.message;
+                        $scope.loading = false;
+                    });
+            },
+
+            //搜索
+            searchAjax: function (inputVal) {
+                $http({
+                    method: 'GET',
+                    url: admin_ROOT + 'manage/search' + '?username=' + $scope.userRName + '&project_name=' + inputVal,
+                }).success(function (data, status, headers) {
+                    $scope.loading = false;
+                    $scope.project_listData = data.sucess;
                 })
                     .error(function (data, status, headers) {
                         $scope.authError = data.message;
@@ -113,6 +138,7 @@ app
 
         //增加
         $scope.addProBtn = function (name, id) {
+            $scope.searchInputAdd='';
             // console.log('增加项目')
             layer.open({
                 title: '增加项目',
@@ -121,13 +147,13 @@ app
                 content: $(".addProCon"),
                 btn: ['确认', '取消'],
                 shade: 0, //不显示遮罩
-                yes: function(){
+                yes: function () {
                     var project_id = '';
                     $("input[name=box]").each(function (index, item) {
                         if ($(item).is(':checked')) {
-                            if($(this).attr('id')==undefined){
+                            if ($(this).attr('id') == undefined) {
                                 return;
-                            }else {
+                            } else {
                                 project_id += $(this).attr('id') + ','
                             }
                         }
@@ -136,16 +162,39 @@ app
                     //去除末尾逗号
                     project_id = project_id.substr(0, project_id.length - 1);
                     // console.log(project_id)
-                    if(project_id==''||project_id==undefined||project_id=='null'){
+                    if (project_id == '' || project_id == undefined || project_id == 'null') {
                         layer.msg('没有选择项目', {icon: 1});
                         return;
                     }
-                    mainHttp.addProjectToCustomerAjax(name, id,project_id);
+                    mainHttp.addProjectToCustomerAjax(name, id, project_id);
                 },
-                btn2: function(){}
+                btn2: function () {
+                }
             });
 
             mainHttp.searchCustomerNoExistsProAjax(name, id);
+
+            //搜索
+            $scope.search = function () {
+                if ($scope.searchInputAdd == undefined) {
+                    console.log('没搜啥')
+                } else if ($scope.searchInputAdd == '') {
+                    console.log('显示全部')
+                    mainHttp.searchCustomerNoExistsProAjax(name, id)
+                } else {
+                    //按搜索词搜索
+                    mainHttp.searchCustomerNoExistsProAjax(name, id, $scope.searchInputAdd)
+                }
+            };
+
+            //input没有值的时候显示默认数据
+            $('#searchInputAdd').bind('input oninput', function () {
+                if ($(this).val() == '') {
+                    console.log('input没有值')
+                    mainHttp.searchCustomerNoExistsProAjax(name, id)
+                }
+            });
+
 
             //全选
             $("#all").click(function () {
@@ -158,7 +207,8 @@ app
             });
         };
         //删除
-        $scope.remProBtn = function (name,id) {
+        $scope.remProBtn = function (name, id) {
+            $scope.searchInputDel='';
             // console.log('删除项目');
             layer.open({
                 title: '删除项目',
@@ -167,7 +217,7 @@ app
                 content: $(".removeProCon"),
                 btn: ['确认', '取消'],
                 shade: 0, //不显示遮罩
-                yes: function(){
+                yes: function () {
                     var project_id = '';
                     $(".removeProCon").find("input[name=box]").each(function (index, item) {
                         if ($(item).is(':checked')) {
@@ -176,16 +226,40 @@ app
                     });
                     //去除末尾逗号
                     project_id = project_id.substr(0, project_id.length - 1);
-                    if(project_id==''||project_id==undefined||project_id=='null'){
+                    if (project_id == '' || project_id == undefined || project_id == 'null') {
                         layer.msg('没有选择项目', {icon: 1});
                         return;
                     }
-                    mainHttp.delCustomerProjectAjax(name, id,project_id);
+                    mainHttp.delCustomerProjectAjax(name, id, project_id);
                 },
-                btn2: function(){}
+                btn2: function () {
+                }
             });
 
             mainHttp.prolistAjax(name);
+
+            //搜索
+            $scope.search = function () {
+                if ($scope.searchInputDel == undefined) {
+                    console.log('没搜啥')
+                } else if ($scope.searchInputDel == '') {
+                    console.log('显示全部')
+                    mainHttp.prolistAjax(name)
+                } else {
+                    //按搜索词搜索
+                    mainHttp.prolistAjax(name, $scope.searchInputDel)
+                }
+            };
+
+            //input没有值的时候显示默认数据
+            $('#searchInputDel').bind('input oninput', function () {
+                if ($(this).val() == '') {
+                    console.log('input没有值')
+                    mainHttp.prolistAjax(name)
+                }
+            });
+
+
             //全选
             $("#remAll").click(function () {
                 // this 全选的复选框
@@ -210,7 +284,7 @@ app
             // }
 
 
-
         }
+
 
     }]);

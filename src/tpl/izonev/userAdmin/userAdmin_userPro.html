@@ -22,35 +22,47 @@
                 </tbody>
             </table> -->
             <table class="layui-table">
-                    <colgroup>
-                        <col width="150">
-                        <col>
-                        <col width="200">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>用户名</th>
-                            <th>公司</th>
-                            <th>项目数</th>
-                            <th>操作</th>
-                        </tr> 
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="item in userManageDataS">
-                            <td>{{item.username}}</td>
-                            <td>{{item.company}}</td>
-                            <td>{{item.numproject}}</td>
-                            <td>
-                                <span class="proBtn" ng-click="addProBtn(item.username,item.user_id)">增加</span>
-                                <span class="proBtn" ng-click="remProBtn(item.username,item.user_id)">删除</span>
-                            </td>
-                        </tr>
-                    </tbody>
+                <colgroup>
+                    <col width="150">
+                    <col>
+                    <col width="200">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>公司</th>
+                    <th>项目数</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in userManageDataS">
+                    <td>{{item.username}}</td>
+                    <td>{{item.company}}</td>
+                    <td>{{item.numproject}}</td>
+                    <td>
+                        <span class="proBtn" ng-click="addProBtn(item.username,item.user_id)">增加</span>
+                        <span class="proBtn" ng-click="remProBtn(item.username,item.user_id)">删除</span>
+                    </td>
+                </tr>
+                </tbody>
             </table>
         </div>
         <!--增加项目-->
         <div class="addProCon">
             <table class="table table-striped b-t b-light">
+                <!--搜索框-->
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm no-border rounded padder" placeholder="输入项目名称"
+                               ng-model="searchInputAdd" id="searchInputAdd" autocomplete="off">
+                        <!--搜索按钮-->
+                        <!--<span class="input-group-btn" ng-click="search()">-->
+                        <span class="input-group-btn" ng-click="search()">
+                <button type="submit" class="btn btn-sm rounded" style="line-height: 1.55"><i class="fa fa-search"></i></button>
+              </span>
+                    </div>
+                </div>
                 <thead>
                 <tr>
                     <th style="width:20px;">
@@ -63,11 +75,13 @@
                         <!-- <span class="proBtn marLeft-10" ng-click="yesAdd()">确定增加</span> -->
                     </th>
                     <th>用户名称</th>
+
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="item in NoExistsData">
-                    <td><label class="i-checks m-b-none"><input type="checkbox" name="box" id="{{item.project_id}}"><i></i></label></td>
+                    <td><label class="i-checks m-b-none"><input type="checkbox" name="box"
+                                                                id="{{item.project_id}}"><i></i></label></td>
                     <td>{{item.project_name}}</td>
                     <td>{{item.customer_name}}</td>
                 </tr>
@@ -77,6 +91,18 @@
         <!--删除项目-->
         <div class="removeProCon">
             <table class="table table-striped b-t b-light">
+                <!--搜索框-->
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm no-border rounded padder" placeholder="输入项目名称"
+                               ng-model="searchInputDel" id="searchInputDel" autocomplete="off">
+                        <!--搜索按钮-->
+                        <!--<span class="input-group-btn" ng-click="search()">-->
+                        <span class="input-group-btn" ng-click="search()">
+                <button type="submit" class="btn btn-sm rounded" style="line-height: 1.55"><i class="fa fa-search"></i></button>
+              </span>
+                    </div>
+                </div>
                 <thead>
                 <tr ng-show="project_listData.length > 0">
                     <th style="width:20px;">
@@ -93,7 +119,8 @@
                 </thead>
                 <tbody>
                 <tr ng-repeat="item in project_listData">
-                    <td><label class="i-checks m-b-none"><input type="checkbox" name="box" remoId="{{item.project_id}}"><i></i></label></td>
+                    <td><label class="i-checks m-b-none"><input type="checkbox" name="box" remoId="{{item.project_id}}"><i></i></label>
+                    </td>
                     <td>{{item.project_name}}</td>
                     <td>{{item.project_company}}</td>
                 </tr>
@@ -106,7 +133,6 @@
 </div>
 
 
-
 <style>
     .userPro-box {
         padding: 100px 20px 20px 20px;
@@ -114,15 +140,18 @@
         height: 700px;
         overflow-y: scroll;
     }
-    .proCon{
+
+    .proCon {
         height: 720px;
         /*display: none;*/
     }
-    .addProCon{
+
+    .addProCon {
         height: 720px;
         display: none;
     }
-    .removeProCon{
+
+    .removeProCon {
         height: 720px;
         display: none;
     }
@@ -151,10 +180,12 @@
     td {
         line-height: 30px !important;
     }
-    .marLeft-10{
+
+    .marLeft-10 {
         margin-left: 10px;
     }
-    .userList-title{
+
+    .userList-title {
         position: absolute;
         top: 20px;
         left: 8px;
@@ -162,6 +193,14 @@
         padding: 20px;
         background: #fff;
     }
+    .form-group{
+        margin: 0 auto;
+        width: 300px
+    }
+    .form-group input{
+        border: 1px solid #eee;
+    }
+
     @media screen and (max-width: 760px) {
         .proBtn {
             background: #7266ba;

@@ -107,17 +107,13 @@ app.controller('obehaviorCtrl', ['$scope', '$http', '$state', '$q', '$interval',
                                 for (var j = 0; j < all_arr.length; j++) {
                                     all_arr[j] = all_arr[j].split(":");
                                     switch (all_arr[j][0]) {
-                                        case '1' :
-                                            $scope.z0.push(all_arr[j][1]);
+                                        case '1' : $scope.z0.push(all_arr[j][1]);
                                             break;
-                                        case '2' :
-                                            $scope.z30.push(all_arr[j][1]);
+                                        case '2' : $scope.z30.push(all_arr[j][1]);
                                             break;
-                                        case '3' :
-                                            $scope.z45.push(all_arr[j][1]);
+                                        case '3' : $scope.z45.push(all_arr[j][1]);
                                             break;
-                                        case '4' :
-                                            $scope.z60.push(all_arr[j][1]);
+                                        case '4' : $scope.z60.push(all_arr[j][1]);
                                             break;
                                     }
                                 }
@@ -381,7 +377,7 @@ app.controller('obehaviorCtrl', ['$scope', '$http', '$state', '$q', '$interval',
 
         },
 
-        sankey: function (data, id) {
+        sankey:function (data,id) {
             var dom = document.getElementById(id);
             var myChart = echarts.init(dom);
             var option = {
@@ -426,7 +422,6 @@ app.controller('obehaviorCtrl', ['$scope', '$http', '$state', '$q', '$interval',
                 myChart.setOption(option, true);
             }
         },
-
     };
 
     $scope.OnSelectTime = function (nm) {
@@ -452,165 +447,231 @@ app.controller('obehaviorCtrl', ['$scope', '$http', '$state', '$q', '$interval',
 
     function matrix(res) {
         var xc;
-        for (var i = 0; i < res.data.length; i++) {
-            if (res.data[i].tuples.length != 0) {
-                if (res.data[i].length == 0) {
-                    xc = i;
-                } else {
-                    xc = res.data.length - 1;
+        for(var i=0;i<res.data.length;i++){
+            if(res.data[i].tuples.length!=0){
+                if(res.data[i].length==0){
+                    xc=i;
+                }else{
+                    xc=res.data.length-1;
                 }
-                var arrr = [];
-                $scope.arrr = [];
-                var arr7 = [];
-                var arr8 = [];
-                var arr9 = [];
-                var arr10 = [];
-                var arr11 = [];
-                var arr12 = [];
-                var arr13 = [];
-                var arr14 = [];
-                var arr15 = [];
-                var arr16 = [];
-                var arr17 = [];
-                var arr18 = [];
-                var jsa = [];
-                for (var j = 0; j < res.data[xc].tuples.length; j++) {
+                var arrr=[];
+                $scope.arrr=[];
+                var arr7=[];
+                var arr8=[];
+                var arr9=[];
+                var arr10=[];
+                var arr11=[];
+                var arr12=[];
+                var arr13=[];
+                var arr14=[];
+                var arr15=[];
+                var arr16=[];
+                var arr17=[];
+                var arr18=[];
+                var arr19=[];
+                var arr20=[];
+                var arr21=[];
+                var arr22=[];
+                var arr23=[];
+                var arr24=[];
+                var arr25=[];
+                var arr26=[];
+                var arr27=[];
+                var arr28=[];
+                var arr29=[];
+                var arr30=[];
+                var arr31=[];
+                var arr32=[];
+                var arr33=[];
+                var jsa=[];
+                for(var j=0;j<res.data[xc].tuples.length;j++){
                     arrr.push(res.data[xc].tuples[j].targetName);
-                    switch (res.data[xc].tuples[j].fromId) {
-                        case ars[0] :
-                            arr7.push(res.data[xc].tuples[j].value);
+                    switch(res.data[xc].tuples[j].fromId){
+                        case ars[0] : arr7.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[1] :
-                            arr8.push(res.data[xc].tuples[j].value);
+                        case ars[1] : arr8.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[2] :
-                            arr9.push(res.data[xc].tuples[j].value);
+                        case ars[2] : arr9.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[3] :
-                            arr10.push(res.data[xc].tuples[j].value);
+                        case ars[3] : arr10.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[4] :
-                            arr11.push(res.data[xc].tuples[j].value);
+                        case ars[4] : arr11.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[5] :
-                            arr12.push(res.data[xc].tuples[j].value);
+                        case ars[5] : arr12.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[6] :
-                            arr13.push(res.data[xc].tuples[j].value);
+                        case ars[6] : arr13.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[7] :
-                            arr14.push(res.data[xc].tuples[j].value);
+                        case ars[7] : arr14.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[8] :
-                            arr15.push(res.data[xc].tuples[j].value);
+                        case ars[8] : arr15.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[9] :
-                            arr16.push(res.data[xc].tuples[j].value);
+                        case ars[9] : arr16.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[10] :
-                            arr17.push(res.data[xc].tuples[j].value);
+                        case ars[10] : arr17.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[11] :
-                            arr18.push(res.data[xc].tuples[j].value);
+                        case ars[11] : arr18.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[12] : arr19.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[13] : arr20.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[14] : arr21.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[15] : arr22.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[16] : arr23.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[17] : arr24.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[18] : arr25.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[19] : arr26.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[20] : arr27.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[21] : arr28.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[22] : arr29.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[23] : arr30.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[24] : arr31.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[25] : arr32.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[26] : arr33.push(res.data[xc].tuples[j].value);
                             break;
                     }
                 }
-                for (var k = 0; k < arrr.length; k++) {
-                    if ($scope.arrr.indexOf(arrr[k]) == -1) {
+                for(var k=0;k<arrr.length;k++){
+                    if($scope.arrr.indexOf(arrr[k])==-1){
                         $scope.arrr.push(arrr[k]);
                     }
                 }
-                jsa = [arr7, arr8, arr9, arr10, arr11, arr12, arr13, arr14, arr15, arr16, arr17, arr18];
+                jsa=[arr7,arr8,arr9,arr10,arr11,arr12,arr13,arr14,arr15,arr16,arr17,arr18,arr19,arr20,arr21,arr22,arr23,arr24,arr25,arr26,arr27,arr28,arr29,arr30,arr31,arr32,arr33];
             }
         }
-        for (var n = 0; n < $scope.arrr.length; n++) {
-            var obj = {};
-            obj['name'] = $scope.arrr[n];
-            obj.arr = [];
-            for (var m = 0; m < jsa[n].length; m++) {
+        for (var n=0;n<$scope.arrr.length;n++){
+            var obj={};
+            obj['name']=$scope.arrr[n];
+            obj.arr=[];
+            for (var m=0;m<jsa[n].length;m++){
                 obj.arr.push(jsa[n][m]);
             }
             $scope.table.push(obj);
         }
-        $scope.table2 = [];
-        for (var i = 0; i < $scope.table.length; i++) {
-            for (var f = 0; f < i; f++) {
-                $scope.table[i].arr[f] = "";
+        $scope.table2=[];
+        for(var i=0;i<$scope.table.length;i++){
+            for(var f=0;f<i;f++){
+                $scope.table[i].arr[f]="";
             }
             $scope.table2.push($scope.table[i]);
         }
     };
     function matrix2(res) {
         var xc;
-        for (var i = 0; i < res.data.length; i++) {
-            if (res.data[i].tuples.length != 0) {
-                if (res.data[i].length == 0) {
-                    xc = i;
-                } else {
-                    xc = res.data.length - 1;
+        for(var i=0;i<res.data.length;i++){
+            if(res.data[i].tuples.length!=0){
+                if(res.data[i].length==0){
+                    xc=i;
+                }else{
+                    xc=res.data.length-1;
                 }
-                var arrr = [];
-                $scope.arrr = [];
-                var arr7 = [];
-                var arr8 = [];
-                var arr9 = [];
-                var arr10 = [];
-                var arr11 = [];
-                var arr12 = [];
-                var arr13 = [];
-                var arr14 = [];
-                var arr15 = [];
-                var arr16 = [];
-                var arr17 = [];
-                var arr18 = [];
-                var jsa = [];
-                for (var j = 0; j < res.data[xc].tuples.length; j++) {
+                var arrr=[];
+                $scope.arrr=[];
+                var arr7=[];
+                var arr8=[];
+                var arr9=[];
+                var arr10=[];
+                var arr11=[];
+                var arr12=[];
+                var arr13=[];
+                var arr14=[];
+                var arr15=[];
+                var arr16=[];
+                var arr17=[];
+                var arr18=[];
+                var arr19=[];
+                var arr20=[];
+                var arr21=[];
+                var arr22=[];
+                var arr23=[];
+                var arr24=[];
+                var arr25=[];
+                var arr26=[];
+                var arr27=[];
+                var arr28=[];
+                var arr29=[];
+                var arr30=[];
+                var arr31=[];
+                var arr32=[];
+                var arr33=[];
+                var jsa=[];
+                for(var j=0;j<res.data[xc].tuples.length;j++){
                     arrr.push(res.data[xc].tuples[j].fromName);
-                    switch (res.data[xc].tuples[j].fromId) {
-                        case ars[0] :
-                            arr7.push(res.data[xc].tuples[j].value);
+                    switch(res.data[xc].tuples[j].fromId){
+                        case ars[0] : arr7.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[1] :
-                            arr8.push(res.data[xc].tuples[j].value);
+                        case ars[1] : arr8.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[2] :
-                            arr9.push(res.data[xc].tuples[j].value);
+                        case ars[2] : arr9.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[3] :
-                            arr10.push(res.data[xc].tuples[j].value);
+                        case ars[3] : arr10.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[4] :
-                            arr11.push(res.data[xc].tuples[j].value);
+                        case ars[4] : arr11.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[5] :
-                            arr12.push(res.data[xc].tuples[j].value);
+                        case ars[5] : arr12.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[6] :
-                            arr13.push(res.data[xc].tuples[j].value);
+                        case ars[6] : arr13.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[7] :
-                            arr14.push(res.data[xc].tuples[j].value);
+                        case ars[7] : arr14.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[8] :
-                            arr15.push(res.data[xc].tuples[j].value);
+                        case ars[8] : arr15.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[9] :
-                            arr16.push(res.data[xc].tuples[j].value);
+                        case ars[9] : arr16.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[10] :
-                            arr17.push(res.data[xc].tuples[j].value);
+                        case ars[10] : arr17.push(res.data[xc].tuples[j].value);
                             break;
-                        case ars[11] :
-                            arr18.push(res.data[xc].tuples[j].value);
+                        case ars[11] : arr18.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[12] : arr19.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[13] : arr20.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[14] : arr21.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[15] : arr22.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[16] : arr23.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[17] : arr24.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[18] : arr25.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[19] : arr26.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[20] : arr27.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[21] : arr28.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[22] : arr29.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[23] : arr30.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[24] : arr31.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[25] : arr32.push(res.data[xc].tuples[j].value);
+                            break;
+                        case ars[26] : arr33.push(res.data[xc].tuples[j].value);
                             break;
                     }
                 }
-                for (var k = 0; k < arrr.length; k++) {
-                    if ($scope.arrr.indexOf(arrr[k]) == -1) {
+                for(var k=0;k<arrr.length;k++){
+                    if($scope.arrr.indexOf(arrr[k])==-1){
                         $scope.arrr.push(arrr[k]);
                     }
                 }
-                jsa = [arr7, arr8, arr9, arr10, arr11, arr12, arr13, arr14, arr15, arr16, arr17, arr18];
+                jsa=[arr7,arr8,arr9,arr10,arr11,arr12,arr13,arr14,arr15,arr16,arr17,arr18,arr19,arr20,arr21,arr22,arr23,arr24,arr25,arr26,arr27,arr28,arr29,arr30,arr31,arr32,arr33];
                 // jsa.forEach(function (v,i) {
                 //     if(v.length!=0){
                 //         v.splice(i,0,100);
@@ -618,20 +679,20 @@ app.controller('obehaviorCtrl', ['$scope', '$http', '$state', '$q', '$interval',
                 // });
             }
         }
-        for (var n = 0; n < $scope.arrr.length; n++) {
-            var obj = {};
-            obj['name'] = $scope.arrr[n];
-            obj.arr = [];
-            for (var m = 0; m < jsa[n].length; m++) {
-                (jsa[n][m] == 0) && (jsa[n][m] = 100);
-                obj.arr.push(jsa[n][m] + "%");
+        for (var n=0;n<$scope.arrr.length;n++){
+            var obj={};
+            obj['name']=$scope.arrr[n];
+            obj.arr=[];
+            for (var m=0;m<jsa[n].length;m++){
+                (jsa[n][m]==0) && (jsa[n][m]=100);
+                obj.arr.push(jsa[n][m]+"%");
             }
             $scope.table.push(obj);
         }
-        $scope.table2 = [];
-        for (var i = 0; i < $scope.table.length; i++) {
-            for (var f = 0; f < i; f++) {
-                $scope.table[i].arr[f] = "";
+        $scope.table2=[];
+        for(var i=0;i<$scope.table.length;i++){
+            for(var f=0;f<i;f++){
+                $scope.table[i].arr[f]="";
             }
             $scope.table2.push($scope.table[i]);
         }
@@ -678,4 +739,6 @@ app.controller('obehaviorCtrl', ['$scope', '$http', '$state', '$q', '$interval',
             $scope.loading = false;
         }
     }, true);
+
+
 }]);
