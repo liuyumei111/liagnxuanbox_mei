@@ -112,6 +112,29 @@ angular.module('app')
                                 }]
                         }
                     })
+                    // calo评分模板
+                    .state('calo', {
+                        abstract: true,
+                        url: '/calo',
+                        templateUrl: 'tpl/izonev/calo/calo.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/calo/calo.js']);
+                                }]
+                        }
+                    })
+                    // 人脸识别模板
+                    .state('camera', {
+                        url: '/camera',
+                        templateUrl: 'tpl/izonev/camera/camera.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/camera/camera.js']);
+                                }]
+                        }
+                    })
                     //全页面模板
                     .state('fulls', {
                         abstract: true,
@@ -352,7 +375,51 @@ angular.module('app')
                         }
                     })
 
+                    // calo评分--开始评分
+                    .state('calo.start', {
+                        url: '/start',
+                        templateUrl: 'tpl/izonev/calo/calo_start.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/calo/calo_start.js']);
+                                }]
+                        }
+                    })
 
+                    // 人脸识别--图像集合
+                    .state('camera.list', {
+                        url: '/list',
+                        templateUrl: 'tpl/izonev/camera/camera_list.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/camera/camera_list.js']);
+                                }]
+                        }
+                    })
+                    // 人脸识别--人脸认证
+                    .state('camera.check', {
+                        url: '/check',
+                        templateUrl: 'tpl/izonev/camera/camera_check.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/camera/camera_check.js']);
+                                }]
+                        }
+                    })
+                    // 人脸识别--人脸注册
+                    .state('camera.register', {
+                        url: '/register',
+                        templateUrl: 'tpl/izonev/camera/camera_register.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/camera/camera_register.js']);
+                                }]
+                        }
+                    })
 
 
                     //人群包

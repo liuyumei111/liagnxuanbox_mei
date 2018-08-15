@@ -1,0 +1,68 @@
+<div ng-controller="ccheckCtrl" style="margin-top: 20px;">
+    <div class="layui-row ">
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 m_right_10">
+            <div>appId:<input id="appId" type="text" name="title" lay-verify="required" placeholder="请输入appId（必填）"
+                              autocomplete="off" class="layui-input"></div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 m_right_10">
+            <div>storeId:<input id="storeId" type="text" name="title" lay-verify="required" placeholder="请输入storeId（必填）"
+                                autocomplete="off" class="layui-input"></div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 m_right_10">
+            <div>faceid:<input id="faceid" type="text" name="title" lay-verify="required" placeholder="请输入faceid（必填）"
+                              autocomplete="off" class="layui-input"></div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 m_top_20">
+            <button class="layui-btn layui-btn-normal" ng-click="findFace()">确定认证</button>
+        </div>
+
+    </div>
+
+    <!--认证成功-->
+    <div class="col-sm-12 addfaceOK">
+        <div class="panel b-a border-radius-6">
+            <div class="panel-heading bg-info dk no-border wrapper-lg"></div>
+            <div class="text-center m-b clearfix">
+                <div class="thumb-lg avatar m-t-n-xxl">
+                    <img src="{{faceInfo.faceUrl}}" class="b b-3x b-whit no-radius">
+                    <div class="h4 font-thin m-t-sm over-hide">{{faceInfo.sex=='1'?'男':'女'}}</div>
+                    <div class="h4 font-thin m-t-sm over-hide">{{faceInfo.age}}</div>
+                </div>
+            </div>
+            <div class="panel-footer bg-light lter wrapper">
+                <div class="row">
+                    <div class="col-xs-4 textCenter">
+                        <small class="text-muted block">人脸编号</small>
+                        <span class="text-md">{{faceInfo.id}}</span>
+                    </div>
+                    <div class="col-xs-4 textCenter">
+                        <small class="text-muted block">门店编号</small>
+                        <span class="text-md">{{faceInfo.storeId}}</span>
+                    </div>
+                    <div class="col-xs-4 textCenter">
+                        <small class="text-muted block">摄像头编号</small>
+                        <span class="text-md">{{faceInfo.deviceId}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .layui-row {
+        margin: 5% 0 0 7%;
+    }
+    .m_right_10 {
+        margin-right: 10px;
+    }
+    .m_top_20 {
+        margin-top: 20px;
+    }
+    .addfaceOK{
+        display: none;
+    }
+</style>

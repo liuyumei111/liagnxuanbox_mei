@@ -1,0 +1,92 @@
+<div ng-controller="ccameraCtrl" style="margin-top: 36px;">
+    <!--<div class="col-sm-4" ng-repeat="item in faceDTOs">
+        <div class="panel b-a border-radius-6">
+            <div class="panel-heading bg-info dk no-border wrapper-lg"></div>
+            <div class="text-center m-b clearfix">
+                <div class="thumb-lg avatar m-t-n-xxl">
+                    <img src="{{item.faceUrl}}" class="b b-3x b-white">
+                    <div class="h4 font-thin m-t-sm over-hide">{{item.sex=='1'?'男':'女'}}</div>
+                    <div class="h4 font-thin m-t-sm over-hide">{{item.age}}</div>
+                </div>
+            </div>
+            <div class="panel-footer bg-light lter wrapper">
+                <div class="row">
+                    <div class="col-xs-4 textCenter">
+                        <small class="text-muted block">人脸编号</small>
+                        <span class="text-md">{{item.id}}</span>
+                    </div>
+                    <div class="col-xs-4 textCenter">
+                        <small class="text-muted block">门店编号</small>
+                        <span class="text-md">{{item.storeId}}</span>
+                    </div>
+                    <div class="col-xs-4 textCenter">
+                        <small class="text-muted block">摄像头编号</small>
+                        <span class="text-md">{{item.deviceId}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!--搜索-->
+    <div class="layui-row m_bottom_20">
+
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 m_right_10">
+            <div>appId:<input id="appId" type="text" name="title" lay-verify="required" placeholder="请输入appId（必填）"
+                              autocomplete="off" class="layui-input"></div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 m_right_10">
+            <div>storeId:<input id="storeId" type="text" name="title" lay-verify="required" placeholder="请输入storeId（必填）"
+                                autocomplete="off" class="layui-input"></div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+            <div>deviceId:<input id="deviceId" type="text" name="title" lay-verify="required" placeholder="请输入deviceId"
+                                 autocomplete="off" class="layui-input"></div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md2" style="text-align: center;margin-top: 20px;">
+            <button class="layui-btn" ng-click="searchList()">查询</button>
+        </div>
+
+    </div>
+    <!--表格-->
+    <table class="layui-table" ng-show="isShow">
+        <!--<table class="layui-table">-->
+        <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>人脸编号</th>
+            <th>门店编号</th>
+            <th>摄像头编号</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>照片</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in faceDTOs">
+            <td>{{item.id}}</td>
+            <td>{{item.storeId}}</td>
+            <td>{{item.deviceId}}</td>
+            <td>{{item.sex=='1'?'男':'女'}}</td>
+            <td>{{item.age}}</td>
+            <td>
+                <img src="{{item.faceUrl}}" alt="">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<style>
+    .m_right_10 {
+        margin-right: 10px;
+    }
+    .m_bottom_20{
+        margin-bottom: 20px;
+    }
+</style>

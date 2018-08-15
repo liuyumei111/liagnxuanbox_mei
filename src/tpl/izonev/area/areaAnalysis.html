@@ -46,6 +46,25 @@
                     </li>
                     <li class="line dk"></li>
 
+                    <!--calo评分-->
+                    <li ui-sref-active="active" >
+                        <a href="#/calo/start">
+                            <i class="glyphicon glyphicon-sound-stereo icon text-warning"></i>
+                            <span class="font-bold">calo评分</span>
+                        </a>
+                    </li>
+                    <li class="line dk"></li>
+
+                    <!--人脸识别-->
+                    <li ui-sref-active="active" >
+                        <a href="#/camera/list">
+                            <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                            <span class="font-bold">人脸识别</span>
+                        </a>
+                    </li>
+                    <li class="line dk"></li>
+
+
 
                 </ul>
                 <!-- / list -->
@@ -59,8 +78,8 @@
                         <!--<div class="shopChartHeight">-->
                             <!--<img ng-src="{{traffic.img}}" style="width: 100%;height: 100%">-->
                             <label for="photo" class="ditu">
-                                <!--<img ng-src="https://jdi.jiguang.cn/iZone/2017/{{img}}" alt="" style="width: 100%;height: 100%" onerror='nofind(this,"ditu.jpg");'>-->
-                                <img src="img/izone/thumbnail.png" alt="" style="width: 100%;" onerror='nofind(this,"ditu.jpg");'>
+                                <img ng-src="https://jdi.jiguang.cn/iZone/2017/{{img}}" alt="" style="width: 100%;height: 100%" onerror='nofind(this,"ditu.jpg");'>
+                                <!--<img src="img/izone/thumbnail.png" alt="" style="width: 100%;" onerror='nofind(this,"ditu.jpg");'>-->
                                 <i class="on b-white right"></i>
                             </label>
                             <input type="file" id="photo" style="display: none;" onchange="angular.element(this).scope().filechange(this)">

@@ -1,0 +1,82 @@
+<div ng-controller="ccaloCtrl" style="margin-top: 20px;">
+    <div class="layui-row">
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md2">
+            <a ng-click="downloadTpl()">
+                <button class="layui-btn layui-btn-primary">
+                    下载模板
+                    <i class="layui-icon layui-icon-download-circle" style="font-size: 26px"></i>
+                </button>
+            </a>
+        </div>
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md4 m_right_10">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <select name="city" lay-verify="required">
+                            <option value="0">phone</option>
+                            <option value="1">mac</option>
+                            <option value="2">imei</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md2 uploadBox">
+            <label class="layui-form-label upload" id="test1">
+                <i class="layui-icon m_right_10">&#xe67c;</i><span class="uploadText">上传</span>
+            </label>
+            <span class="format">支持格式：.xls/.xlsx</span>
+        </div>
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md2">
+            <button class="layui-btn m_left_0" ng-click="searchCalo()">查询</button>
+        </div>
+    </div>
+
+
+
+    <!--下载excel模板/下载图片-->
+        <!--<a href="img/excel.xls">下载excel模板</a>-->
+        <!--<a href="img/b13.jpg"  title="下载" mce_href="#" download=""><i class="fa fa-arrow-circle-down"></i>下载图片</a>-->
+
+</div>
+
+<style>
+
+    .layui-form-label {
+        background: #9ca9a8;
+        width: auto;
+    }
+
+    /*上传成功显示正确绿色*/
+    .upload-active {
+        background: #33dccf;
+    }
+
+    .layui-btn {
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    .m_right_10 {
+        margin-right: 10px;
+    }
+
+    .m_left_0 {
+        margin-left: 0;
+    }
+
+    .uploadBox {
+        position: relative;
+    }
+
+    .format {
+        position: absolute;
+        bottom: -16px;
+        left: 0;
+        color: #ccc;
+    }
+
+
+</style>
+
