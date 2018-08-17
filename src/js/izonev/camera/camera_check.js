@@ -15,7 +15,7 @@ app
                     $scope.faceInfo=data.faceInfo;
                     console.log($scope.faceInfo);
                      layer.open({
-                         title: '注册成功',
+                         title: '查询成功',
                          type: 1,
                          area: ['500px','400px'],
                          content: $(".addfaceOK"),

@@ -11,7 +11,7 @@ app
                     "url": "camera.list"
                 },
                 {
-                    "menuName": "人脸认证 ",
+                    "menuName": "人脸查询 ",
                     "url": "camera.check"
                 },
                 {

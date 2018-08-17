@@ -7,12 +7,15 @@ app
 
         var mainHttp={
             // 人脸注册
-            addfaceAjax: function (appId,storeId,userId,userInfo) {
+            addfaceAjax: function (appId,storeId,userId,userInfo,fileName) {
                 $http({
                     method: 'get',
-                    url: USP_SERVER_ROOT1 + 'newface/addface?appId='+appId+'&storeId='+storeId+'&userId='+userId+'&userInfo='+userInfo,
+                    url: USP_SERVER_ROOT1 + 'newface/addface?appId='+appId+'&storeId='+storeId+'&userId='+userId+'&userInfo='+userInfo+'&filename='+fileName,
                 }).success(function (data, status, headers) {
                     $scope.loading = false;
+                    if(data.respStatus.code=='100'){
+                        layer.msg('注册成功', {icon: 1});
+                    }
                     /* layer.open({
                          title: '注册成功',
                          type: 1,
@@ -48,9 +51,8 @@ app
                         $('.layui-btn').addClass('upload-active');
                         layer.msg('上传成功', {icon: 1});
 
-                        var fileName=res.fileName.toString();
-                        // fileName= fileName.split('.')[0];
-                        $('.uploadText').html(fileName+'上传成功')
+                        $scope.fileName=res.fileName.toString();
+                        $('.uploadText').html($scope.fileName+'上传成功')
 
                     }else {
                         layer.msg('文件格式不对', {icon: 2});
@@ -64,6 +66,14 @@ app
 
     //    注册按钮
         $scope.searchAddface=function () {
+            //检测是否上传文件
+            if(!$('.upload').hasClass('upload-active')) {
+                layer.msg('您没有上传查询文件', {
+                    icon: 2
+                });
+                return;
+            }
+
             var appId= $('#appId').val();
             var storeId= $('#storeId').val();
             var userId= $('#userId').val();
@@ -83,7 +93,7 @@ app
             if (userInfo == 'NaN' || userInfo == 'undefined' || userInfo == '') {
                 userInfo == ''
             }
-            mainHttp.addfaceAjax(appId,storeId,userId,userInfo)
+            mainHttp.addfaceAjax(appId,storeId,userId,userInfo,$scope.fileName)
 
         }
 
