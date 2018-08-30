@@ -8,30 +8,48 @@
                 </button>
             </a>
         </div>
-	<div class="layui-col-xs12 layui-col-sm12 layui-col-md4 m_right_10">
-		<form class="layui-form" action="">
-			<div class="layui-form-item">
-				<div class="layui-input-block">
-					<select name="city" lay-verify="required">
-						<option value="0">phone</option>
-						<option value="1">mac</option>
-						<option value="2">imei</option>
-					</select>
-				</div>
-			</div>
-		</form>
-
+	<div class="layui-col-xs12 layui-col-sm12 layui-col-md4">
+		<select style="width: 70%;height: 38px;" class="select">
+			<option value="phone">phone</option>
+			<option value="mac">mac</option>
+			<option value="imei">imei</option>
+		</select>
 	</div>
 	<div class="layui-col-xs12 layui-col-sm12 layui-col-md2 uploadBox">
 		<label class="layui-form-label upload" id="test1">
                 <i class="layui-icon m_right_10">&#xe67c;</i><span class="uploadText">上传</span>
             </label>
-		<span class="format">支持格式：.xls/.xlsx</span>
+		<span class="format">
+			支持格式：.xls/.xlsx <br>
+			最大支持1M
+		</span>
 	</div>
 	<div class="layui-col-xs12 layui-col-sm12 layui-col-md2">
 		<button class="layui-btn m_left_0" ng-click="searchCalo()">查询</button>
 	</div>
 </div>
+
+
+	<div class="col-sm-6 findAllcalo-box" ng-show="isShow">
+			<!--<div class="panel-heading">查询记录</div>-->
+			<table class="table table-striped m-b-none">
+				<thead>
+				<tr>
+					<th>查询历史</th>
+					<th style="width:70px;"></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="item in findAllcalo">
+					<td>{{item.name}}</td>
+					<td class="text-success" ng-click="updownAjax(item.name)">
+						<i class="fa fa-level-down"></i>下载
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
 <!--下载excel模板/下载图片-->
 <!--<a href="img/calo评分模板.xls" download="">calo评分模板</a>-->
@@ -49,12 +67,7 @@
 	.upload-active {
 		background: #33dccf;
 	}
-	
-	.layui-btn {
-		width: 50%;
-		margin-left: 25%;
-	}
-	
+
 	.m_right_10 {
 		margin-right: 10px;
 	}
@@ -69,8 +82,15 @@
 	
 	.format {
 		position: absolute;
-		bottom: -16px;
+		bottom: -36px;
 		left: 0;
 		color: #ccc;
+	}
+	.findAllcalo-box{
+		margin: 4% 0 0 20%;
+		background: #fff
+	}
+	.text-success{
+		cursor: pointer;
 	}
 </style>

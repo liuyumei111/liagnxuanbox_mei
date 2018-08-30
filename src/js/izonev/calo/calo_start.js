@@ -8,6 +8,8 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 
 	var projectId = window.sessionStorage.getItem("projectId");
 
+    $scope.isShow = false;
+
 	//input选择框初始化
 	layui.use('form', function() {
 		var form = layui.form;
@@ -20,10 +22,10 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 
 	var mainHttp = {
 		//确定查询接口
-		caloAjax: function(inputVal,filename) {
+		caloAjax: function(inputVal, filename) {
 			$http({
 					method: 'GET',
-					url: USP_SERVER_ROOT1 + 'newbox/calo?type=' + inputVal+'&filename='+$scope.filename,
+					url: USP_SERVER_ROOT1 + 'newbox/calo?type=' + inputVal + '&filename=' + $scope.filename,
 					data: {}
 				}).success(function(data, status, headers) {
 					$scope.loading = false;
@@ -32,13 +34,15 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 							btn: ['确定', '取消'] //按钮
 						}, function() {
 							// console.log('确定查询');
-							mainHttp.updownAjax()
+							mainHttp.updownresultAjax();
 							layer.closeAll()
 						}, function() {
 							// layer.msg('取消成功', {icon: 1});
 						});
 					} else if(data.code == "400") {
-						layer.msg('数据格式不匹配，请重新查询', {icon: 2});
+						layer.msg('数据格式不匹配，请重新查询', {
+							icon: 2
+						});
 					}
 					console.log(data)
 				})
@@ -47,9 +51,26 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 					$scope.loading = false;
 				});
 		},
+        //历史记录查询接口
+        findAllcaloAjax: function() {
+            $http({
+                method: 'GET',
+                url: USP_SERVER_ROOT1 + 'newbox/findAllcalo',
+            }).success(function(data, status, headers) {
+                $scope.loading = false;
+                if(data.code=='200'){
+                	$scope.findAllcalo=data.list;
+                    $scope.isShow = true
+				}
 
-		//下载
-		updownAjax: function() {
+            })
+                .error(function(data, status, headers) {
+                    $scope.authError = data.message;
+                    $scope.loading = false;
+                });
+        },
+		//下载结果
+        updownresultAjax: function() {
 			var url = USP_SERVER_ROOT1 + 'newbox/updownresult/1';
 			var xhr = new XMLHttpRequest();
 			xhr.open('GET', url, true);
@@ -59,9 +80,29 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 					var blob = this.response;
 					var reader = new FileReader();
 					reader.readAsDataURL(blob);
+					var myDate = new Date();
+					var year = myDate.getFullYear(); //年
+					var month = myDate.getMonth() + 1; //月
+					var day = myDate.getDate(); //日
+					var hours = myDate.getHours(); //小时
+					var min = myDate.getMinutes(); //分钟
+					if(month >= 1 && month <= 9) {
+						month = "0" + month;
+					}
+					if(day >= 0 && day <= 9) {
+						day = "0" + day;
+					}
+					if(hours >= 0 && hours <= 9) {
+						hours = "0" + hours;
+					}
+					if(min >= 0 && min <= 9) {
+						min = "0" + min;
+					}
+					var time = year + "-" + month + "-" + day + "-" + hours + "-" + min;
+					console.info(time);
 					reader.onload = function(e) {
 						var a = document.createElement('a');
-						a.download = 'calo评分结果.xlsx';
+						a.download = 'calo评分结果' + time + '.xls';
 						a.href = e.target.result;
 						$("body").append(a);
 						a.click();
@@ -71,6 +112,29 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 			};
 			xhr.send()
 		},
+        //下载历记录
+        updownAjax: function(name) {
+            var url = USP_SERVER_ROOT1 + 'newbox/updown/1?filename='+name;
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', url, true);
+            xhr.responseType = "blob";
+            xhr.onload = function() {
+                if(this.status === 200) {
+                    var blob = this.response;
+                    var reader = new FileReader();
+                    reader.readAsDataURL(blob);
+                    reader.onload = function(e) {
+                        var a = document.createElement('a');
+                        a.download = name;
+                        a.href = e.target.result;
+                        $("body").append(a);
+                        a.click();
+                        $(a).remove();
+                    }
+                }
+            };
+            xhr.send()
+        },
 	};
 
 	//上传查询文件
@@ -90,7 +154,8 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 						icon: 1
 					});
 					$scope.filename = res.fileName.toString()
-					$('.uploadText').html($scope.filename + '上传成功')
+					// $('.uploadText').html($scope.filename + '上传成功')
+					$('.uploadText').html('上传成功')
 
 				} else {
 					layer.msg('文件格式不对', {
@@ -119,7 +184,7 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 		}
 
 		// 确认查询询问
-		var inputVal = $('.layui-input').val();
+		var inputVal = $('.select').val();
 		layer.confirm('您将根据【' + inputVal + '】进行查询calo评分', {
 			btn: ['确定', '取消'] //按钮
 		}, function() {
@@ -130,5 +195,12 @@ app.controller('ccaloCtrl', ['$scope', '$http', '$state', '$q', '$interval', fun
 			// layer.msg('取消成功', {icon: 1});
 		});
 	}
+
+    mainHttp.findAllcaloAjax();
+
+	//下载历史
+	$scope.updownAjax=function (name) {
+        mainHttp.updownAjax(name)
+    }
 
 }]);

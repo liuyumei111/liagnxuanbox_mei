@@ -68,6 +68,7 @@ var chartapp = {
 
 //===============================================================================================================
 var echartsDl = function (url, data) {
+    console.log(url,data)
     var appkey="9c418970093b352d1a8fb7e8";
     var secret="13f9644a74ba92c3ebe916a3";
     var m_token =Base64.encode(appkey+":"+secret);
