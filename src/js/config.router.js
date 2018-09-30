@@ -51,7 +51,18 @@ angular.module('app')
                                 }]
                         }
                     })
-                    //首页
+                    //选择进入
+                    .state('access.selections', {
+                        url: '/selections',
+                        templateUrl: 'tpl/selections.html',
+                        resolve: {
+                            deps: ['uiLoad',
+                                function (uiLoad) {
+                                    return uiLoad.load(['js/izonev/pub/selections.js']);
+                                }]
+                        }
+                    })
+                    //极光数据--首页列表
                     .state('access.home', {
                         url: '/home',
                         templateUrl: 'tpl/home.html',
@@ -132,6 +143,27 @@ angular.module('app')
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
                                     return $ocLazyLoad.load(['js/izonev/camera/camera.js']);
+                                }]
+                        }
+                    })
+                    // wifipix管理
+                    .state('wifipix', {
+                        url: '/wifipix',
+                        templateUrl: 'tpl/izonev/wifipix/wifipix.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/wifipix/wifipix.js']);
+                                }]
+                        }
+                    })
+                    .state('wifipix-1', {
+                        url: '/wifipix-1',
+                        templateUrl: 'tpl/izonev/wifipix/wifipix-1.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/wifipix/wifipix-1.js']);
                                 }]
                         }
                     })
@@ -387,6 +419,38 @@ angular.module('app')
                         }
                     })
 
+                    //wifipix
+                    .state('wifipix-1.statistics', {
+                        url: '/statistics?pixProId&storeName',
+                        templateUrl: 'tpl/izonev/wifipix/wifipix_statistics.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/wifipix/wifipix_statistics.js']);
+                                }]
+                        }
+                    })
+                    .state('wifipix-1.portrayal', {
+                        url: '/portrayal',
+                        templateUrl: 'tpl/izonev/wifipix/wifipix_portrayal.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/wifipix/wifipix_portrayal.js']);
+                                }]
+                        }
+                    })
+                    .state('wifipix.manage', {
+                        url: '/manage',
+                        templateUrl: 'tpl/izonev/wifipix/wifipix_manage.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/wifipix/wifipix_manage.js']);
+                                }]
+                        }
+                    })
+
                     // 人脸识别--图像集合
                     .state('camera.list', {
                         url: '/list',
@@ -417,6 +481,18 @@ angular.module('app')
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
                                     return $ocLazyLoad.load(['js/izonev/camera/camera_register.js']);
+                                }]
+                        }
+                    })
+
+                    // 人脸识别--图像统计
+                    .state('camera.statistics', {
+                        url: '/statistics',
+                        templateUrl: 'tpl/izonev/camera/camera_statistics.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['js/izonev/camera/camera_statistics.js']);
                                 }]
                         }
                     })

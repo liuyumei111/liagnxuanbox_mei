@@ -1,0 +1,100 @@
+<style>
+	.ditu{
+		width:180px;
+		height:180px;
+		cursor: pointer;
+	}
+</style>
+<div ng-controller="wifipixStatisCorl" style="margin-top: 36px;">
+	<div class="layui-row m_bottom_20" style="margin-left: 30px">
+		<div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+			<label>开始时间</label>
+			<div class="col-lg-10 bitian-box">
+				<!--<span class="m_company-bitian">必填</span>-->
+				<input type="text" class="form-control" placeholder="例如：2018-7-1" id="accredit_start_time" ng-model="accredit_start_time" maxlength="20">
+			</div>
+		</div>
+		<div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+			<label>结束时间</label>
+			<div class="col-lg-10 bitian-box">
+				<!--<span class="m_company-bitian">必填</span>-->
+				<input type="text" class="form-control" placeholder="例如：2018-7-1" id="accredit_end_time" ng-model="accredit_end_time" maxlength="20">
+			</div>
+		</div>
+		<div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+			<button class="layui-btn" ng-click="selectionTime()">查询</button>
+		</div>
+	</div>
+	<!--总体客流规模，总体客流趋势-->
+	<div class="row" style="margin-top: 30px" ng-show="isShow">
+		<h3 class="font-bold m-t-none  text-muted m_center" ng ng-style="app.settings.fontColor">店铺名称:{{storeName}}</h3>
+		<div class="col-md-12" style="margin-top: 20px">
+			<div class="panel wrapper" ng-style="app.settings.Panel">
+				<h4 class="font-bold m-t-none  text-muted m_center" ng ng-style="app.settings.fontColor">总体客流累计</h4>
+				<div class="chartHeight" id="passengerFlowScaleID" ></div>
+			</div>
+		</div>
+			<!--<div class="col-md-6">-->
+				<!--<div class="panel wrapper" ng-style="app.settings.Panel">-->
+					<!--<h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">分店铺客流累计</h4>-->
+					<!--<div class="chartHeight" id="audienceStatisticalD" ></div>-->
+				<!--</div>-->
+			<!--</div>-->
+			<div class="col-md-12">
+				<div class="panel wrapper" ng-style="app.settings.Panel">
+					<h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">分时段客流累计</h4>
+					<div class="chartHeight" id="audienceStatisticaTimelD" ></div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="panel wrapper" ng-style="app.settings.Panel">
+					<h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">历史客流累计</h4>
+					<div class="chartHeight" id="audienceStatisticahistorylD" ></div>
+					<!--<h4 class="font-bold m-t-none  text-muted m_center col-md -11 col-md-offset-5" ng-style="app.settings.fontColor">平均停留时长：{{avgStay}}</h4>-->
+					<div class="btn-group col-md -11 col-md-offset-10">
+						<button class="btn btn-info" ng-click="daytime()">天</button>
+						<button class="btn btn-info" ng-click="weektime()">周</button>
+						<button class="btn btn-info" ng-click="mounthtime()">月</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel wrapper" ng-style="app.settings.Panel">
+					<h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">时段人数趋势</h4>
+					<div class="chartHeight" id="timePersonlD" ></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel wrapper" ng-style="app.settings.Panel">
+					<h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">进店客流趋势</h4>
+					<div class="chartHeight" id="storePersonlD" ></div>
+					<div class="btn-group col-md -11 col-md-offset-9">
+						<button class="btn btn-info" ng-click="daytime()">天</button>
+						<button class="btn btn-info" ng-click="weektime()">周</button>
+						<button class="btn btn-info" ng-click="mounthtime()">月</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="panel wrapper" ng-style="app.settings.Panel" ng-show="areaShow"><!-- ng-show="areaShow"-->
+					<h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">区域客流对比</h4>
+					<div class="chartHeight" id="areaPersonlD" ></div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<div class="panel wrapper" ng-style="app.settings.Panel">
+						<h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">新增顾客比:{{newCustomerRate}}</h4>
+						<div class="chartHeight" id="newArealD" ></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel wrapper" ng-style="app.settings.Panel">
+						<h4 class="font-bold m-t-none  text-muted m_center" ng-style="app.settings.fontColor">进店转换率:{{crv}}</h4>
+						<div class="chartHeight" id="storeArealD" ></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+</div>

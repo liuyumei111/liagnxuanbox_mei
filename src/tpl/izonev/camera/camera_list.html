@@ -3,11 +3,11 @@
     <div class="layui-row m_bottom_20">
 
         <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 m_right_10">
-            <div>账号ID:<input id="appId" type="text" name="title" lay-verify="required" placeholder="请输入账号ID（必填）"
+            <div>账号ID:<input id="appId" type="text" name="title" appId={{appIdS}}  lay-verify="required" placeholder="{{appIdS}}"
                               autocomplete="off" class="layui-input"></div>
         </div>
         <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 m_right_10">
-            <div>门店ID:<input id="storeId" type="text" name="title" lay-verify="required" placeholder="请输入门店ID（必填）"
+            <div>门店ID:<input id="storeId" type="text" name="title" storeId={{storeidS}} lay-verify="required" placeholder="{{storeidS}}"
                                 autocomplete="off" class="layui-input"></div>
         </div>
         <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
@@ -19,6 +19,8 @@
         </div>
 
     </div>
+
+
     <!--表格-->
     <table class="layui-table" ng-show="isShow">
         <!--<table class="layui-table">-->
@@ -34,6 +36,7 @@
             <th>摄像头编号</th>
             <th>性别</th>
             <th>年龄</th>
+            <th>身份</th>
             <th>照片</th>
         </tr>
         </thead>
@@ -44,12 +47,41 @@
             <td>{{item.deviceId}}</td>
             <td>{{item.sex=='1'?'男':'女'}}</td>
             <td>{{item.age}}</td>
+            <td>{{item.userInfo==null ? '普通顾客':item.userInfo}}</td>
             <td>
                 <img src="{{item.faceUrl}}" alt="">
             </td>
         </tr>
         </tbody>
     </table>
+    <!--消息提醒-->
+    <li class="dropdown xiaoxi" dropdown>
+        <a href class="dropdown-toggle" dropdown-toggle>
+            <!--<i class="icon-bell fa-fw"></i>-->
+            <img src="img/news.png" alt="" style="width: 40px">
+            <span class="visible-xs-inline">Notifications</span>
+            <span class="badge badge-sm up bg-danger pull-right-xs">消息</span>
+        </a>
+        <!-- dropdown -->
+        <div class="dropdown-menu w-xl animated fadeInUp tixing">
+            <div class="panel bg-white">
+                <div class="list-group" ng-repeat="item in memberlist">
+                    <a href class="media list-group-item">
+                    <span class="pull-left">
+                     <img src="{{item.httpUrl}}" alt="" class="" style="height: 60px">
+                    </span>
+                      <small class="text-muted">人脸编号：{{item.faceId}}</small>
+                        <br>
+                      <small class="text-muted">时间：{{item.createtime}}</small>
+                    </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- / dropdown -->
+    </li>
+    <!--声音提醒-->
+    <audio id="audio" src="img/di%20.mp3"></audio>
 </div>
 
 
@@ -59,5 +91,15 @@
     }
     .m_bottom_20{
         margin-bottom: 20px;
+    }
+    .dropdown{
+        position: fixed;
+        top: 15%;
+        right: 10px;
+    }
+    .tixing{
+        position: relative;
+        top: -1%;
+        right: 0px;
     }
 </style>

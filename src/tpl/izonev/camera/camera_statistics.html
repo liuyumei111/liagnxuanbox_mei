@@ -1,0 +1,52 @@
+<div ng-controller="ccameracCtrl" style="margin-top: 36px;">
+    <div class="layui-row m_bottom_20" style="margin-left: 100px">
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+            <label>开始时间</label>
+            <div class="col-lg-10 bitian-box">
+                <!--<span class="m_company-bitian">必填</span>-->
+                <input type="text" class="form-control" placeholder="例如：2018-7-1" id="accredit_start_time" ng-model="accredit_start_time" maxlength="20">
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+            <label>结束时间</label>
+            <div class="col-lg-10 bitian-box">
+                <!--<span class="m_company-bitian">必填</span>-->
+                <input type="text" class="form-control" placeholder="例如：2018-7-1" id="accredit_end_time" ng-model="accredit_end_time" maxlength="20">
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md2" style="text-align: center;">
+            <button class="layui-btn" ng-click="searchList()">查询</button>
+        </div>
+    </div>
+
+    <div class="col-md-12" style="margin-top: 20px" ng-show="toShow">
+        <div style="margin-top: 20px">
+            <h2 class="font-bold m-t-none  text-muted m_center" ng ng-style="app.settings.fontColor">客流量：{{totalNumber}}</h2>
+        </div>
+        <div class="panel wrapper" ng-style="app.settings.Panel">
+            <h4 class="font-bold m-t-none  text-muted m_center" ng ng-style="app.settings.fontColor">客流总数：{{total}}</h4>
+            <div class="chartHeight" id="personID" ></div>
+            <div class="btn-group col-md -11 col-md-offset-10">
+                <button class="btn btn-info" ng-click="daytime()">天</button>
+                <button class="btn btn-info" ng-click="weektime()">周</button>
+                <button class="btn btn-info" ng-click="mounthtime()">月</button>
+            </div>
+        </div>
+    </div>
+    <div ng-show="show">
+        <div class="col-md-6" style="margin-top: 20px">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+                <h4 class="font-bold m-t-none  text-muted m_center" ng ng-style="app.settings.fontColor">男女占比</h4>
+                <div class="chartHeight" id="sexID" ></div>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin-top: 20px">
+            <div class="panel wrapper" ng-style="app.settings.Panel">
+                <h4 class="font-bold m-t-none  text-muted m_center" ng ng-style="app.settings.fontColor">年龄占比</h4>
+                <div class="chartHeight" id="ageID" ></div>
+            </div>
+        </div>
+    </div>
+
+    <div data-ng-include=" 'tpl/blocks/loading.html' " ng-show="loading" ></div>
+</div>

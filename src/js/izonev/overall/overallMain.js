@@ -1,6 +1,6 @@
 'use strict';
 app
-    .controller('overallMainCtrl', ['$scope', '$http', '$state', '$q', '$filter', function ($scope, $http, $state, $q, $filter) {
+    .controller('overallMainCtrl', ['$scope', '$http', '$state', '$q', '$filter','$rootScope', function ($scope, $http, $state, $q, $filter,$rootScope) {
 
         // $scope.kpavilionId=window.sessionStorage.getItem('basePluspavilionId');
         $scope.mktime = window.sessionStorage.getItem('mktime');
@@ -12,6 +12,7 @@ app
 
         var projectId = window.sessionStorage.getItem("projectId");
         var pid = window.sessionStorage.getItem("pid");
+
 
         //请求总体分析--权限接口
         $http({
@@ -97,9 +98,37 @@ app
 
                 });
             },
+            //进入单个项目，是否开通有人脸识别
+            findCameraAjax: function () {
+                $http({
+                    method: 'get',
+                    url: USP_SERVER_ROOT1 + 'project/findCamera?project_id='+projectId,
+                }).success(function (data, status, headers) {
+                    $scope.loading = false;
+                    if(data.code==201){
+                        console.log('此项目没有安装人脸识别设备');
+                        $rootScope.noCamera=false;
+                        $rootScope.cameraNav=[]
+                    }else if (data.code==200) {
+                        console.log('安装人脸识别设备');
+                        $scope.noCamera=true;
+                        window.sessionStorage.setItem('appId',data.list[0].appId);
+                        window.sessionStorage.setItem('storeId',data.list[0].storeId);
+
+                    }else {
+                        console.log('出现异常')
+                    }
+
+                })
+                    .error(function (data, status, headers) {
+                        $scope.authError = data.message;
+                        $scope.loading = false;
+                    });
+            },
         };
         thttp.serchArea();
         thttp.serch();
+        thttp.findCameraAjax();
 
         if ($scope.endtime == 1) {
             var agodate = addDate($filter('date')(new Date(), 'yyyy-MM-dd'), -1);

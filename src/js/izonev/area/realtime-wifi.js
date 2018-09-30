@@ -245,7 +245,33 @@ app.controller('realtimewifiCtrl', ['$scope', '$http', '$state', '$q', '$interva
                 // $scope.app.exhibition.dataflag2 = true;
             });
         },
+        //进入单个项目，是否开通有人脸识别
+        findCameraAjax: function () {
+            $http({
+                method: 'get',
+                url: USP_SERVER_ROOT1 + 'project/findCamera?project_id='+projectId,
+            }).success(function (data, status, headers) {
+                $scope.loading = false;
+                if(data.code==201){
+                    console.log('此项目没有安装人脸识别设备');
+                    $rootScope.noCamera=false;
+                    $rootScope.cameraNav=[]
+                }else if (data.code==200) {
+                    console.log('安装人脸识别设备');
+                    $scope.noCamera=true;
+                    window.sessionStorage.setItem('appId',data.list[0].appId);
+                    window.sessionStorage.setItem('storeId',data.list[0].storeId);
 
+                }else {
+                    console.log('出现异常')
+                }
+
+            })
+                .error(function (data, status, headers) {
+                    $scope.authError = data.message;
+                    $scope.loading = false;
+                });
+        },
 
         searchData:function () {
             $scope.loading=true;
@@ -279,7 +305,7 @@ app.controller('realtimewifiCtrl', ['$scope', '$http', '$state', '$q', '$interva
     thttp.serchT();
     thttp.serchArea();
     thttp.searchData();
-
+    thttp.findCameraAjax();
     function realTime() {
         for(var i=0;i<$scope.traffic.length;i++){
             $scope.traffic[i].realTime="";

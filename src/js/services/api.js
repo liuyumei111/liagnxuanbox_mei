@@ -7,19 +7,19 @@
 var USP_SERVER_ROOT = 'api/login';
 
 // 本地    前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
-// var USP_SERVER_ROOT1 = 'http://192.168.1.117:8080/lx_box_pro/v1/';
-// var admin_ROOT = 'http://192.168.1.117:8080/lx_box_pro/v1/';
+// var USP_SERVER_ROOT1 = 'http://192.168.1.116:8080/lx_box_pro/v1/';
+// var admin_ROOT = 'http://192.168.1.116:8080/lx_box_pro/v1/';
+var WIFIPIX='http://192.168.1.116:10002/';
 
 // 测试    前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
-// var USP_SERVER_ROOT1 = 'http://39.106.166.192:9000/lx_box_pro/v1/';
-// var admin_ROOT = 'http://39.106.166.192:9000/lx_box_pro/v1/';
+var USP_SERVER_ROOT1 = 'http://39.106.166.192:8082/lx_box_pro/v1/';
+var admin_ROOT = 'http://39.106.166.192:8082/lx_box_pro/v1/';
+// var WIFIPIX='http://39.106.166.192:10002/';
 
 //正式     前台接口USP_SERVER_ROOT1    用户管理admin_ROOT
-var USP_SERVER_ROOT1 = 'http://54.223.30.252:8080/lx_box_pro/v1/';
-var admin_ROOT = 'http://54.223.30.252:8080/lx_box_pro/v1/';
+// var USP_SERVER_ROOT1 = 'http://54.223.30.252:8080/lx_box_pro/v1/';
+// var admin_ROOT = 'http://54.223.30.252:8080/lx_box_pro/v1/';
 
-
-//正式
 var API_FORMAL="https://api-jdi.jiguang.cn/v1/manage";
 var token = localStorage.getItem("access_token");
 var api = angular.module('api.service', []);

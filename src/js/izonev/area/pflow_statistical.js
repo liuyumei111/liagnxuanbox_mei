@@ -12,7 +12,6 @@ app.controller('astatisticalCtrl', ['$scope', '$http', '$state', '$q', '$interva
     $scope.app.exhibition.pavilion_idPlus = $stateParams.pavilion_idPlus;
 
 
-
     /**
      * 定义公共样式
      * tooltip

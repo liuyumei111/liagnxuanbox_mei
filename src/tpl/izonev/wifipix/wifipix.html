@@ -1,5 +1,7 @@
-<div ng-controller="caloCtrl">
-    <div class="app-header navbar">
+<!-- navbar -->
+<div ng-controller="wifipixController">
+
+    <div>
         <div class="navbar app-header navbar  bg-white-only navbar-fixed-top">
             <div class="col-xs-12 m_height">
                 <a ui-sref="access.selections">
@@ -7,8 +9,12 @@
                         <img src="img/logo.png" alt="">
                     </div>
                 </a>
+
                 <div class="m_exit">
-                    <div class="dropdown" dropdown>
+                    <div class="dropdown" dropdown style="position: relative">
+                        <i class="glyphicon glyphicon-align-justify m_navBtn"
+                           style="position: absolute;top: 26px;left: -30px;" ui-toggle-class="off-screen"
+                           data-target=".app-aside"></i>
                         <a href class="dropdown-toggle clear" dropdown-toggle>
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                 <img src="img/a0.jpg" alt="...">
@@ -23,7 +29,7 @@
                                     <i class="glyphicon glyphicon-share-alt" style="margin-right: 18px"></i>
                                     退出
                                 </a>
-                                <!--glyphicon glyphicon-share-alt-->
+
                             </li>
                         </ul>
                         <!-- / dropdown -->
@@ -31,43 +37,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="app-aside hidden-xs {{app.settings.asideColor}}" style="margin-top: 20px">
-        <nav ui-nav class="navi" >
-            <!-- list -->
-            <ul class="nav">
-                <li class="hidden-folded padder m-t m-b-sm text-muted text-xs" style="margin: 20px 0">
-                    <span></span>
-                </li>
-                <li class="line dk"></li>
-                <!--calo评分-->
-                <li ui-sref-active="active" >
-                    <a href class="auto">
-                          <span class="pull-right text-muted">
-                            <i class="fa fa-fw fa-angle-right text"></i>
-                            <i class="fa fa-fw fa-angle-down text-active"></i>
-                          </span>
-                        <i class="glyphicon glyphicon-sound-stereo icon text-warning"></i>
-                        <span class="font-bold">calo评分</span>
-                    </a>
-                    <ul class="nav nav-sub dk">
-                        <li class="nav-sub-header">
-                            <a href>
-                                <span translate="aside.nav.DASHBOARD">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="#/calo/start">
-                                <span>进行评分</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="line dk"></li>
-            </ul>
-            <!-- / list -->
-        </nav>
     </div>
 
     <div class="app-content m_app-content">
@@ -80,7 +49,6 @@
     <!--<div data-ng-include=" 'tpl/izonev/blocks/footer.html' " ></div>-->
 
 </div>
-
 
 <style>
     * {
@@ -123,7 +91,7 @@
         margin: 0 auto;
     }
     .m_app-content{
-        margin-left: 210px;
+        padding: 0 20px;
     }
     @media screen and (max-width: 767px) {
         .m_app-content{
@@ -159,6 +127,16 @@
     .dropdown-menu {
         position: absolute;
         top: 95%;
-        left: -20px;
+        left: -23px;
+    }
+
+    .m_navBtn {
+        visibility: hidden;
+    }
+
+    @media screen and (max-width: 768px) {
+        .m_navBtn {
+            visibility: visible;
+        }
     }
 </style>

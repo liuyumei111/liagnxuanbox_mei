@@ -49,17 +49,8 @@
                 </li>
                 <li class="line dk"></li>
 
-                <!--calo评分-->
-                <li ui-sref-active="active" >
-                    <a href="#/calo/start" class="auto">
-                        <i class="glyphicon glyphicon-sound-stereo icon text-warning"></i>
-                        <span class="font-bold">calo评分</span>
-                    </a>
-                </li>
-                <li class="line dk"></li>
-
                 <!--人脸识别-->
-                <li ui-sref-active="active" >
+                <li ui-sref-active="active">
                     <a href class="auto">
                           <span class="pull-right text-muted">
                             <i class="fa fa-fw fa-angle-right text"></i>
@@ -82,7 +73,6 @@
                     </ul>
                 </li>
                 <li class="line dk"></li>
-
             </ul>
             <!-- / list -->
         </nav>
@@ -91,7 +81,8 @@
     <div class="app-content m_app-content">
         <div ui-butterbar></div>
         <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a>
-        <div class="app-content-body " ui-view ng-style="app.settings.contentBody"></div>
+        <div class="app-content-body " ui-view ng-style="app.settings.contentBody">
+        </div>
 
     </div>
     <!-- 底部content -->

@@ -1,8 +1,10 @@
-<div ng-controller="caloCtrl">
+<!-- navbar -->
+<div ng-controller="wifipix1Controller">
+
     <div class="app-header navbar">
         <div class="navbar app-header navbar  bg-white-only navbar-fixed-top">
             <div class="col-xs-12 m_height">
-                <a ui-sref="access.selections">
+                <a ui-sref="wifipix.manage">
                     <div class="m_home-logo">
                         <img src="img/logo.png" alt="">
                     </div>
@@ -33,38 +35,49 @@
         </div>
     </div>
 
+
     <div class="app-aside hidden-xs {{app.settings.asideColor}}" style="margin-top: 20px">
-        <nav ui-nav class="navi" >
+        <nav ui-nav class="navi">
             <!-- list -->
             <ul class="nav">
                 <li class="hidden-folded padder m-t m-b-sm text-muted text-xs" style="margin: 20px 0">
                     <span></span>
                 </li>
+                <!--项目名称-->
                 <li class="line dk"></li>
-                <!--calo评分-->
-                <li ui-sref-active="active" >
+                <li ui-sref-active="active">
+                    <a ui-sref="app.calendar">
+                        <!--icon-drawer-->
+                        <i class="glyphicon glyphicon-briefcase icon"></i>
+                        <span class="font-bold">{{m_project_name}}</span>
+                    </a>
+                </li>
+                <li class="line dk"></li>
+
+                <li ui-sref-active="active">
                     <a href class="auto">
                           <span class="pull-right text-muted">
                             <i class="fa fa-fw fa-angle-right text"></i>
                             <i class="fa fa-fw fa-angle-down text-active"></i>
                           </span>
                         <i class="glyphicon glyphicon-sound-stereo icon text-warning"></i>
-                        <span class="font-bold">calo评分</span>
+                        <span class="font-bold">客流管理</span>
                     </a>
-                    <ul class="nav nav-sub dk">
+                    <ul class="nav nav-sub dk" ng-repeat="menu in cameraNav">
                         <li class="nav-sub-header">
                             <a href>
                                 <span translate="aside.nav.DASHBOARD">Dashboard</span>
                             </a>
                         </li>
-                        <li class="active">
-                            <a href="#/calo/start">
-                                <span>进行评分</span>
+                        <li ui-sref-active="active">
+                            <a ui-sref="{{menu.url?menu.url:false}}">
+                                <span>{{menu.menuName}}</span>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="line dk"></li>
+
             </ul>
             <!-- / list -->
         </nav>
@@ -80,7 +93,6 @@
     <!--<div data-ng-include=" 'tpl/izonev/blocks/footer.html' " ></div>-->
 
 </div>
-
 
 <style>
     * {
@@ -122,12 +134,14 @@
         width: 60px;
         margin: 0 auto;
     }
-    .m_app-content{
+
+    .m_app-content {
         margin-left: 210px;
     }
+
     @media screen and (max-width: 767px) {
-        .m_app-content{
-            margin-left: 0px!important;
+        .m_app-content {
+            margin-left: 0px !important;
             width: 100%;
         }
     }

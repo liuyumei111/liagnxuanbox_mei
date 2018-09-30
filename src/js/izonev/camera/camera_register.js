@@ -3,6 +3,8 @@ app
     .controller('cregisterCtrl', ['$scope', '$http', '$state', '$q', '$filter', function ($scope, $http, $state, $q, $filter) {
 
         $scope.m_project_name=window.sessionStorage.getItem('project_name');
+        $scope.appIdS=window.sessionStorage.getItem('appId');
+        $scope.storeidS=window.sessionStorage.getItem('storeId');
 
 
         var mainHttp={
@@ -74,19 +76,19 @@ app
                 return;
             }
 
-            var appId= $('#appId').val();
-            var storeId= $('#storeId').val();
+            var appId= $('#appId').attr('appId');
+            var storeId= $('#storeId').attr('storeId');
             var userId= $('#userId').val();
             var userInfo= $('#userInfo').val();
 
-            if (appId == 'NaN' || appId == 'undefined' || appId == '') {
-                layer.tips('appId不能为空', '#appId');
-                return false;
-            }
-            if (storeId == 'NaN' || storeId == 'undefined' || storeId == '') {
-                layer.tips('storeId不能为空', '#storeId');
-                return false;
-            }
+            // if (appId == 'NaN' || appId == 'undefined' || appId == '') {
+            //     layer.tips('appId不能为空', '#appId');
+            //     return false;
+            // }
+            // if (storeId == 'NaN' || storeId == 'undefined' || storeId == '') {
+            //     layer.tips('storeId不能为空', '#storeId');
+            //     return false;
+            // }
             if (userId == 'NaN' || userId == 'undefined' || userId == '') {
                 userId == ''
             }

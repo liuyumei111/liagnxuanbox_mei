@@ -1,0 +1,33 @@
+<div ng-controller="wifipixProCorl" style="margin-top: 36px;">
+	<div class="layui-row m_bottom_20" style="margin-left: 30px">
+		<!--<div class="layui-col-xs6 layui-col-sm6 layui-col-md3">-->
+				<!--<label>店铺id</label>-->
+				<!--<input id="storeId" type="text" name="title" lay-verify="required" placeholder="请输入店铺id（必填）"-->
+							 <!--autocomplete="off" class="layui-input" value="7093">-->
+		<!--</div>-->
+		<div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+			<label>店铺id</label>
+			<div class="col-lg-10 bitian-box">
+				<!--<span class="m_company-bitian">必填</span>-->
+				<input type="text" class="form-control" name="title" lay-verify="required" placeholder="请输入店铺id（必填）" id="storeId" maxlength="20" autocomplete="off" class="layui-input" value="7093">
+			</div>
+		</div>
+		<div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+			<label>开始时间</label>
+			<div class="col-lg-10 bitian-box">
+				<!--<span class="m_company-bitian">必填</span>-->
+				<input type="text" class="form-control" placeholder="例如：2018-7-1" id="accredit_start_time" ng-model="accredit_start_time" maxlength="20">
+			</div>
+		</div>
+		<div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+			<label>结束时间</label>
+			<div class="col-lg-10 bitian-box">
+				<!--<span class="m_company-bitian">必填</span>-->
+				<input type="text" class="form-control" placeholder="例如：2018-7-1" id="accredit_end_time" ng-model="accredit_end_time" maxlength="20">
+			</div>
+		</div>
+		<div class="layui-col-xs6 layui-col-sm6 layui-col-md2" style="text-align: center;">
+			<button class="layui-btn" ng-click="searchList()">查询</button>
+		</div>
+	</div>
+</div>

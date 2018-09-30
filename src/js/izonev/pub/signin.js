@@ -46,7 +46,8 @@ app.controller('SigninFormController', ['$scope', '$http', '$state', '$rootScope
                     apiStorage.putLoc('userPas', $scope.userPassword);
                     apiStorage.putLoc('access_token', access_token);
                     $rootScope.projectS = data.project_list;
-                    $state.go('access.home');
+                    // $state.go('access.home');
+                    $state.go('access.selections');
                 } else {
                     $('.promptError').html('用户名或密码错误')
                 }
